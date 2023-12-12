@@ -7,7 +7,7 @@
 #include "AssetManager.hpp"
 #include "AudioManager.hpp"
 #include "SettingsManager.hpp"
-
+#include "StateVictory.hpp"
 
 // -------------------- 类设计 --------------------
 /*
@@ -83,10 +83,12 @@ private:
 	// 选择难度的按钮
 	Button easyButton;
 	Button hardButton;
+	Button bossButton; // 一键进入boss战
 
 	//是否播放过音效
 	bool isEasyButton;
 	bool ishardButton;
+	bool isbossButton;
 
 	// 显示难度选择的文字
 	sf::Text difficultyText;

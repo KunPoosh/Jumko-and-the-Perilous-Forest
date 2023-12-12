@@ -1,4 +1,4 @@
-#include "StateStarGame.hpp"
+﻿#include "StateStarGame.hpp"
 
 StateStartGame::StateStartGame(StateManager& manager) : stateManager(manager) {
 	//构造方法
@@ -192,6 +192,10 @@ StateSelectDifficulty::StateSelectDifficulty(StateManager& manager) : stateManag
 	hardButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
 	hardButton.setPosition(540, 500, 200, 50);
 
+	bossButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"进入Boos战", 25);
+	bossButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
+	bossButton.setPosition(390, 600, 200, 50);
+
 	// 难度选择文本
 	difficultyText.setFont(assetManager.getFont("simhei"));
 	difficultyText.setFillColor(sf::Color::White);
@@ -234,7 +238,7 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 			window.close();
 		}
 
-		// 检测难度按钮的点击
+		// 检测难度和boss战按钮的点击
 		if (event.type == sf::Event::MouseButtonPressed) {
 			if (easyButton.isMouseOver(mousePosition)) {
 				// 处理简单难度的选择
@@ -245,6 +249,12 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 			else if (hardButton.isMouseOver(mousePosition)) {
 				// 处理困难难度的选择
 				audioManager.playSound("ClickButton");
+				settingsManager.isHardCore = true;
+				stateManager.changeState(stateManager.createState("NewGame"));
+			}
+			else if (bossButton.isMouseOver(mousePosition) && ( settingsManager.unlockedCGs[10]|| settingsManager.unlockedCGs[11])) {
+				audioManager.playSound("ClickButton");
+				settingsManager.isBossCore = true;
 				settingsManager.isHardCore = true;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}
@@ -275,7 +285,21 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 				hardButton.resetColor();
 				ishardButton = false;
 			}
+
+			//悬停boss战按钮
+			if (bossButton.isMouseOver(mousePosition)) {
+				bossButton.onHover();
+				if (!isbossButton) {
+					isbossButton = true;
+					audioManager.playSound("SelectButton");
+				}
+			}
+			else {
+				bossButton.resetColor();
+				isbossButton= false;
+			}
 		}
+
 	}
 }
 
@@ -313,4 +337,5 @@ void StateSelectDifficulty::draw(sf::RenderWindow& window) {
 	window.draw(difficultyText);
 	easyButton.draw(window);
 	hardButton.draw(window);
+	bossButton.draw(window);
 }

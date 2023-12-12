@@ -1,4 +1,4 @@
-#include "StateMainGame.hpp"
+﻿#include "StateMainGame.hpp"
 #include <iostream>
 #include "Animation.hpp"
 #include "StateMenu.hpp"
@@ -111,13 +111,24 @@ StateMainGame::StateMainGame(StateManager& manager)
     Return.setPosition(325, 500, 250, 80);
 
     //数值初始化
-    TIMEFORPLAY = 0;
+   
     score = 0;
     power = 0;
-    TOTALTIME = 0.f;
+    if (isBossMode) {
+        TOTALTIME = 205.0f;
+        TIMEFORPLAY = 104;
+    }
+    else {
+        TOTALTIME = 0.f; 
+        TIMEFORPLAY = 0;
+    }
+    
+    
+    
     elapsedTime = 0.f;
     fpsUpdateTime = 0.f;
     isHardMode = SettingsManager::getInstance().isHardCore;
+    isBossMode = SettingsManager::getInstance().isBossCore;
     ENEMYOUT2S = 0;
     ENEMYOUT2STIME = 0.f;
     //RecordTotalTime = 0.f;
@@ -143,6 +154,10 @@ StateMainGame::StateMainGame(StateManager& manager)
     //是否开启无敌模式
     if (SettingsManager::getInstance().isInvincible) {
         player->Invincible();
+    }
+    //是否开启Boss战模式
+    if (isBossMode) {
+        player->bossCore();
     }
     //管理器关联玩家
     EntityManager::getInstance()->setPlayer(player);

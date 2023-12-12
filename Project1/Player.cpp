@@ -38,6 +38,7 @@ Player::Player() {
 	TotalTime = 0.f;
 	score = 0;
 	isHard = false;
+	isBoss = false;
 	isGameOver = false;
 	isInvincible = false;
 	isSkill = false;
@@ -96,6 +97,30 @@ void Player::hardCore() {
 	maxHealth = 1200;
 	healthRegenerationRate = 12;
 	atkBullet = 500;
+}
+
+void Player::bossCore() {
+	//开启Boss战模式！
+	/*
+	负责人: 波波沙
+
+	功能:
+		使玩家进入困难模式,改变玩家的基础数值
+
+	参数: void
+
+	返回值: void
+	*/
+	//----------------------实现------------------------//
+
+	isBoss = true;
+	//其他的参数调整
+	//...
+	health = 1200;
+	maxHealth = 1200;
+	healthRegenerationRate = 12;
+	atkBullet = 500;
+	strength = 3000;
 }
 
 void Player::Invincible() {
