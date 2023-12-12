@@ -20,18 +20,18 @@ Player::Player() {
 	sprite.setTexture(assetManager.getTexture("Jumko"));
 	hitboxSprite.setTexture(assetManager.getTexture("HitBox"));
 
-	health = 2000;
-	maxHealth = 2000;
-	strength = 1000;
+	health = 2500;
+	maxHealth = 2500;
+	strength = 2000;
 	moveSpeed = 600;
 
 	accumulatedTime = 0.f;
 	attackInterval = 0.08f;
 	timeTohealth = 0.f;
-	healthRegenerationRate = 20;
+	healthRegenerationRate = 30;
 	skillCharging = 0;
 
-	atkBullet = 600;
+	atkBullet = 900;
 	helthBullet = 1;
 	speedBullet = 1500;
 
@@ -92,10 +92,11 @@ void Player::hardCore() {
 	isHard = true;
 	//其他的参数调整
 	//...
-	health = 1200;
-	maxHealth = 1200;
-	healthRegenerationRate = 12;
-	atkBullet = 500;
+	health = 1800;
+	maxHealth = 1800;
+	healthRegenerationRate = 20;
+	strength = 1000;
+	atkBullet = 600;
 }
 
 void Player::Invincible() {

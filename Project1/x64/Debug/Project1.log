@@ -1,5 +1,1051 @@
+<<<<<<< HEAD
+﻿H:\program files\VisualStudio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(SFMLProject.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  AddEnemys.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(153,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“AddEnemys.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(202,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“AddEnemys.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(359,124): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(359,124): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(359,124): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(359,124): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(359,124): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(359,117): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(359,117): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(359,117): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(359,117): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(359,117): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(368,124): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(368,124): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(368,124): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(368,124): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(368,124): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(368,117): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(368,117): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(368,117): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(368,117): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(368,117): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(377,124): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(377,124): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(377,124): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(377,124): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(377,124): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(377,117): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(377,117): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(377,117): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(377,117): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(377,117): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(406,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(406,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(406,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(406,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(406,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(406,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(406,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(406,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(406,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(406,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(415,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(415,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(415,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(415,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(415,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(415,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(415,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(415,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(415,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(415,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(424,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(424,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(424,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(424,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(424,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(424,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(424,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(424,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(424,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(424,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(442,124): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(442,124): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(442,124): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(442,124): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(442,124): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(442,117): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(442,117): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(442,117): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(442,117): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(442,117): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(471,124): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(471,124): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(471,124): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(471,124): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(471,124): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(471,117): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(471,117): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(471,117): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(471,117): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(471,117): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(480,124): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(480,124): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(480,124): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(480,124): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(480,124): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(480,117): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(480,117): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(480,117): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(480,117): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(480,117): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(489,124): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(489,124): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(489,124): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(489,124): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(489,124): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(489,117): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(489,117): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(489,117): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(489,117): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(489,117): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(661,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(661,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(661,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(661,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(661,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(661,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(661,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(661,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(661,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(661,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(670,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(670,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(670,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(670,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(670,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(670,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(670,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(670,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(670,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(670,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(679,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(679,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(679,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(679,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(679,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(679,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(679,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(679,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(679,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(679,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(699,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(699,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(699,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(699,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(699,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(699,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(699,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(699,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(699,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(699,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(708,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(708,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(708,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(708,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(708,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(708,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(708,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(708,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(708,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(708,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(717,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(717,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(717,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(717,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(717,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(717,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(717,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(717,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(717,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(717,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(726,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(726,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(726,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(726,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(726,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(726,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(726,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(726,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(726,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(726,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(735,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(735,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(735,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(735,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(735,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(735,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(735,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(735,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(735,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(735,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(777,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(777,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(777,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(777,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(777,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(777,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(777,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(777,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(777,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(777,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(786,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(786,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(786,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(786,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(786,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(786,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(786,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(786,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(786,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(786,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(795,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(795,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(795,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(795,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(795,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(795,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(795,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(795,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(795,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(795,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(815,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(815,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(815,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(815,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(815,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(815,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(815,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(815,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(815,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(815,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(824,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(824,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(824,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(824,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(824,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(824,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(824,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(824,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(824,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(824,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(833,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(833,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(833,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(833,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(833,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(833,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(833,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(833,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(833,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(833,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(842,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(842,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(842,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(842,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(842,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(842,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(842,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(842,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(842,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(842,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(843,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(843,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(843,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(843,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(843,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(843,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(843,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(843,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(843,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(843,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(852,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(852,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(852,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(852,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(852,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(852,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(852,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(852,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(852,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(852,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(853,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(853,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(853,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(853,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(853,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(853,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(853,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(853,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(853,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(853,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(887,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(887,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(887,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(887,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(887,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(887,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(887,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(887,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(887,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(887,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(896,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(896,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(896,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(896,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(896,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(896,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(896,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(896,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(896,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(896,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(905,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(905,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(905,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(905,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(905,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(905,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(905,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(905,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(905,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(905,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(914,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(914,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(914,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(914,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(914,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(914,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(914,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(914,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(914,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(914,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(923,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(923,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(923,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(923,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(923,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(923,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(923,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(923,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(923,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(923,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(943,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(943,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(943,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(943,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(943,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(943,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(943,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(943,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(943,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(943,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(952,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(952,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(952,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(952,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(952,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(952,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(952,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(952,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(952,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(952,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(961,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(961,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(961,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(961,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(961,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(961,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(961,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(961,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(961,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(961,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(976,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(976,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(976,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(976,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(976,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(976,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(976,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(976,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(976,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(976,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(996,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(996,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(996,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(996,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(996,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(996,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(996,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(996,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(996,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(996,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1005,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1005,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1005,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1005,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1005,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1005,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1005,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1005,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1005,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1005,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1014,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1014,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1014,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1014,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1014,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1014,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1014,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1014,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1014,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1014,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1023,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1023,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1023,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1023,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1023,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1023,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1023,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1023,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1023,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1023,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1032,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1032,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1032,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1032,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1032,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1032,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1032,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1032,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1032,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1032,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1052,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1052,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1052,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1052,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1052,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1052,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1052,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1052,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1052,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1052,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1061,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1061,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1061,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1061,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1061,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1061,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1061,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1061,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1061,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1061,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1296,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1296,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1296,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1296,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1296,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1296,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1296,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1296,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1296,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1296,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1305,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1305,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1305,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1305,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1305,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1305,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1305,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1305,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1305,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1305,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1314,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1314,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1314,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1314,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1314,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1314,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1314,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1314,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1314,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1314,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1405,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1405,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1405,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1405,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1405,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1405,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1405,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1405,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1405,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1405,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1406,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1406,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1406,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1406,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1406,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1406,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1406,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1406,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1406,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1406,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1425,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1425,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1425,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1425,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1425,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1425,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1425,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1425,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1425,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1425,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1426,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1426,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1426,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1426,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1426,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1426,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1426,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1426,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1426,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1426,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1445,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1445,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1445,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1445,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1445,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1445,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1445,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1445,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1445,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1445,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1446,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1446,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1446,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1446,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1446,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1446,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1446,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1446,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1446,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1446,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1466,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1466,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1466,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1466,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1466,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1466,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1466,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1466,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1466,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1466,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1467,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1467,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1467,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1467,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1467,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1467,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1467,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1467,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1467,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1467,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1503,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1503,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1503,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1503,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1503,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1503,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1503,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1503,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1503,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1503,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1504,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1504,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1504,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1504,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1504,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1504,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1504,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1504,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1504,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1504,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1513,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1513,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1513,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1513,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1513,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1513,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1513,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1513,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1513,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1513,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1514,128): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1514,128): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1514,128): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1514,128): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1514,128): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1514,121): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1514,121): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1514,121): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1514,121): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1514,121): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1538,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1538,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1538,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1538,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1538,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1538,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1538,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1538,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1538,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1538,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1549,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1549,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1549,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1549,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1549,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1549,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1549,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1549,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1549,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1549,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1558,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1558,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1558,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1558,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1558,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1558,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1558,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1558,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1558,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1558,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1567,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1567,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1567,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1567,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1567,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1567,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1567,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1567,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1567,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1567,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1576,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1576,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1576,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1576,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1576,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1576,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1576,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1576,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1576,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1576,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1600,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1600,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1600,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1600,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1600,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1600,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1600,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1600,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1600,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1600,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1609,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1609,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1609,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1609,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1609,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1609,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1609,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1609,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1609,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1609,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1618,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1618,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1618,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1618,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1618,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1618,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1618,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1618,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1618,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(1618,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3614,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3614,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3614,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3614,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3614,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3614,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3614,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3614,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3614,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3614,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3673,126): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3673,126): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3673,126): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3673,126): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3673,126): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3673,119): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3673,119): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3673,119): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3673,119): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3673,119): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3732,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3732,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3732,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3732,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3732,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3732,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3732,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3732,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3732,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3732,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3791,126): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3791,126): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3791,126): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3791,126): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3791,126): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3791,119): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3791,119): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3791,119): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3791,119): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3791,119): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3850,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3850,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3850,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3850,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3850,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3850,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3850,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3850,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3850,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3850,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3909,126): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3909,126): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3909,126): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3909,126): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3909,126): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3909,119): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3909,119): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3909,119): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3909,119): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3909,119): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3968,125): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3968,125): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3968,125): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3968,125): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3968,125): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3968,118): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3968,118): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3968,118): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3968,118): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(3968,118): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(4027,126): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(4027,126): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(4027,126): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(4027,126): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(4027,126): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(4027,119): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(4027,119): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(4027,119): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(4027,119): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\AddEnemys.cpp(4027,119): warning C4305:         ]
+  Animation.cpp
+  AssetManager.cpp
+  AudioManager.cpp
+  Bullet.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(153,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Bullet.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(202,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Bullet.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.cpp(42,24): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  Button.cpp
+  Enemy.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(153,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Enemy.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(202,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Enemy.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1220,29): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1220,29): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1220,29): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1220,29): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1220,29): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1327,14): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1568,21): warning C4244: “参数”: 从“int”转换到“T”，可能丢失数据
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1568,21): warning C4244:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1568,21): warning C4244:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1568,21): warning C4244:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1568,21): warning C4244:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1580,23): warning C4244: “参数”: 从“double”转换到“T”，可能丢失数据
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1580,23): warning C4244:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1580,23): warning C4244:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1580,23): warning C4244:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1580,23): warning C4244:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1679,14): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(1697,25): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: “参数”: 从“_Ty”转换到“float”，可能丢失数据
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         with
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         [
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:             _Ty=int
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         ]
+  (编译源文件“Enemy.cpp”)
+  H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
+  模板实例化上下文(最早的实例化上下文)为
+  	D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Enemy.cpp(150,44):
+  	查看对正在编译的函数 模板 实例化“std::shared_ptr<EnemyBullet1> std::make_shared<EnemyBullet1,sf::Texture&,sf::Vector2f,int,int,int>(sf::Texture &,sf::Vector2f &&,int &&,int &&,int &&)”的引用
+  	H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
+  	查看对正在编译的函数 模板 实例化“std::_Ref_count_obj2<EnemyBullet1>::_Ref_count_obj2<sf::Texture&,_Ty,int,int,int>(sf::Texture &,_Ty &&,int &&,int &&,int &&)”的引用
+          with
+          [
+              _Ty=sf::Vector2f
+          ]
+  	H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\memory(2094,18):
+  	查看对正在编译的函数 模板 实例化“void std::_Construct_in_place<_Ty,sf::Texture&,sf::Vector2<float>,int,int,int>(_Ty &,sf::Texture &,sf::Vector2<float> &&,int &&,int &&,int &&) noexcept(false)”的引用
+          with
+          [
+              _Ty=EnemyBullet1
+          ]
+  
+  EntityManager.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(153,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“EntityManager.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(202,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“EntityManager.cpp”)
+  
+  Main.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Main.cpp(59,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  Player.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(153,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Player.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(202,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Player.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(230,23): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(484,31): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(484,31): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(484,31): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(484,31): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(484,31): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(484,20): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(484,20): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(484,20): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(484,20): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(484,20): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(498,30): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(498,30): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(498,30): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(498,30): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(498,30): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(498,19): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(498,19): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(498,19): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(498,19): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(498,19): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(559,31): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(559,31): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(559,31): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(559,31): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(559,31): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(559,20): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(559,20): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(559,20): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(559,20): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(559,20): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(573,30): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(573,30): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(573,30): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(573,30): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(573,30): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(573,19): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(573,19): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(573,19): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(573,19): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(573,19): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(587,30): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(587,30): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(587,30): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(587,30): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(587,30): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(587,19): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(587,19): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(587,19): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(587,19): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(587,19): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(601,31): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(601,31): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(601,31): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(601,31): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(601,31): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(601,20): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(601,20): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(601,20): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(601,20): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(601,20): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(663,31): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(663,31): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(663,31): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(663,31): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(663,31): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(663,20): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(663,20): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(663,20): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(663,20): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(663,20): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(677,30): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(677,30): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(677,30): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(677,30): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(677,30): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(677,19): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(677,19): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(677,19): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(677,19): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(677,19): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(691,30): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(691,30): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(691,30): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(691,30): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(691,30): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(691,19): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(691,19): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(691,19): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(691,19): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(691,19): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(705,31): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(705,31): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(705,31): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(705,31): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(705,31): warning C4305:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(705,20): warning C4305: “参数”: 从“double”到“T”截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(705,20): warning C4305:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(705,20): warning C4305:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(705,20): warning C4305:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(705,20): warning C4305:         ]
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“Player.cpp”)
+  H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
+  模板实例化上下文(最早的实例化上下文)为
+  	D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(360,46):
+  	查看对正在编译的函数 模板 实例化“std::shared_ptr<PlayerBullet1> std::make_shared<PlayerBullet1,sf::Texture&,sf::Vector2f,int&,int&,int&>(sf::Texture &,sf::Vector2f &&,int &,int &,int &)”的引用
+  	H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
+  	查看对正在编译的函数 模板 实例化“std::_Ref_count_obj2<PlayerBullet1>::_Ref_count_obj2<sf::Texture&,_Ty,int&,int&,int&>(sf::Texture &,_Ty &&,int &,int &,int &)”的引用
+          with
+          [
+              _Ty=sf::Vector2f
+          ]
+  	H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\memory(2094,18):
+  	查看对正在编译的函数 模板 实例化“void std::_Construct_in_place<_Ty,sf::Texture&,sf::Vector2<float>,int&,int&,int&>(_Ty &,sf::Texture &,sf::Vector2<float> &&,int &,int &,int &) noexcept(false)”的引用
+          with
+          [
+              _Ty=PlayerBullet1
+          ]
+  
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: “参数”: 从“_Ty”转换到“int”，可能丢失数据
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         with
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         [
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:             _Ty=double
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         ]
+  (编译源文件“Player.cpp”)
+  H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82):
+  模板实例化上下文(最早的实例化上下文)为
+  	D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Player.cpp(773,45):
+  	查看对正在编译的函数 模板 实例化“std::shared_ptr<PlayerMagicBullet> std::make_shared<PlayerMagicBullet,sf::Texture&,sf::Vector2f,int,int,double>(sf::Texture &,sf::Vector2f &&,int &&,int &&,double &&)”的引用
+  	H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\memory(2769,46):
+  	查看对正在编译的函数 模板 实例化“std::_Ref_count_obj2<PlayerMagicBullet>::_Ref_count_obj2<sf::Texture&,_Ty,int,int,double>(sf::Texture &,_Ty &&,int &&,int &&,double &&)”的引用
+          with
+          [
+              _Ty=sf::Vector2f
+          ]
+  	H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\memory(2094,18):
+  	查看对正在编译的函数 模板 实例化“void std::_Construct_in_place<_Ty,sf::Texture&,sf::Vector2<float>,int,int,double>(_Ty &,sf::Texture &,sf::Vector2<float> &&,int &&,int &&,double &&) noexcept(false)”的引用
+          with
+          [
+              _Ty=PlayerMagicBullet
+          ]
+  
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244: “参数”: 从“_Ty”转换到“float”，可能丢失数据
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         with
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         [
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:             _Ty=int
+H:\program files\VisualStudio\VC\Tools\MSVC\14.38.33130\include\xutility(255,82): warning C4244:         ]
+  (编译源文件“Player.cpp”)
+  
+  SettingsManager.cpp
+  State.cpp
+  StateAbout.cpp
+  StateAppreciate.cpp
+  StateFailure.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(153,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“StateFailure.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(202,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“StateFailure.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateFailure.cpp(9,16): warning C4311: “<function-style-cast>”: 从“time_t (__cdecl *)(time_t *const )”到“unsigned int”的指针截断
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateFailure.cpp(9,16): warning C4302: “<function-style-cast>”: 从“time_t (__cdecl *)(time_t *const )”到“unsigned int”截断
+  StateGameplay.cpp
+  StateMainGame.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(153,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“StateMainGame.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(202,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“StateMainGame.cpp”)
+  
+  StateManager.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(153,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“StateManager.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(202,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“StateManager.cpp”)
+  
+  StateMenu.cpp
+  StateSetting.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateSetting.cpp(234,66): warning C4244: “=”: 从“T”转换到“int”，可能丢失数据
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateSetting.cpp(234,66): warning C4244:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateSetting.cpp(234,66): warning C4244:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateSetting.cpp(234,66): warning C4244:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateSetting.cpp(234,66): warning C4244:         ]
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateSetting.cpp(248,66): warning C4244: “=”: 从“T”转换到“int”，可能丢失数据
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateSetting.cpp(248,66): warning C4244:         with
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateSetting.cpp(248,66): warning C4244:         [
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateSetting.cpp(248,66): warning C4244:             T=float
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateSetting.cpp(248,66): warning C4244:         ]
+  正在生成代码...
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateManager.cpp(123): warning C4715: “StateManager::createState”: 不是所有的控件路径都返回值
+  正在编译...
+  StateStarGame.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateStarGame.cpp(134,45): warning C4244: “参数”: 从“float”转换到“sf::Uint8”，可能丢失数据
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateStarGame.cpp(135,50): warning C4244: “参数”: 从“float”转换到“sf::Uint8”，可能丢失数据
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateStarGame.cpp(136,50): warning C4244: “参数”: 从“float”转换到“sf::Uint8”，可能丢失数据
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateStarGame.cpp(137,50): warning C4244: “参数”: 从“float”转换到“sf::Uint8”，可能丢失数据
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\StateStarGame.cpp(138,50): warning C4244: “参数”: 从“float”转换到“sf::Uint8”，可能丢失数据
+  StateVictory.cpp
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(153,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“StateVictory.cpp”)
+  
+D:\MyCode\JumkoProject\Jumko and the Perilous Forest\Project1\Bullet.hpp(202,85): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“StateVictory.cpp”)
+  
+  正在生成代码...
+  LINK : 没有找到 D:\MyCode\JumkoProject\Jumko and the Perilous Forest\x64\Debug\Project1.exe 或上一个增量链接没有生成它；正在执行完全链接
+  Project1.vcxproj -> D:\MyCode\JumkoProject\Jumko and the Perilous Forest\x64\Debug\Project1.exe
+=======
 ﻿D:\bianji\vs\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(SFMLProject.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
   SettingsManager.cpp
 D:\git\git test\Jumko-and-the-Perilous-Forest\Project1\SettingsManager.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
 D:\git\git test\Jumko-and-the-Perilous-Forest\Project1\SettingsManager.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
   Project1.vcxproj -> D:\git\git test\Jumko-and-the-Perilous-Forest\x64\Debug\Project1.exe
+>>>>>>> main

@@ -2,7 +2,11 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
+      <FullPath>D:\MyCode\JumkoProject\Jumko and the Perilous Forest\x64\Debug\Project1.exe</FullPath>
+=======
       <FullPath>D:\git\git test\Jumko-and-the-Perilous-Forest\x64\Debug\Project1.exe</FullPath>
+>>>>>>> main
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
