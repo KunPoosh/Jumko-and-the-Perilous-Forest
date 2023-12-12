@@ -8,6 +8,7 @@
 #include "Bullet.hpp"
 #include "AudioManager.hpp"
 #include <iostream>
+#include "SettingsManager.hpp"
 
 
 // -------------------- 类设计 --------------------

@@ -1,4 +1,4 @@
-#include"StateFailure.hpp"
+﻿#include"StateFailure.hpp"
 #include"AssetManager.hpp"
 #include"StateMenu.hpp"
 #include<ctime>
