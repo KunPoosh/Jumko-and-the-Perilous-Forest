@@ -1,77 +1,77 @@
-#include <SFML/Graphics.hpp>
+ï»¿#include <SFML/Graphics.hpp>
 #include "StateGameplay.hpp"
 #include "StateMenu.hpp"
-extern bool isSelectHome;//ÔÚ±ğµÄcppÎÄ¼şÖĞÒıÓÃÈ«¾Ö¾²Ì¬±äÁ¿
+extern bool isSelectHome;//åœ¨åˆ«çš„cppæ–‡ä»¶ä¸­å¼•ç”¨å…¨å±€é™æ€å˜é‡
 bool isSelectBack = false;
 bool isSelectNext = false;
 StateGameplay::StateGameplay(StateManager& manager) : stateManager(manager) {
-	//ËØ²Ä¹ÜÀíÆ÷µ¥Àı
+	//ç´ æç®¡ç†å™¨å•ä¾‹
 	AssetManager& assetmanager = AssetManager::getInstance();
 
-	//·µ»ØÖ÷²Ëµ¥°´Å¥µÄĞÅÏ¢
-	home.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"·µ»Ø", 30);
+	//è¿”å›ä¸»èœå•æŒ‰é’®çš„ä¿¡æ¯
+	home.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"è¿”å›", 30);
 	home.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	home.setPosition(50, 50, 200, 50);
 
-	//ÏÂÒ»Ò³°´Å¥µÄĞÅÏ¢
-	Next.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"ÏÂÒ»Ò³", 30);
+	//ä¸‹ä¸€é¡µæŒ‰é’®çš„ä¿¡æ¯
+	Next.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"ä¸‹ä¸€é¡µ", 30);
 	Next.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	Next.setPosition(490, 150, 90, 40);
 
-	//ÉÏÒ»Ò³°´Å¥µÄĞÅÏ¢
-	Back.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"ÉÏÒ»Ò³", 30);
+	//ä¸Šä¸€é¡µæŒ‰é’®çš„ä¿¡æ¯
+	Back.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"ä¸Šä¸€é¡µ", 30);
 	Back.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	Back.setPosition(310, 150, 90, 40);
 
-	//±êÌâµÄÏà¹ØĞÅÏ¢
+	//æ ‡é¢˜çš„ç›¸å…³ä¿¡æ¯
 	title.setFont(assetmanager.getFont("simhei"));
 	title.setFillColor(sf::Color::White);
 	title.setCharacterSize(70);
-	title.setString(L"ÓÎÏ·Íæ·¨");
+	title.setString(L"æ¸¸æˆç©æ³•");
 	title.setPosition(350, 50);
 
-	//ÉèÖÃ±³¾°Í¼Æ¬
+	//è®¾ç½®èƒŒæ™¯å›¾ç‰‡
 	BackgroundImage.setTexture(assetmanager.getTexture("JumkoMenu"));
 
-	//Ê¹Í¼Æ¬±ä°µµ«ÈÔÈ»¿É¼û
+	//ä½¿å›¾ç‰‡å˜æš—ä½†ä»ç„¶å¯è§
 	BackgroundImage.setColor(sf::Color(128, 128, 128, 255));
 
-	//ËÄÕÅÍ¼Æ¬µÄ²¼¾ÖºÍÉè¼Æ
+	//å››å¼ å›¾ç‰‡çš„å¸ƒå±€å’Œè®¾è®¡
 	Introduction1.setTexture(assetmanager.getTexture("TextHowToPlay1"));
 	Introduction1.setPosition(sf::Vector2f(0, 0));
 
 }
 
-// ´¦ÀíÓÃ»§ÊäÈë
+// å¤„ç†ç”¨æˆ·è¾“å…¥
 void StateGameplay::handleInput(sf::RenderWindow& window) {
 	AudioManager& audioManager = AudioManager::getInstance();
 	sf::Event event;
 	while (window.pollEvent(event)) {
-		//»ñÈ¡Êó±êÎ»ÖÃ
+		//è·å–é¼ æ ‡ä½ç½®
 		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 
-		//´¦Àí¹Ø±Õ½çÃæ
+		//å¤„ç†å…³é—­ç•Œé¢
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
-		//´¦ÀíÊó±êµã»÷°´Å¥ÊÂ¼ş
+		//å¤„ç†é¼ æ ‡ç‚¹å‡»æŒ‰é’®äº‹ä»¶
 		if (event.type == sf::Event::MouseButtonPressed) {
-			//·µ»ØÖ÷²Ëµ¥°´Å¥µÄÏìÓ¦
+			//è¿”å›ä¸»èœå•æŒ‰é’®çš„å“åº”
 			if (home.isMouseOver(mousePosition)) {
 				audioManager.playSound("ClickButton");
 				stateManager.changeState(std::make_unique<StateMenu>(stateManager));
 				//entityManager->clearAllEntities();
 			}
 
-			//ÏÂÒ»Ò³°´Å¥µÄÏìÓ¦
+			//ä¸‹ä¸€é¡µæŒ‰é’®çš„å“åº”
 			else if (Next.isMouseOver(mousePosition)) {
 				audioManager.playSound("ClickButton");
 				stateManager.changeState(stateManager.createState("StateGameplay2"));
 			}
 		}
-		//´¦ÀíÊó±êÒÆ¶¯µ½°´Å¥±äÉ«
+		//å¤„ç†é¼ æ ‡ç§»åŠ¨åˆ°æŒ‰é’®å˜è‰²
 		if (event.type == sf::Event::MouseMoved) {
-			// ·µ»ØµÄÏìÓ¦
+			// è¿”å›çš„å“åº”
 			if (home.isMouseOver(mousePosition)) {
 				home.onHover();
 				if (!isSelectHome) {
@@ -84,7 +84,7 @@ void StateGameplay::handleInput(sf::RenderWindow& window) {
 				isSelectHome = false;
 			}
 
-			//ÉÏÒ»Ò³µÄÏìÓ¦
+			//ä¸Šä¸€é¡µçš„å“åº”
 			if (Back.isMouseOver(mousePosition)) {
 				Back.onHover();
 				if (!isSelectBack) {
@@ -97,7 +97,7 @@ void StateGameplay::handleInput(sf::RenderWindow& window) {
 				isSelectBack = false;
 			}
 
-			//ÏÂÒ»Ò³µÄÏìÓ¦
+			//ä¸‹ä¸€é¡µçš„å“åº”
 			if (Next.isMouseOver(mousePosition)) {
 				Next.onHover();
 				if (!isSelectNext) {
@@ -112,23 +112,23 @@ void StateGameplay::handleInput(sf::RenderWindow& window) {
 		}
 	}
 }
-//¶ÔÊı¾İÊµÊ±¸üĞÂ
+//å¯¹æ•°æ®å®æ—¶æ›´æ–°
 void StateGameplay::update(float deltaTime) {
 	//EntityManager::getInstance()->updateEntities(deltaTime);
 }
 
-//¶ÔäÖÈ¾ËùÓĞĞèÒªäÖÈ¾µÄ¶«Î÷
+//å¯¹æ¸²æŸ“æ‰€æœ‰éœ€è¦æ¸²æŸ“çš„ä¸œè¥¿
 void StateGameplay::draw(sf::RenderWindow& window) {
-	//»æÖÆ±³¾°
+	//ç»˜åˆ¶èƒŒæ™¯
 	window.draw(BackgroundImage);
 
-	//»æÖÆ±êÌâ
+	//ç»˜åˆ¶æ ‡é¢˜
 	window.draw(title);
 
-	//äÖÈ¾ËÄ¸ö½éÉÜÍ¼Æ¬
+	//æ¸²æŸ“å››ä¸ªä»‹ç»å›¾ç‰‡
 	window.draw(Introduction1);
 
-	//»æÖÆ°´Å¥
+	//ç»˜åˆ¶æŒ‰é’®
 	home.draw(window);
 	Back.draw(window);
 	Next.draw(window);
@@ -138,43 +138,43 @@ void StateGameplay::draw(sf::RenderWindow& window) {
 
 
 
-//--------------------------ÓÎÏ·Íæ·¨½çÃæµÚ¶şÒ³-----------------------------
+//--------------------------æ¸¸æˆç©æ³•ç•Œé¢ç¬¬äºŒé¡µ-----------------------------
 
 
 StateGameplay2::StateGameplay2(StateManager& manager) : stateManager(manager) {
-	//ËØ²Ä¹ÜÀíÆ÷µ¥Àı
+	//ç´ æç®¡ç†å™¨å•ä¾‹
 	AssetManager& assetmanager = AssetManager::getInstance();
 
-	//·µ»ØÖ÷²Ëµ¥°´Å¥µÄĞÅÏ¢
-	home.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"·µ»Ø", 30);
+	//è¿”å›ä¸»èœå•æŒ‰é’®çš„ä¿¡æ¯
+	home.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"è¿”å›", 30);
 	home.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	home.setPosition(50, 50, 200, 50);
 
-	//ÏÂÒ»Ò³°´Å¥µÄĞÅÏ¢
-	Next.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"ÏÂÒ»Ò³", 30);
+	//ä¸‹ä¸€é¡µæŒ‰é’®çš„ä¿¡æ¯
+	Next.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"ä¸‹ä¸€é¡µ", 30);
 	Next.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	Next.setPosition(490, 150, 90, 40);
 
-	//ÉÏÒ»Ò³°´Å¥µÄĞÅÏ¢
-	Back.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"ÉÏÒ»Ò³", 30);
+	//ä¸Šä¸€é¡µæŒ‰é’®çš„ä¿¡æ¯
+	Back.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"ä¸Šä¸€é¡µ", 30);
 	Back.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	Back.setPosition(310, 150, 90, 40);
 
-	//±êÌâµÄÏà¹ØĞÅÏ¢
+	//æ ‡é¢˜çš„ç›¸å…³ä¿¡æ¯
 	title.setFont(assetmanager.getFont("simhei"));
 	title.setFillColor(sf::Color::White);
 	title.setCharacterSize(70);
-	title.setString(L"ÓÎÏ·Íæ·¨");
+	title.setString(L"æ¸¸æˆç©æ³•");
 	title.setPosition(350, 50);
 
-	//ÉèÖÃ±³¾°Í¼Æ¬
+	//è®¾ç½®èƒŒæ™¯å›¾ç‰‡
 	BackgroundImage.setTexture(assetmanager.getTexture("JumkoMenu"));
 
-	//Ê¹Í¼Æ¬±ä°µµ«ÈÔÈ»¿É¼û
+	//ä½¿å›¾ç‰‡å˜æš—ä½†ä»ç„¶å¯è§
 	BackgroundImage.setColor(sf::Color(128, 128, 128, 255));
 
-	//ËÄÕÅÍ¼Æ¬µÄ²¼¾ÖºÍÉè¼Æ
-	// ²âÊÔÓÃ
+	//å››å¼ å›¾ç‰‡çš„å¸ƒå±€å’Œè®¾è®¡
+	// æµ‹è¯•ç”¨
 	/*
 	Introduction1.setTexture(assetmanager.getTexture("JumkoMenu"));
 	Introduction1.setScale(500.0f / Introduction1.getLocalBounds().width, 500.0f / Introduction1.getLocalBounds().height);
@@ -184,39 +184,39 @@ StateGameplay2::StateGameplay2(StateManager& manager) : stateManager(manager) {
 	Introduction1.setPosition(sf::Vector2f(0, 0));
 }
 
-// ´¦ÀíÓÃ»§ÊäÈë
+// å¤„ç†ç”¨æˆ·è¾“å…¥
 void StateGameplay2::handleInput(sf::RenderWindow& window) {
 	AudioManager& audioManager = AudioManager::getInstance();
 	sf::Event event;
 	while (window.pollEvent(event)) {
-		//»ñÈ¡Êó±êÎ»ÖÃ
+		//è·å–é¼ æ ‡ä½ç½®
 		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 
-		//´¦Àí¹Ø±Õ½çÃæ
+		//å¤„ç†å…³é—­ç•Œé¢
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
-		//´¦ÀíÊó±êµã»÷°´Å¥ÊÂ¼ş
+		//å¤„ç†é¼ æ ‡ç‚¹å‡»æŒ‰é’®äº‹ä»¶
 		if (event.type == sf::Event::MouseButtonPressed) {
-			//·µ»ØÖ÷²Ëµ¥°´Å¥µÄÏìÓ¦
+			//è¿”å›ä¸»èœå•æŒ‰é’®çš„å“åº”
 			if (home.isMouseOver(mousePosition)) {
 				audioManager.playSound("ClickButton");
 				stateManager.changeState(std::make_unique<StateMenu>(stateManager));
 				//entityManager->clearAllEntities();
 			}
 
-			//ÉÏÒ»Ò³°´Å¥µÄÏìÓ¦
+			//ä¸Šä¸€é¡µæŒ‰é’®çš„å“åº”
 			else if (Back.isMouseOver(mousePosition)) {
 				audioManager.playSound("ClickButton");
 				stateManager.changeState(stateManager.createState("StateGameplay"));
 			}
 
-			//ÏÂÒ»Ò³°´Å¥µÄÏìÓ¦ (Èç¹ûĞèÒªµÚÈıÒ³ ÄÇÃ´¾ÍµÃ¼Ó)
+			//ä¸‹ä¸€é¡µæŒ‰é’®çš„å“åº” (å¦‚æœéœ€è¦ç¬¬ä¸‰é¡µ é‚£ä¹ˆå°±å¾—åŠ )
 
 		}
-		//´¦ÀíÊó±êÒÆ¶¯µ½°´Å¥±äÉ«
+		//å¤„ç†é¼ æ ‡ç§»åŠ¨åˆ°æŒ‰é’®å˜è‰²
 		if (event.type == sf::Event::MouseMoved) {
-			// ·µ»ØµÄÏìÓ¦
+			// è¿”å›çš„å“åº”
 			if (home.isMouseOver(mousePosition)) {
 				home.onHover();
 				if (!isSelectHome) {
@@ -229,7 +229,7 @@ void StateGameplay2::handleInput(sf::RenderWindow& window) {
 				isSelectHome = false;
 			}
 
-			//ÉÏÒ»Ò³µÄÏìÓ¦
+			//ä¸Šä¸€é¡µçš„å“åº”
 			if (Back.isMouseOver(mousePosition)) {
 				Back.onHover();
 				if (!isSelectBack) {
@@ -242,7 +242,7 @@ void StateGameplay2::handleInput(sf::RenderWindow& window) {
 				isSelectBack = false;
 			}
 
-			//ÏÂÒ»Ò³µÄÏìÓ¦
+			//ä¸‹ä¸€é¡µçš„å“åº”
 			if (Next.isMouseOver(mousePosition)) {
 				Next.onHover();
 				if (!isSelectNext) {
@@ -257,24 +257,24 @@ void StateGameplay2::handleInput(sf::RenderWindow& window) {
 		}
 	}
 }
-//¶ÔÊı¾İÊµÊ±¸üĞÂ
+//å¯¹æ•°æ®å®æ—¶æ›´æ–°
 void StateGameplay2::update(float deltaTime) {
 	//EntityManager::getInstance()->updateEntities(deltaTime);
 }
 
-//¶ÔäÖÈ¾ËùÓĞĞèÒªäÖÈ¾µÄ¶«Î÷
+//å¯¹æ¸²æŸ“æ‰€æœ‰éœ€è¦æ¸²æŸ“çš„ä¸œè¥¿
 void StateGameplay2::draw(sf::RenderWindow& window) {
-	//»æÖÆ±³¾°
+	//ç»˜åˆ¶èƒŒæ™¯
 	window.draw(BackgroundImage);
 
-	//»æÖÆ±êÌâ
+	//ç»˜åˆ¶æ ‡é¢˜
 	window.draw(title);
 
-	//äÖÈ¾ËÄ¸ö½éÉÜÍ¼Æ¬
+	//æ¸²æŸ“å››ä¸ªä»‹ç»å›¾ç‰‡
 
 	window.draw(Introduction1);
 
-	//»æÖÆ°´Å¥
+	//ç»˜åˆ¶æŒ‰é’®
 	home.draw(window);
 	Back.draw(window);
 	Next.draw(window);

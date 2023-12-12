@@ -1,75 +1,75 @@
-#include"StateAppreciate.hpp"
+ï»¿#include"StateAppreciate.hpp"
 #include"StateMenu.hpp"
 
-//³õÊ¼»¯¾²Ì¬³ÉÔ±
+//åˆå§‹åŒ–é™æ€æˆå‘˜
 int StateAppreciate::SelectImage = -1;
 int StateAppreciate2::SelectImage2 = -1;
-//¹¹Ôìº¯Êı£¬³õÊ¼»¯½çÃæ
+//æ„é€ å‡½æ•°ï¼Œåˆå§‹åŒ–ç•Œé¢
 StateAppreciate::StateAppreciate(StateManager& manager) :stateManager(manager)
 {
-	//»ñÈ¡ËØ²Ä¹ÜÀíÆ÷µÄµ¥Àı
+	//è·å–ç´ æç®¡ç†å™¨çš„å•ä¾‹
 	AssetManager& assetManager = AssetManager::getInstance();
 
-	//ÉèÖÃ¡°·µ»Ø¡±°´Å¥
-	home.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"·µ»Ø", 30);
+	//è®¾ç½®â€œè¿”å›â€æŒ‰é’®
+	home.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"è¿”å›", 30);
 	home.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	home.setPosition(50, 50, 200, 50);
-	//ÉèÖÃÏÂÒ»Ò³°´Å¥
-	Next.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"ÏÂÒ»Ò³", 30);
+	//è®¾ç½®ä¸‹ä¸€é¡µæŒ‰é’®
+	Next.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"ä¸‹ä¸€é¡µ", 30);
 	Next.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	Next.setPosition(490, 150, 90, 40);
-	//ÉèÖÃÉÏÒ»Ò³°´Å¥
-	Prior.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"ÉÏÒ»Ò³", 30);
+	//è®¾ç½®ä¸Šä¸€é¡µæŒ‰é’®
+	Prior.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"ä¸Šä¸€é¡µ", 30);
 	Prior.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	Prior.setPosition(310, 150, 90, 40);
-	//ÉèÖÃ±³¾°Í¼Æ¬
+	//è®¾ç½®èƒŒæ™¯å›¾ç‰‡
 	BackgroundImage.setTexture(assetManager.getTexture("JumkoMenu"));
-	// Ê¹Í¼Æ¬±ä°µµ«ÈÔÈ»¿É¼û
+	// ä½¿å›¾ç‰‡å˜æš—ä½†ä»ç„¶å¯è§
 	BackgroundImage.setColor(sf::Color(128, 128, 128, 255));
 
-	//³õÊ¼»¯±êÌâ
+	//åˆå§‹åŒ–æ ‡é¢˜
 	title.setFont(assetManager.getFont("simhei"));
 	title.setFillColor(sf::Color::White);
 	title.setCharacterSize(70);
 	title.setString("Appreciate");
 	title.setPosition(350, 50);
 
-	//ÉèÖÃ¾ØĞÎÔ²½Ç¿ò´óĞ¡
+	//è®¾ç½®çŸ©å½¢åœ†è§’æ¡†å¤§å°
 	roundedRect1.setSize(sf::Vector2f(300, 200));
 	roundedRect2.setSize(sf::Vector2f(300, 200));
 	roundedRect3.setSize(sf::Vector2f(300, 200));
 	roundedRect4.setSize(sf::Vector2f(300, 200));
 	roundedRect5.setSize(sf::Vector2f(300, 200));
 	roundedRect6.setSize(sf::Vector2f(300, 200));
-	//ÉèÖÃ¾ØĞÎÔ²½Ç¿òÑÕÉ«
+	//è®¾ç½®çŸ©å½¢åœ†è§’æ¡†é¢œè‰²
 	roundedRect1.setFillColor(sf::Color(200, 200, 200, 150));
 	roundedRect2.setFillColor(sf::Color(200, 200, 200, 150));
 	roundedRect3.setFillColor(sf::Color(200, 200, 200, 150));
 	roundedRect4.setFillColor(sf::Color(200, 200, 200, 150));
 	roundedRect5.setFillColor(sf::Color(200, 200, 200, 150));
 	roundedRect6.setFillColor(sf::Color(200, 200, 200, 150));
-	//ÉèÖÃ¾ØĞÎÔ²½Ç¿òÎ»ÖÃ
+	//è®¾ç½®çŸ©å½¢åœ†è§’æ¡†ä½ç½®
 	roundedRect1.setPosition(100, 200);
 	roundedRect2.setPosition(490, 200);
 	roundedRect3.setPosition(100, 450);
 	roundedRect4.setPosition(490, 450);
 	roundedRect5.setPosition(100, 700);
 	roundedRect6.setPosition(490, 700);
-	// ÉèÖÃÃ¿¸öÔ²½Ç¾ØĞÎ¿òµÄ±ß¿òÑÕÉ«
+	// è®¾ç½®æ¯ä¸ªåœ†è§’çŸ©å½¢æ¡†çš„è¾¹æ¡†é¢œè‰²
 	roundedRect1.setOutlineColor(sf::Color(200, 200, 200, 150));
 	roundedRect2.setOutlineColor(sf::Color(200, 200, 200, 150));
 	roundedRect3.setOutlineColor(sf::Color(200, 200, 200, 150));
 	roundedRect4.setOutlineColor(sf::Color(200, 200, 200, 150));
 	roundedRect5.setOutlineColor(sf::Color(200, 200, 200, 150));
 	roundedRect6.setOutlineColor(sf::Color(200, 200, 200, 150));
-	// ÉèÖÃÃ¿¸öÔ²½Ç¾ØĞÎ¿òµÄ±ß¿òºñ¶È
+	// è®¾ç½®æ¯ä¸ªåœ†è§’çŸ©å½¢æ¡†çš„è¾¹æ¡†åšåº¦
 	roundedRect1.setOutlineThickness(1);
 	roundedRect2.setOutlineThickness(1);
 	roundedRect3.setOutlineThickness(1);
 	roundedRect4.setOutlineThickness(1);
 	roundedRect5.setOutlineThickness(1);
 	roundedRect6.setOutlineThickness(1);
-	//ÉèÖÃ¾«Áé
+	//è®¾ç½®ç²¾çµ
 	sprite1.setTexture(assetManager.getTexture("WEIMEI1"));
 	sprite1.setPosition(100, 200);
 	sprite1.setScale(300.0f / assetManager.getTexture("WEIMEI1").getSize().x, 200.0f / assetManager.getTexture("WEIMEI1").getSize().y);
@@ -93,7 +93,7 @@ StateAppreciate::StateAppreciate(StateManager& manager) :stateManager(manager)
 	sprite6.setTexture(assetManager.getTexture("WEIMEI6"));
 	sprite6.setPosition(490, 700);
 	sprite6.setScale(300.0f / assetManager.getTexture("WEIMEI6").getSize().x, 200.0f / assetManager.getTexture("WEIMEI4").getSize().y);
-	//ÉèÖÃCG¸²¸ÇÍ¼
+	//è®¾ç½®CGè¦†ç›–å›¾
 	CGBackground1.setTexture(assetManager.getTexture("Close"));
 	CGBackground1.setPosition(100, 200);
 	CGBackground1.setScale(300.0f / assetManager.getTexture("Close").getSize().x, 200.0f / assetManager.getTexture("Close").getSize().y);
@@ -124,43 +124,43 @@ StateAppreciate::StateAppreciate(StateManager& manager) :stateManager(manager)
 void StateAppreciate::handleInput(sf::RenderWindow& window)
 {
 	sf::Event event;
-	//ÒıÓÃÒôÆµ²¥·Åµ¥Àı
+	//å¼•ç”¨éŸ³é¢‘æ’­æ”¾å•ä¾‹
 	AudioManager& audioManager = AudioManager::getInstance();
-	//ÒıÓÃÎÄ¼ş¹ÜÀíµ¥Àı
+	//å¼•ç”¨æ–‡ä»¶ç®¡ç†å•ä¾‹
 	SettingsManager& settingsManager = SettingsManager::getInstance();
 	while (window.pollEvent(event))
 	{
-		//»ñÈ¡Êó±êÎ»ÖÃ
+		//è·å–é¼ æ ‡ä½ç½®
 		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
-		//µ±µã»÷¹Ø±ÕÊ±¹Ø±Õ´°¿Ú
+		//å½“ç‚¹å‡»å…³é—­æ—¶å…³é—­çª—å£
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
-		// ... ´¦Àí°´Å¥µã»÷ÊÂ¼ş£¬Ê¹ÓÃstateManager.changeState(...)
+		// ... å¤„ç†æŒ‰é’®ç‚¹å‡»äº‹ä»¶ï¼Œä½¿ç”¨stateManager.changeState(...)
 		if (event.type == sf::Event::MouseButtonPressed) {
-			//»ñÈ¡Êó±êÎ»ÖÃ
+			//è·å–é¼ æ ‡ä½ç½®
 			sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 			if (this->home.isMouseOver(mousePosition)) {
 				this->stateManager.changeState(std::make_unique<StateMenu>(stateManager));
 				audioManager.playSound("ClickButton");
 			}
-			/*µã»÷ÏÂÒ»Ò³°´Å¥*/
+			/*ç‚¹å‡»ä¸‹ä¸€é¡µæŒ‰é’®*/
 			else if (this->Next.isMouseOver(mousePosition))
 			{
 				this->stateManager.changeState(stateManager.createState("Appreciate2"));
 				audioManager.playSound("ClickButton");
 			}
-			//Êó±êµã»÷µÚÒ»ÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬ä¸€å¼ å›¾ç‰‡
 			else if (sprite1.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
-				//01Á´ÔÊĞí´ò¿ªµÚÒ»ÕÅÍ¼Æ¬
+				//01é“¾å…è®¸æ‰“å¼€ç¬¬ä¸€å¼ å›¾ç‰‡
 				if (settingsManager.unlockedCGs[0] == 1)
 				{
 					SelectImage = 1;
 					this->stateManager.changeState(stateManager.createState("MagnifyAppreciate"));
 				}
 			}
-			//Êó±êµã»÷µÚ¶şÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬äºŒå¼ å›¾ç‰‡
 			else if (sprite2.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
 				if (settingsManager.unlockedCGs[1] == 1)
@@ -169,7 +169,7 @@ void StateAppreciate::handleInput(sf::RenderWindow& window)
 					this->stateManager.changeState(stateManager.createState("MagnifyAppreciate"));
 				}
 			}
-			//Êó±êµã»÷µÚÈıÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬ä¸‰å¼ å›¾ç‰‡
 			else if (sprite3.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
 				if (settingsManager.unlockedCGs[2] == 1)
@@ -178,7 +178,7 @@ void StateAppreciate::handleInput(sf::RenderWindow& window)
 					this->stateManager.changeState(stateManager.createState("MagnifyAppreciate"));
 				}
 			}
-			//Êó±êµã»÷µÚËÄÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬å››å¼ å›¾ç‰‡
 			else if (sprite4.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
 				if (settingsManager.unlockedCGs[3] == 1)
@@ -187,7 +187,7 @@ void StateAppreciate::handleInput(sf::RenderWindow& window)
 					this->stateManager.changeState(stateManager.createState("MagnifyAppreciate"));
 				}
 			}
-			//Êó±êµã»÷µÚÎåÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬äº”å¼ å›¾ç‰‡
 			else if (sprite5.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
 				if (settingsManager.unlockedCGs[4] == 1)
@@ -196,7 +196,7 @@ void StateAppreciate::handleInput(sf::RenderWindow& window)
 					this->stateManager.changeState(stateManager.createState("MagnifyAppreciate"));
 				}
 			}
-			//Êó±êµã»÷µÚÎåÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬äº”å¼ å›¾ç‰‡
 			else if (sprite6.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
 				if (settingsManager.unlockedCGs[5] == 1)
@@ -215,7 +215,7 @@ void StateAppreciate::handleInput(sf::RenderWindow& window)
 				Next.onHover();
 			}
 			else {
-				//µ±Êó±ê²»ÔÙĞüÍ£ÔÚ°´Å¥ÉÏÊ±»Ö¸´Ô­Ê¼ÑÕÉ«
+				//å½“é¼ æ ‡ä¸å†æ‚¬åœåœ¨æŒ‰é’®ä¸Šæ—¶æ¢å¤åŸå§‹é¢œè‰²
 				home.resetColor();
 				Next.resetColor();
 			}
@@ -227,33 +227,33 @@ void StateAppreciate::update(float deltaTime) {
 
 }
 void StateAppreciate::draw(sf::RenderWindow& window) {
-	//×îÏÈäÖÈ¾±³¾°Í¼Æ¬
+	//æœ€å…ˆæ¸²æŸ“èƒŒæ™¯å›¾ç‰‡
 	window.draw(BackgroundImage);
-	//ÒıÓÃÎÄ¼ş¹ÜÀíµ¥Àı
+	//å¼•ç”¨æ–‡ä»¶ç®¡ç†å•ä¾‹
 	SettingsManager& settingsManager = SettingsManager::getInstance();
-	// ... »æÖÆ°´Å¥
+	// ... ç»˜åˆ¶æŒ‰é’®
 	this->home.draw(window);
 	this->Next.draw(window);
 	this->Prior.draw(window);
-	//»æÖÆÎÄ×Ö
+	//ç»˜åˆ¶æ–‡å­—
 	window.draw(this->title);
 
-	//»æÖÆ¾ØĞÎÔ²½Ç¿ò
+	//ç»˜åˆ¶çŸ©å½¢åœ†è§’æ¡†
 	window.draw(roundedRect1);
 	window.draw(roundedRect2);
 	window.draw(roundedRect3);
 	window.draw(roundedRect4);
 	window.draw(roundedRect5);
 	window.draw(roundedRect6);
-	//»æÖÆÍ¼Æ¬
+	//ç»˜åˆ¶å›¾ç‰‡
 	window.draw(sprite1);
 	window.draw(sprite2);
 	window.draw(sprite3);
 	window.draw(sprite4);
 	window.draw(sprite5);
 	window.draw(sprite6);
-	//»æÖÆCG¸²¸ÇÍ¼
-	//Èç¹û01Á´ËøÉÏ£¬ÔòÒª»æÖÆ
+	//ç»˜åˆ¶CGè¦†ç›–å›¾
+	//å¦‚æœ01é“¾é”ä¸Šï¼Œåˆ™è¦ç»˜åˆ¶
 	if (settingsManager.unlockedCGs[0] == 0)
 	{
 		window.draw(CGBackground1);
@@ -283,61 +283,61 @@ void StateAppreciate::draw(sf::RenderWindow& window) {
 
 
 //-----------------------------------------------------------------------------
-//¼øÉÍ½çÃæ2
+//é‰´èµç•Œé¢2
 StateAppreciate2::StateAppreciate2(StateManager& manager) :stateManager(manager)
 {
-	//»ñÈ¡ËØ²Ä¹ÜÀíÆ÷µÄµ¥Àı
+	//è·å–ç´ æç®¡ç†å™¨çš„å•ä¾‹
 	AssetManager& assetManager = AssetManager::getInstance();
 
-	//ÉèÖÃÏÂÒ»Ò³°´Å¥
-	Next.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"ÏÂÒ»Ò³", 30);
+	//è®¾ç½®ä¸‹ä¸€é¡µæŒ‰é’®
+	Next.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"ä¸‹ä¸€é¡µ", 30);
 	Next.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	Next.setPosition(490, 150, 90, 40);
-	//ÉèÖÃÉÏÒ»Ò³°´Å¥
-	Prior.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"ÉÏÒ»Ò³", 30);
+	//è®¾ç½®ä¸Šä¸€é¡µæŒ‰é’®
+	Prior.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"ä¸Šä¸€é¡µ", 30);
 	Prior.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	Prior.setPosition(310, 150, 90, 40);
-	//ÉèÖÃ±³¾°Í¼Æ¬
+	//è®¾ç½®èƒŒæ™¯å›¾ç‰‡
 	BackgroundImage.setTexture(assetManager.getTexture("JumkoMenu"));
-	// Ê¹Í¼Æ¬±ä°µµ«ÈÔÈ»¿É¼û
+	// ä½¿å›¾ç‰‡å˜æš—ä½†ä»ç„¶å¯è§
 	BackgroundImage.setColor(sf::Color(128, 128, 128, 255));
 
-	//³õÊ¼»¯±êÌâ
+	//åˆå§‹åŒ–æ ‡é¢˜
 	title.setFont(assetManager.getFont("simhei"));
 	title.setFillColor(sf::Color::White);
 	title.setCharacterSize(70);
 	title.setString("Appreciate");
 	title.setPosition(350, 50);
 
-	//ÉèÖÃ¾ØĞÎÔ²½Ç¿ò´óĞ¡
+	//è®¾ç½®çŸ©å½¢åœ†è§’æ¡†å¤§å°
 	roundedRect7.setSize(sf::Vector2f(300, 200));
 	roundedRect8.setSize(sf::Vector2f(300, 200));
 	roundedRect9.setSize(sf::Vector2f(300, 200));
 	roundedRect10.setSize(sf::Vector2f(300, 200));
 	roundedRect11.setSize(sf::Vector2f(300, 200));
 	roundedRect12.setSize(sf::Vector2f(300, 200));
-	//ÉèÖÃ¾ØĞÎÔ²½Ç¿òÑÕÉ«
+	//è®¾ç½®çŸ©å½¢åœ†è§’æ¡†é¢œè‰²
 	roundedRect7.setFillColor(sf::Color(200, 200, 200, 150));
 	roundedRect8.setFillColor(sf::Color(200, 200, 200, 150));
 	roundedRect9.setFillColor(sf::Color(200, 200, 200, 150));
 	roundedRect10.setFillColor(sf::Color(200, 200, 200, 150));
 	roundedRect11.setFillColor(sf::Color(200, 200, 200, 150));
 	roundedRect12.setFillColor(sf::Color(200, 200, 200, 150));
-	//ÉèÖÃ¾ØĞÎÔ²½Ç¿òÎ»ÖÃ
+	//è®¾ç½®çŸ©å½¢åœ†è§’æ¡†ä½ç½®
 	roundedRect7.setPosition(100, 200);
 	roundedRect8.setPosition(490, 200);
 	roundedRect9.setPosition(100, 450);
 	roundedRect10.setPosition(490, 450);
 	roundedRect11.setPosition(100, 700);
 	roundedRect12.setPosition(490, 700);
-	// ÉèÖÃÃ¿¸öÔ²½Ç¾ØĞÎ¿òµÄ±ß¿òÑÕÉ«
+	// è®¾ç½®æ¯ä¸ªåœ†è§’çŸ©å½¢æ¡†çš„è¾¹æ¡†é¢œè‰²
 	roundedRect7.setOutlineColor(sf::Color(200, 200, 200, 150));
 	roundedRect8.setOutlineColor(sf::Color(200, 200, 200, 150));
 	roundedRect9.setOutlineColor(sf::Color(200, 200, 200, 150));
 	roundedRect10.setOutlineColor(sf::Color(200, 200, 200, 150));
 	roundedRect11.setOutlineColor(sf::Color(200, 200, 200, 150));
 	roundedRect12.setOutlineColor(sf::Color(200, 200, 200, 150));
-	// ÉèÖÃÃ¿¸öÔ²½Ç¾ØĞÎ¿òµÄ±ß¿òºñ¶È
+	// è®¾ç½®æ¯ä¸ªåœ†è§’çŸ©å½¢æ¡†çš„è¾¹æ¡†åšåº¦
 	roundedRect7.setOutlineThickness(1);
 	roundedRect8.setOutlineThickness(1);
 	roundedRect9.setOutlineThickness(1);
@@ -345,7 +345,7 @@ StateAppreciate2::StateAppreciate2(StateManager& manager) :stateManager(manager)
 	roundedRect11.setOutlineThickness(1);
 	roundedRect12.setOutlineThickness(1);
 
-	//ÉèÖÃÍ¼Æ¬¾«Áé
+	//è®¾ç½®å›¾ç‰‡ç²¾çµ
 	sprite7.setTexture(assetManager.getTexture("WEIMEI7"));
 	sprite7.setPosition(100, 200);
 	sprite7.setScale(300.0f / assetManager.getTexture("WEIMEI7").getSize().x, 200.0f / assetManager.getTexture("WEIMEI1").getSize().y);
@@ -370,7 +370,7 @@ StateAppreciate2::StateAppreciate2(StateManager& manager) :stateManager(manager)
 	sprite12.setPosition(490, 700);
 	sprite12.setScale(300.0f / assetManager.getTexture("WEIMEI12").getSize().x, 200.0f / assetManager.getTexture("WEIMEI4").getSize().y);
 
-	//ÉèÖÃCG¸²¸ÇÍ¼
+	//è®¾ç½®CGè¦†ç›–å›¾
 	CGBackground7.setTexture(assetManager.getTexture("Close"));
 	CGBackground7.setPosition(100, 200);
 	CGBackground7.setScale(300.0f / assetManager.getTexture("Close").getSize().x, 200.0f / assetManager.getTexture("Close").getSize().y);
@@ -399,41 +399,41 @@ StateAppreciate2::StateAppreciate2(StateManager& manager) :stateManager(manager)
 void StateAppreciate2::handleInput(sf::RenderWindow& window)
 {
 	sf::Event event;
-	//ÒıÓÃÒôÆµ²¥·Åµ¥Àı
+	//å¼•ç”¨éŸ³é¢‘æ’­æ”¾å•ä¾‹
 	AudioManager& audioManager = AudioManager::getInstance();
-	//ÒıÓÃÎÄ¼ş¹ÜÀíµ¥Àı
+	//å¼•ç”¨æ–‡ä»¶ç®¡ç†å•ä¾‹
 	SettingsManager& settingsManager = SettingsManager::getInstance();
 	while (window.pollEvent(event))
 	{
-		//»ñÈ¡Êó±êÎ»ÖÃ
+		//è·å–é¼ æ ‡ä½ç½®
 		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 
-		//µ±µã»÷¹Ø±ÕÊ±¹Ø±Õ´°¿Ú
+		//å½“ç‚¹å‡»å…³é—­æ—¶å…³é—­çª—å£
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
-		// ... ´¦Àí°´Å¥µã»÷ÊÂ¼ş£¬Ê¹ÓÃstateManager.changeState(...)
+		// ... å¤„ç†æŒ‰é’®ç‚¹å‡»äº‹ä»¶ï¼Œä½¿ç”¨stateManager.changeState(...)
 		if (event.type == sf::Event::MouseButtonPressed) {
-			//»ñÈ¡Êó±êÎ»ÖÃ
+			//è·å–é¼ æ ‡ä½ç½®
 			sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 
-			//µã»÷ÉÏÒ»Ò³°´Å¥
+			//ç‚¹å‡»ä¸Šä¸€é¡µæŒ‰é’®
 			if (this->Prior.isMouseOver(mousePosition))
 			{
 				this->stateManager.changeState(stateManager.createState("Appreciate"));
 				audioManager.playSound("ClickButton");
 			}
-			//Êó±êµã»÷µÚÆßÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬ä¸ƒå¼ å›¾ç‰‡
 			else if (sprite7.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
-				//01Á´ÔÊĞí´ò¿ªµÚÆßÕÅÍ¼Æ¬
+				//01é“¾å…è®¸æ‰“å¼€ç¬¬ä¸ƒå¼ å›¾ç‰‡
 				if (settingsManager.unlockedCGs[6] == 1)
 				{
 					SelectImage2 = 7;
 					this->stateManager.changeState(stateManager.createState("MagnifyAppreciate2"));
 				}
 			}
-			//Êó±êµã»÷µÚ°ËÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬å…«å¼ å›¾ç‰‡
 			else if (sprite8.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
 				if (settingsManager.unlockedCGs[7] == 1)
@@ -442,7 +442,7 @@ void StateAppreciate2::handleInput(sf::RenderWindow& window)
 					this->stateManager.changeState(stateManager.createState("MagnifyAppreciate2"));
 				}
 			}
-			//Êó±êµã»÷µÚ¾ÅÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬ä¹å¼ å›¾ç‰‡
 			else if (sprite9.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
 				if (settingsManager.unlockedCGs[8] == 1)
@@ -451,7 +451,7 @@ void StateAppreciate2::handleInput(sf::RenderWindow& window)
 					this->stateManager.changeState(stateManager.createState("MagnifyAppreciate2"));
 				}
 			}
-			//Êó±êµã»÷µÚÊ®ÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬åå¼ å›¾ç‰‡
 			else if (sprite10.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
 				if (settingsManager.unlockedCGs[9] == 1)
@@ -460,7 +460,7 @@ void StateAppreciate2::handleInput(sf::RenderWindow& window)
 					this->stateManager.changeState(stateManager.createState("MagnifyAppreciate2"));
 				}
 			}
-			//Êó±êµã»÷µÚÊ®Ò»ÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬åä¸€å¼ å›¾ç‰‡
 			else if (sprite11.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
 				if (settingsManager.unlockedCGs[10] == 1)
@@ -469,7 +469,7 @@ void StateAppreciate2::handleInput(sf::RenderWindow& window)
 					this->stateManager.changeState(stateManager.createState("MagnifyAppreciate2"));
 				}
 			}
-			//Êó±êµã»÷µÚÊ®¶şÕÅÍ¼Æ¬
+			//é¼ æ ‡ç‚¹å‡»ç¬¬åäºŒå¼ å›¾ç‰‡
 			else if (sprite12.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos)))
 			{
 				if (settingsManager.unlockedCGs[11] == 1)
@@ -485,7 +485,7 @@ void StateAppreciate2::handleInput(sf::RenderWindow& window)
 				Prior.onHover();
 			}
 			else {
-				//µ±Êó±ê²»ÔÙĞüÍ£ÔÚ°´Å¥ÉÏÊ±»Ö¸´Ô­Ê¼ÑÕÉ«
+				//å½“é¼ æ ‡ä¸å†æ‚¬åœåœ¨æŒ‰é’®ä¸Šæ—¶æ¢å¤åŸå§‹é¢œè‰²
 				Prior.resetColor();
 			}
 		}
@@ -495,30 +495,30 @@ void StateAppreciate2::update(float deltaTime) {
 
 }
 void StateAppreciate2::draw(sf::RenderWindow& window) {
-	//»ñÈ¡ÎÄ¼ş¹ÜÀíÆ÷
+	//è·å–æ–‡ä»¶ç®¡ç†å™¨
 	SettingsManager& settingsManager = SettingsManager::getInstance();
-	//×îÏÈäÖÈ¾±³¾°Í¼Æ¬
+	//æœ€å…ˆæ¸²æŸ“èƒŒæ™¯å›¾ç‰‡
 	window.draw(BackgroundImage);
-	// ... »æÖÆ°´Å¥
+	// ... ç»˜åˆ¶æŒ‰é’®
 	this->Next.draw(window);
 	this->Prior.draw(window);
-	//»æÖÆÎÄ×Ö
+	//ç»˜åˆ¶æ–‡å­—
 	window.draw(this->title);
-	//»æÖÆ¾ØĞÎÔ²½Ç¿ò
+	//ç»˜åˆ¶çŸ©å½¢åœ†è§’æ¡†
 	window.draw(roundedRect7);
 	window.draw(roundedRect8);
 	window.draw(roundedRect9);
 	window.draw(roundedRect10);
 	window.draw(roundedRect11);
 	window.draw(roundedRect12);
-	//»æÖÆÍ¼Æ¬
+	//ç»˜åˆ¶å›¾ç‰‡
 	window.draw(sprite7);
 	window.draw(sprite8);
 	window.draw(sprite9);
 	window.draw(sprite10);
 	window.draw(sprite11);
 	window.draw(sprite12);
-	//Èç¹û01Á´ËøÉÏ£¬ÔòÒª»æÖÆ
+	//å¦‚æœ01é“¾é”ä¸Šï¼Œåˆ™è¦ç»˜åˆ¶
 	if (settingsManager.unlockedCGs[6] == 0)
 	{
 		window.draw(CGBackground7);
@@ -548,78 +548,78 @@ void StateAppreciate2::draw(sf::RenderWindow& window) {
 
 
 //-----------------------------------------------------------------------
-//±ØĞëÒª³õÊ¼»¯µÄÊ±ºòĞ´ÉÏAppreciate(manager)£¬·ñÔò»á³öÏÖAppreciateÃ»ÓĞµ÷ÓÃÄ¬ÈÏ¹¹Ôìº¯ÊıµÄ´íÎó
+//å¿…é¡»è¦åˆå§‹åŒ–çš„æ—¶å€™å†™ä¸ŠAppreciate(manager)ï¼Œå¦åˆ™ä¼šå‡ºç°Appreciateæ²¡æœ‰è°ƒç”¨é»˜è®¤æ„é€ å‡½æ•°çš„é”™è¯¯
 MagnifyAppreciate::MagnifyAppreciate(StateManager& manager) : StateAppreciate(manager), stateManager(manager)
 {
 
-	//»ñÈ¡ËØ²Ä¹ÜÀíÆ÷µÄµ¥Àı
+	//è·å–ç´ æç®¡ç†å™¨çš„å•ä¾‹
 	AssetManager& assetManager = AssetManager::getInstance();
 
-	//ÉèÖÃ¡°·µ»Ø¡±°´Å¥
-	home.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"·µ»Ø", 30);
+	//è®¾ç½®â€œè¿”å›â€æŒ‰é’®
+	home.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"è¿”å›", 30);
 	home.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	home.setPosition(50, 50, 200, 50);
 
 	if (StateAppreciate::SelectImage == 1)
 	{
-		//ÉèÖÃ¾«Áé1£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ1ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite1.setTexture(assetManager.getTexture("WEIMEI1"));
 		sprite1.setScale(960.0f / assetManager.getTexture("WEIMEI1").getSize().x, 960.0f / assetManager.getTexture("WEIMEI1").getSize().y);
 		sprite1.setPosition(0, 0);
 	}
 	else if (StateAppreciate::SelectImage == 2)
 	{
-		//ÉèÖÃ¾«Áé2£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ2ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite2.setTexture(assetManager.getTexture("WEIMEI2"));
 		sprite2.setScale(960.0f / assetManager.getTexture("WEIMEI2").getSize().x, 960.0f / assetManager.getTexture("WEIMEI2").getSize().y);
 		sprite2.setPosition(0, 0);
 	}
 	else if (StateAppreciate::SelectImage == 3)
 	{
-		//ÉèÖÃ¾«Áé3£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ3ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite3.setTexture(assetManager.getTexture("WEIMEI3"));
 		sprite3.setScale(960.0f / assetManager.getTexture("WEIMEI3").getSize().x, 960.0f / assetManager.getTexture("WEIMEI3").getSize().y);
 		sprite3.setPosition(0, 0);
 	}
 	else if (StateAppreciate::SelectImage == 4)
 	{
-		//ÉèÖÃ¾«Áé4£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ4ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite4.setTexture(assetManager.getTexture("WEIMEI4"));
 		sprite4.setScale(960.0f / assetManager.getTexture("WEIMEI4").getSize().x, 960.0f / assetManager.getTexture("WEIMEI4").getSize().y);
 		sprite4.setPosition(0, 0);
 	}
 	else if (StateAppreciate::SelectImage == 5)
 	{
-		//ÉèÖÃ¾«Áé5£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ5ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite5.setTexture(assetManager.getTexture("WEIMEI5"));
 		sprite5.setScale(960.0f / assetManager.getTexture("WEIMEI5").getSize().x, 960.0f / assetManager.getTexture("WEIMEI4").getSize().y);
 		sprite5.setPosition(0, 0);
 	}
 	else if (StateAppreciate::SelectImage == 6)
 	{
-		//ÉèÖÃ¾«Áé6£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ6ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite6.setTexture(assetManager.getTexture("WEIMEI6"));
 		sprite6.setScale(960.0f / assetManager.getTexture("WEIMEI6").getSize().x, 960.0f / assetManager.getTexture("WEIMEI4").getSize().y);
 		sprite6.setPosition(0, 0);
 	}
 }
 
-//´¦ÀíÊäÈëµÄÊÂ¼ş£¨Î´Íê³É£©
+//å¤„ç†è¾“å…¥çš„äº‹ä»¶ï¼ˆæœªå®Œæˆï¼‰
 void MagnifyAppreciate::handleInput(sf::RenderWindow& window)
 {
 	sf::Event event;
-	//ÒıÓÃÒôÆµ²¥·Åµ¥Àı
+	//å¼•ç”¨éŸ³é¢‘æ’­æ”¾å•ä¾‹
 	AudioManager& audioManager = AudioManager::getInstance();
 	while (window.pollEvent(event))
 	{
-		//»ñÈ¡Êó±êÎ»ÖÃ
+		//è·å–é¼ æ ‡ä½ç½®
 		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 
-		//µ±µã»÷¹Ø±ÕÊ±¹Ø±Õ´°¿Ú
+		//å½“ç‚¹å‡»å…³é—­æ—¶å…³é—­çª—å£
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
-		// ... ´¦Àí°´Å¥µã»÷ÊÂ¼ş£¬Ê¹ÓÃstateManager.changeState(...)
+		// ... å¤„ç†æŒ‰é’®ç‚¹å‡»äº‹ä»¶ï¼Œä½¿ç”¨stateManager.changeState(...)
 		if (event.type == sf::Event::MouseButtonPressed) {
 			if (this->home.isMouseOver(mousePosition)) {
 				this->stateManager.changeState(std::make_unique<StateAppreciate>(stateManager));
@@ -632,7 +632,7 @@ void MagnifyAppreciate::handleInput(sf::RenderWindow& window)
 				home.onHover();
 			}
 			else {
-				//µ±Êó±ê²»ÔÙĞüÍ£ÔÚ°´Å¥ÉÏÊ±»Ö¸´Ô­Ê¼ÑÕÉ«
+				//å½“é¼ æ ‡ä¸å†æ‚¬åœåœ¨æŒ‰é’®ä¸Šæ—¶æ¢å¤åŸå§‹é¢œè‰²
 				home.resetColor();
 			}
 		}
@@ -644,10 +644,10 @@ void MagnifyAppreciate::update(float deltaTime)
 
 }
 
-//äÖÈ¾£¨Î´Íê³É£©
+//æ¸²æŸ“ï¼ˆæœªå®Œæˆï¼‰
 void MagnifyAppreciate::draw(sf::RenderWindow& window)
 {
-	//¸ù¾İÑ¡ÔñÖµÀ´È·¶¨»æÖÆµÄÍ¼Æ¬
+	//æ ¹æ®é€‰æ‹©å€¼æ¥ç¡®å®šç»˜åˆ¶çš„å›¾ç‰‡
 	if (StateAppreciate::SelectImage == 1)
 	{
 		window.draw(sprite1);
@@ -672,79 +672,79 @@ void MagnifyAppreciate::draw(sf::RenderWindow& window)
 	{
 		window.draw(sprite6);
 	}
-	// ... »æÖÆ°´Å¥
+	// ... ç»˜åˆ¶æŒ‰é’®
 	this->home.draw(window);
 }
 
 //-------------------------------------------
 MagnifyAppreciate2::MagnifyAppreciate2(StateManager& manager) :StateAppreciate2(manager), stateManager(manager) {
-	//»ñÈ¡ËØ²Ä¹ÜÀíÆ÷µÄµ¥Àı
+	//è·å–ç´ æç®¡ç†å™¨çš„å•ä¾‹
 	AssetManager& assetManager = AssetManager::getInstance();
 
-	//ÉèÖÃ¡°·µ»Ø¡±°´Å¥
-	home.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"·µ»Ø", 30);
+	//è®¾ç½®â€œè¿”å›â€æŒ‰é’®
+	home.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"è¿”å›", 30);
 	home.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	home.setPosition(50, 50, 200, 50);
 
 	if (StateAppreciate2::SelectImage2 == 7)
 	{
-		//ÉèÖÃ¾«Áé7£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ7ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite7.setTexture(assetManager.getTexture("WEIMEI7"));
 		sprite7.setScale(960.0f / assetManager.getTexture("WEIMEI7").getSize().x, 960.0f / assetManager.getTexture("WEIMEI1").getSize().y);
 		sprite7.setPosition(0, 0);
 	}
 	else if (StateAppreciate2::SelectImage2 == 8)
 	{
-		//ÉèÖÃ¾«Áé8£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ8ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite8.setTexture(assetManager.getTexture("WEIMEI8"));
 		sprite8.setScale(960.0f / assetManager.getTexture("WEIMEI8").getSize().x, 960.0f / assetManager.getTexture("WEIMEI2").getSize().y);
 		sprite8.setPosition(0, 0);
 	}
 	else if (StateAppreciate2::SelectImage2 == 9)
 	{
-		//ÉèÖÃ¾«Áé9£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ9ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite9.setTexture(assetManager.getTexture("WEIMEI9"));
 		sprite9.setScale(960.0f / assetManager.getTexture("WEIMEI9").getSize().x, 960.0f / assetManager.getTexture("WEIMEI3").getSize().y);
 		sprite9.setPosition(0, 0);
 	}
 	else if (StateAppreciate2::SelectImage2 == 10)
 	{
-		//ÉèÖÃ¾«Áé10£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ10ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite10.setTexture(assetManager.getTexture("WEIMEI10"));
 		sprite10.setScale(960.0f / assetManager.getTexture("WEIMEI10").getSize().x, 960.0f / assetManager.getTexture("WEIMEI4").getSize().y);
 		sprite10.setPosition(0, 0);
 	}
 	else if (StateAppreciate2::SelectImage2 == 11)
 	{
-		//ÉèÖÃ¾«Áé11£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ11ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite11.setTexture(assetManager.getTexture("WEIMEI11"));
 		sprite11.setScale(960.0f / assetManager.getTexture("WEIMEI11").getSize().x, 960.0f / assetManager.getTexture("WEIMEI4").getSize().y);
 		sprite11.setPosition(0, 0);
 	}
 	else if (StateAppreciate2::SelectImage2 == 12)
 	{
-		//ÉèÖÃ¾«Áé12£¬ÈÃËü³äµ±±³¾°Í¼
+		//è®¾ç½®ç²¾çµ12ï¼Œè®©å®ƒå……å½“èƒŒæ™¯å›¾
 		sprite12.setTexture(assetManager.getTexture("WEIMEI12"));
 		sprite12.setScale(960.0f / assetManager.getTexture("WEIMEI12").getSize().x, 960.0f / assetManager.getTexture("WEIMEI4").getSize().y);
 		sprite12.setPosition(0, 0);
 	}
 
 }
-//´¦ÀíÊäÈëµÄÊÂ¼ş
+//å¤„ç†è¾“å…¥çš„äº‹ä»¶
 void MagnifyAppreciate2::handleInput(sf::RenderWindow& window) {
 	sf::Event event;
-	//ÒıÓÃÒôÆµ²¥·Åµ¥Àı
+	//å¼•ç”¨éŸ³é¢‘æ’­æ”¾å•ä¾‹
 	AudioManager& audioManager = AudioManager::getInstance();
 	while (window.pollEvent(event))
 	{
-		//»ñÈ¡Êó±êÎ»ÖÃ
+		//è·å–é¼ æ ‡ä½ç½®
 		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 
-		//µ±µã»÷¹Ø±ÕÊ±¹Ø±Õ´°¿Ú
+		//å½“ç‚¹å‡»å…³é—­æ—¶å…³é—­çª—å£
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
-		// ... ´¦Àí°´Å¥µã»÷ÊÂ¼ş£¬Ê¹ÓÃstateManager.changeState(...)
+		// ... å¤„ç†æŒ‰é’®ç‚¹å‡»äº‹ä»¶ï¼Œä½¿ç”¨stateManager.changeState(...)
 		if (event.type == sf::Event::MouseButtonPressed) {
 			if (this->home.isMouseOver(mousePosition)) {
 				this->stateManager.changeState(std::make_unique<StateAppreciate2>(stateManager));
@@ -757,22 +757,22 @@ void MagnifyAppreciate2::handleInput(sf::RenderWindow& window) {
 				home.onHover();
 			}
 			else {
-				//µ±Êó±ê²»ÔÙĞüÍ£ÔÚ°´Å¥ÉÏÊ±»Ö¸´Ô­Ê¼ÑÕÉ«
+				//å½“é¼ æ ‡ä¸å†æ‚¬åœåœ¨æŒ‰é’®ä¸Šæ—¶æ¢å¤åŸå§‹é¢œè‰²
 				home.resetColor();
 			}
 		}
 	}
 }
 
-//¸üĞÂ
+//æ›´æ–°
 void MagnifyAppreciate2::update(float deltaTime) {
 
 }
 
-//äÖÈ¾
+//æ¸²æŸ“
 void MagnifyAppreciate2::draw(sf::RenderWindow& window)
 {
-	//¸ù¾İÑ¡ÔñÖµÀ´È·¶¨»æÖÆµÄÍ¼Æ¬
+	//æ ¹æ®é€‰æ‹©å€¼æ¥ç¡®å®šç»˜åˆ¶çš„å›¾ç‰‡
 	if (StateAppreciate2::SelectImage2 == 7)
 	{
 		window.draw(sprite7);
@@ -797,6 +797,6 @@ void MagnifyAppreciate2::draw(sf::RenderWindow& window)
 	{
 		window.draw(sprite12);
 	}
-	// ... »æÖÆ°´Å¥
+	// ... ç»˜åˆ¶æŒ‰é’®
 	this->home.draw(window);
 }
