@@ -1,4 +1,4 @@
-#include <SFML/Graphics.hpp>
+﻿#include <SFML/Graphics.hpp>
 #include "StateGameplay.hpp"
 #include "StateMenu.hpp"
 extern bool isSelectHome;//在别的cpp文件中引用全局静态变量

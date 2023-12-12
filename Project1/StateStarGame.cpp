@@ -1,4 +1,4 @@
-#include "StateStarGame.hpp"
+﻿#include "StateStarGame.hpp"
 
 StateStartGame::StateStartGame(StateManager& manager) : stateManager(manager) {
 	//构造方法
