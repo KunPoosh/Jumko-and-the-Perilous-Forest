@@ -834,52 +834,108 @@ void Player::update(float deltaTime) {
 
 void Player::handleInput(sf::Event& event) {
 	//处理事件
-
+	SettingsManager& settingsManager = SettingsManager::getInstance();
 	if (event.type == sf::Event::KeyPressed) {
-		switch (event.key.code) {
-		case sf::Keyboard::Up:
-			movingUp = true;
-			break;
-		case sf::Keyboard::Down:
-			movingDown = true;
-			break;
-		case sf::Keyboard::Left:
-			movingLeft = true;
-			break;
-		case sf::Keyboard::Right:
-			movingRight = true;
-			break;
-		case sf::Keyboard::LShift:
-			slowMovement = true;
-			break;
-		case sf::Keyboard::Z:
-			openFire = true;
-			break;
-			// ... 其他键盘事件 ...
+		if (!settingsManager.iswasd)
+		{
+			switch (event.key.code) {
+			case sf::Keyboard::Up:
+				movingUp = true;
+				break;
+			case sf::Keyboard::Down:
+				movingDown = true;
+				break;
+			case sf::Keyboard::Left:
+				movingLeft = true;
+				break;
+			case sf::Keyboard::Right:
+				movingRight = true;
+				break;
+			case sf::Keyboard::LShift:
+				slowMovement = true;
+				break;
+			case sf::Keyboard::Z:
+				openFire = true;
+				break;
+				// ... 其他键盘事件 ...
+			}
 		}
+		else
+		{
+			switch (event.key.code) {
+			case sf::Keyboard::W:
+				movingUp = true;
+				break;
+			case sf::Keyboard::S:
+				movingDown = true;
+				break;
+			case sf::Keyboard::A:
+				movingLeft = true;
+				break;
+			case sf::Keyboard::D:
+				movingRight = true;
+				break;
+			case sf::Keyboard::LShift:
+				slowMovement = true;
+				break;
+			case sf::Keyboard::J:
+				openFire = true;
+				break;
+				// ... 其他键盘事件 ...
+			}
+		}
+		
 	}
 	else if (event.type == sf::Event::KeyReleased) {
-		switch (event.key.code) {
-		case sf::Keyboard::Up:
-			movingUp = false;
-			break;
-		case sf::Keyboard::Down:
-			movingDown = false;
-			break;
-		case sf::Keyboard::Left:
-			movingLeft = false;
-			break;
-		case sf::Keyboard::Right:
-			movingRight = false;
-			break;
-		case sf::Keyboard::LShift:
-			slowMovement = false;
-			break;
-		case sf::Keyboard::Z:
-			openFire = false;
-			break;
-			// ... 其他键盘事件 ...
+		if (!settingsManager.iswasd)
+		{
+			switch (event.key.code) {
+			case sf::Keyboard::Up:
+				movingUp = false;
+				break;
+			case sf::Keyboard::Down:
+				movingDown = false;
+				break;
+			case sf::Keyboard::Left:
+				movingLeft = false;
+				break;
+			case sf::Keyboard::Right:
+				movingRight = false;
+				break;
+			case sf::Keyboard::LShift:
+				slowMovement = false;
+				break;
+			case sf::Keyboard::Z:
+				openFire = false;
+				break;
+				// ... 其他键盘事件 ...
+			}
 		}
+		else
+		{
+			switch (event.key.code) {
+			case sf::Keyboard::W:
+				movingUp = false;
+				break;
+			case sf::Keyboard::S:
+				movingDown = false;
+				break;
+			case sf::Keyboard::A:
+				movingLeft = false;
+				break;
+			case sf::Keyboard::D:
+				movingRight = false;
+				break;
+			case sf::Keyboard::LShift:
+				slowMovement = false;
+				break;
+			case sf::Keyboard::J:
+				openFire = false;
+				break;
+				// ... 其他键盘事件 ...
+			}
+		}
+		
 	}
 }
 

@@ -11,74 +11,74 @@
 #include "EntityManager.hpp"
 
 int main() {
-	//ç¨‹åºå…¥å£
+	//³ÌĞòÈë¿Ú
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		è¿è¡Œç¨‹åºåŸºæœ¬é€»è¾‘
+	¹¦ÄÜ:
+		ÔËĞĞ³ÌĞò»ù±¾Âß¼­
 
-	å‚æ•°: void
+	²ÎÊı: void
 
-	è¿”å›å€¼: int
+	·µ»ØÖµ: int
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
-	//åˆ›å»ºçª—å£
-	sf::RenderWindow window(sf::VideoMode(960, 960), L"é…±å¯ä¸å±é™©ä¹‹æ£®");
-	//é™åˆ¶æ¸¸æˆå¸§ç‡ä¸Šé™ä¸º200FPS
+	//´´½¨´°¿Ú
+	sf::RenderWindow window(sf::VideoMode(960, 960), L"½´¿ÉÓëÎ£ÏÕÖ®É­");
+	//ÏŞÖÆÓÎÏ·Ö¡ÂÊÉÏÏŞÎª200FPS
 	window.setFramerateLimit(200);
 
 
-	//åˆ›å»ºåœºæ™¯ç®¡ç†å™¨
+	//´´½¨³¡¾°¹ÜÀíÆ÷
 	StateManager stateManager;
 
-	// åˆå§‹åŒ–EntityManagerå•ä¾‹
+	// ³õÊ¼»¯EntityManagerµ¥Àı
 	EntityManager* entityManager = EntityManager::getInstance();
 
-	//ä½¿ç”¨éŸ³é¢‘ç®¡ç†å™¨
+	//Ê¹ÓÃÒôÆµ¹ÜÀíÆ÷
 	AudioManager& audioManager = AudioManager::getInstance();
 
-	//ä½¿ç”¨æ–‡ä»¶ç®¡ç†å™¨
+	//Ê¹ÓÃÎÄ¼ş¹ÜÀíÆ÷
 	SettingsManager& settingsManager = SettingsManager::getInstance();
 
-	//å°†åœºæ™¯ç®¡ç†å™¨åˆå§‹åŒ–åœºæ™¯è®¾ç½®ä¸ºä¸»ç•Œé¢(ä½¿ç”¨æ™ºèƒ½æŒ‡é’ˆ)
+	//½«³¡¾°¹ÜÀíÆ÷³õÊ¼»¯³¡¾°ÉèÖÃÎªÖ÷½çÃæ(Ê¹ÓÃÖÇÄÜÖ¸Õë)
 	stateManager.changeState(std::make_unique<StateMenu>(stateManager));
-	//é»˜è®¤åˆå§‹æ’­æ”¾BGM
+	//Ä¬ÈÏ³õÊ¼²¥·ÅBGM
 	audioManager.playMusic("MenuMusic1", true);
 
-	//è¯»å–ä¸€æ¬¡å­˜æ¡£
+	//¶ÁÈ¡Ò»´Î´æµµ
 	settingsManager.loadSettings("Asset/save.txt");
 	audioManager.setSoundVolume(settingsManager.soundVolume / 100.f);
 	audioManager.setMusicVolume(settingsManager.musicVolume / 100.f);
 
-	//åˆ›å»ºå…¨å±€æ—¶é’Ÿ
+	//´´½¨È«¾ÖÊ±ÖÓ
 	sf::Clock clock;
 
-	//åˆå§‹éšæœºæ•°
+	//³õÊ¼Ëæ»úÊı
 	srand(time(NULL));
 
-	//----------------æ¸¸æˆä¸»å¾ªç¯------------------//
+	//----------------ÓÎÏ·Ö÷Ñ­»·------------------//
 	while (window.isOpen()) {
-		//ç»Ÿä¸€æ—¶é—´
+		//Í³Ò»Ê±¼ä
 		float deltaTime = clock.restart().asSeconds();
 
-		//å°†çª—å£ä¸‹ä¼ 
+		//½«´°¿ÚÏÂ´«
 		stateManager.handleInputCurrentState(window);
 
-		//è¿›è¡Œåœºæ™¯çš„æ™®é€šçš„æ¯å¸§æ›´æ–°
+		//½øĞĞ³¡¾°µÄÆÕÍ¨µÄÃ¿Ö¡¸üĞÂ
 		stateManager.updateCurrentState(deltaTime);
 
-		//æ¸…ç†æ’­æ”¾çš„éŸ³æ•ˆ
+		//ÇåÀí²¥·ÅµÄÒôĞ§
 		audioManager.update();
 
-		//æ¸…ç©ºç¼“å†²
+		//Çå¿Õ»º³å
 		window.clear();
 
-		//æ¸²æŸ“å½“å‰åœºæ™¯çš„å†…å®¹
+		//äÖÈ¾µ±Ç°³¡¾°µÄÄÚÈİ
 		stateManager.drawCurrentState(window);
 
-		//æ˜¾ç¤ºæ¸²æŸ“å®Œæˆçš„åœºæ™¯
+		//ÏÔÊ¾äÖÈ¾Íê³ÉµÄ³¡¾°
 		window.display();
 	}
 

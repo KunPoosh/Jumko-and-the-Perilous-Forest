@@ -3,62 +3,62 @@
 #include "SettingsManager.hpp"
 
 StateSetting::StateSetting(StateManager& manager) : stateManager(manager) {
-	//æ„é€ æ–¹æ³•
+	//¹¹Ôì·½·¨
 	/*
-	è´Ÿè´£äºº: å°æŸ±
+	¸ºÔğÈË: Ğ¡Öù
 
-	åŠŸèƒ½:
-		åˆå§‹åŒ–è®¾ç½®åœºæ™¯
-			è®¾ç½®å­—ä½“
-			è®¾ç½®éŸ³ä¹æ¡
+	¹¦ÄÜ:
+		³õÊ¼»¯ÉèÖÃ³¡¾°
+			ÉèÖÃ×ÖÌå
+			ÉèÖÃÒôÀÖÌõ
 
-	å‚æ•°:
-		StateManager& manager    //çª—å£ç®¡ç†å™¨
+	²ÎÊı:
+		StateManager& manager    //´°¿Ú¹ÜÀíÆ÷
 
-	è¿”å›å€¼: StateSetting
+	·µ»ØÖµ: StateSetting
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
-	//éŸ³æ•ˆï¼Œç´ æç®¡ç†å™¨å•ä¾‹
+	//ÒôĞ§£¬ËØ²Ä¹ÜÀíÆ÷µ¥Àı
 	AssetManager& assetManager = AssetManager::getInstance();
 	AudioManager& audioManager = AudioManager::getInstance();
 	SettingsManager& settingsManager = SettingsManager::getInstance();
-	//è®¾ç½®"è®¾ç½®"æŒ‰é’®çš„ä½ç½®ç­‰ä¿¡æ¯ã€‚
-	home.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"è¿”å›", 30);
+	//ÉèÖÃ"ÉèÖÃ"°´Å¥µÄÎ»ÖÃµÈĞÅÏ¢¡£
+	home.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"·µ»Ø", 30);
 	home.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	home.setPosition(50, 50, 200, 50);
 
-	//è®¾ç½®èƒŒæ™¯å›¾ç‰‡
+	//ÉèÖÃ±³¾°Í¼Æ¬
 	BackgroundImage.setTexture(assetManager.getTexture("JumkoMenu"));
-	// ä½¿å›¾ç‰‡å˜æš—ä½†ä»ç„¶å¯è§
+	// Ê¹Í¼Æ¬±ä°µµ«ÈÔÈ»¿É¼û
 	BackgroundImage.setColor(sf::Color(128, 128, 128, 255));
 
-	//åˆå§‹åŒ–æ ‡é¢˜
+	//³õÊ¼»¯±êÌâ
 	title.setFont(assetManager.getFont("simhei"));
 	title.setFillColor(sf::Color::White);
 	title.setCharacterSize(70);
-	title.setString(L"æ¸¸æˆè®¾ç½®");
+	title.setString(L"ÓÎÏ·ÉèÖÃ");
 	title.setPosition(350, 50);
 
-	//åˆå§‹åŒ–éŸ³ä¹éŸ³é‡çš„æ ‡ç­¾
+	//³õÊ¼»¯ÒôÀÖÒôÁ¿µÄ±êÇ©
 	MusicVolume.setFont(assetManager.getFont("simhei"));
 	MusicVolume.setFillColor(sf::Color::White);
 	MusicVolume.setCharacterSize(35);
-	MusicVolume.setString(L"éŸ³ä¹éŸ³é‡");
+	MusicVolume.setString(L"ÒôÀÖÒôÁ¿");
 	MusicVolume.setPosition(150, 300);
-	//åˆå§‹åŒ–éŸ³æ•ˆéŸ³é‡çš„æ ‡ç­¾
+	//³õÊ¼»¯ÒôĞ§ÒôÁ¿µÄ±êÇ©
 	SoundVolume.setFont(assetManager.getFont("simhei"));
 	SoundVolume.setFillColor(sf::Color::White);
 	SoundVolume.setCharacterSize(35);
-	SoundVolume.setString(L"éŸ³æ•ˆéŸ³é‡");
+	SoundVolume.setString(L"ÒôĞ§ÒôÁ¿");
 	SoundVolume.setPosition(150, 400);
-	//åˆå§‹åŒ–æ— æ•Œæ¨¡å¼çš„æ ‡ç­¾
+	//³õÊ¼»¯ÎŞµĞÄ£Ê½µÄ±êÇ©
 	Mod.setFont(assetManager.getFont("simhei"));
 	Mod.setFillColor(sf::Color::White);
 	Mod.setCharacterSize(35);
-	Mod.setString(L"æ— æ•Œæ¨¡å¼");
+	Mod.setString(L"ÎŞµĞÄ£Ê½");
 	Mod.setPosition(150, 600);
-	//åˆå§‹åŒ–éŸ³é‡æ¡
+	//³õÊ¼»¯ÒôÁ¿Ìõ
 
 	Background1.setSize(sf::Vector2f(350, 20));
 	Background2.setSize(sf::Vector2f(350, 20));
@@ -72,25 +72,25 @@ StateSetting::StateSetting(StateManager& manager) : stateManager(manager) {
 	Background2.setPosition(400, 410);
 	VolumeBar1.setPosition(400, 310);
 	VolumeBar2.setPosition(400, 410);
-	//åˆå§‹åŒ–éŸ³é‡æ¡ä¸Šé¢çš„é‚£ä¸ªçƒ
+	//³õÊ¼»¯ÒôÁ¿ÌõÉÏÃæµÄÄÇ¸öÇò
 	VolumeBall1.setRadius(15.f);
 	VolumeBall2.setRadius(15.f);
 	VolumeBall1.setPosition(380 + 350 * audioManager.getVolumeMusic(), 305);
 	VolumeBall2.setPosition(380 + 350 * audioManager.getVolumeSound(), 405);
-	//åˆå§‹åŒ–éŸ³é‡æ•°å­—
+	//³õÊ¼»¯ÒôÁ¿Êı×Ö
 	MusicText.setFont(assetManager.getFont("simhei"));
 	MusicText.setFillColor(sf::Color::White);
 	MusicText.setCharacterSize(30);
 	MusicText.setString(std::to_string(static_cast<int>(audioManager.getVolumeMusic() * 100)));
 	MusicText.setPosition(800, 300);
-	//åˆå§‹åŒ–éŸ³æ•ˆæ•°å­—
+	//³õÊ¼»¯ÒôĞ§Êı×Ö
 	SoundText.setFont(assetManager.getFont("simhei"));
 	SoundText.setFillColor(sf::Color::White);
 	SoundText.setCharacterSize(30);
 	SoundText.setString(std::to_string(static_cast<int>(audioManager.getVolumeSound() * 100)));
 	SoundText.setPosition(800, 400);
 
-	//åˆå§‹åŒ–æ— æ•Œæ¨¡å¼
+	//³õÊ¼»¯ÎŞµĞÄ£Ê½
 	Background3.setSize(sf::Vector2f(50, 20));
 	Background3.setFillColor(sf::Color::Black);
 	Background3.setPosition(400, 610);
@@ -105,9 +105,34 @@ StateSetting::StateSetting(StateManager& manager) : stateManager(manager) {
 		ModBar.setSize(sf::Vector2f(0, 20));
 		ModBall.setPosition(380, 602);
 	}
+	//³õÊ¼»¯¼üÎ»
+	wasd.setFont(assetManager.getFont("simhei"));
+	wasd.setFillColor(sf::Color::White);
+	wasd.setCharacterSize(35);
+	wasd.setString(L"wasd¼üÎ»");
+	wasd.setPosition(150, 475);
 
+	not_wasd.setFont(assetManager.getFont("simhei"));
+	not_wasd.setFillColor(sf::Color::White);
+	not_wasd.setCharacterSize(35);
+	not_wasd.setString(L"·½Ïò¼ü¼üÎ»");
+	not_wasd.setPosition(150, 525);
 
+	wasd_shape.setRadius(18.f);
+	wasd_shape.setFillColor(sf::Color(0, 0, 0, 128));
+	wasd_shape.setPosition(400, 480);
 
+	not_wasd_shape.setRadius(18.f);
+	not_wasd_shape.setFillColor(sf::Color(0, 0, 0, 128));
+	not_wasd_shape.setPosition(400, 530);
+
+	wasd_ball.setRadius(14.f);
+	wasd_ball.setFillColor(sf::Color::White);
+	wasd_ball.setPosition(404, 484);
+
+	not_wasd_ball.setRadius(14.f);
+	not_wasd_ball.setFillColor(sf::Color::White);
+	not_wasd_ball.setPosition(404, 534);
 
 
 }
@@ -121,21 +146,21 @@ bool isSelect = false;
 //bool is
 
 void StateSetting::handleInput(sf::RenderWindow& window) {
-	//å¤„ç†è¾“å…¥
+	//´¦ÀíÊäÈë
 	/*
-	è´Ÿè´£äºº: å°æŸ±
+	¸ºÔğÈË: Ğ¡Öù
 
-	åŠŸèƒ½:
-		å¤„ç†ç”¨æˆ·çš„è¾“å…¥
-			è¿”å›ä¸»èœå•
-			è°ƒèŠ‚éŸ³æ•ˆéŸ³ä¹éŸ³é‡
+	¹¦ÄÜ:
+		´¦ÀíÓÃ»§µÄÊäÈë
+			·µ»ØÖ÷²Ëµ¥
+			µ÷½ÚÒôĞ§ÒôÀÖÒôÁ¿
 
-	å‚æ•°:
-		sf::RenderWindow& window    //æ—¶é—´å‘ç”Ÿçš„åœ°æ–¹
+	²ÎÊı:
+		sf::RenderWindow& window    //Ê±¼ä·¢ÉúµÄµØ·½
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
 	AudioManager& audioManager = AudioManager::getInstance();
 	SettingsManager& settingsManager = SettingsManager::getInstance();
@@ -145,19 +170,21 @@ void StateSetting::handleInput(sf::RenderWindow& window) {
 	while (window.pollEvent(event))
 	{
 
-		//è·å–é¼ æ ‡ä½ç½®
+		//»ñÈ¡Êó±êÎ»ÖÃ
 		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 
-		//å½“ç‚¹å‡»å…³é—­æ—¶å…³é—­çª—å£
+		//µ±µã»÷¹Ø±ÕÊ±¹Ø±Õ´°¿Ú
 		if (event.type == sf::Event::Closed) {
 			SettingsManager::getInstance().saveSettings("Asset/save.txt");
 			window.close();
 		}
-		// ... å¤„ç†æŒ‰é’®ç‚¹å‡»äº‹ä»¶ï¼Œä½¿ç”¨stateManager.changeState(...)
+		// ... ´¦Àí°´Å¥µã»÷ÊÂ¼ş£¬Ê¹ÓÃstateManager.changeState(...)
 		if (event.type == sf::Event::MouseButtonPressed) {
 			bool getground1 = Background1.getGlobalBounds().contains(mousePosition);
 			bool getground2 = Background2.getGlobalBounds().contains(mousePosition);
 			bool getground3 = Background3.getGlobalBounds().contains(mousePosition);
+			bool getground4 = wasd_shape.getGlobalBounds().contains(mousePosition);
+			bool getground5 = not_wasd_shape.getGlobalBounds().contains(mousePosition);
 			if (this->home.isMouseOver(mousePosition)) {
 				SettingsManager::getInstance().saveSettings("Asset/save.txt");
 				this->stateManager.changeState(std::make_unique<StateMenu>(stateManager));
@@ -192,6 +219,18 @@ void StateSetting::handleInput(sf::RenderWindow& window) {
 				audioManager.playSound("ClickButton");
 			}
 
+			if (getground4)
+			{
+				settingsManager.iswasd = true;
+				audioManager.playSound("ClickButton");
+			}
+
+			if (getground5)
+			{
+				settingsManager.iswasd = false;
+				audioManager.playSound("ClickButton");
+			}
+
 			if (home.isMouseOver(mousePosition)) {
 				audioManager.playSound("ClickButton");
 			}
@@ -216,7 +255,7 @@ void StateSetting::handleInput(sf::RenderWindow& window) {
 				}
 			}
 			else {
-				//å½“é¼ æ ‡ä¸å†æ‚¬åœåœ¨æŒ‰é’®ä¸Šæ—¶æ¢å¤åŸå§‹é¢œè‰²
+				//µ±Êó±ê²»ÔÙĞüÍ£ÔÚ°´Å¥ÉÏÊ±»Ö¸´Ô­Ê¼ÑÕÉ«
 				home.resetColor();
 				isSelect = false;
 
@@ -257,48 +296,48 @@ void StateSetting::handleInput(sf::RenderWindow& window) {
 }
 
 void StateSetting::update(float deltaTime) {
-	// ... æ›´æ–°é€»è¾‘
+	// ... ¸üĞÂÂß¼­
 	/*
-	è´Ÿè´£äºº: å°æŸ±
+	¸ºÔğÈË: Ğ¡Öù
 
-	åŠŸèƒ½:
-		æ²¡ç”¨
+	¹¦ÄÜ:
+		Ã»ÓÃ
 
-	å‚æ•°:
-		float deltaTime    //å…¨å±€é—´éš”æ—¶é—´
+	²ÎÊı:
+		float deltaTime    //È«¾Ö¼ä¸ôÊ±¼ä
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
 }
 
 void StateSetting::draw(sf::RenderWindow& window) {
-	//æ¸²æŸ“
+	//äÖÈ¾
 	/*
-	è´Ÿè´£äºº: å°æŸ±
+	¸ºÔğÈË: Ğ¡Öù
 
-	åŠŸèƒ½:
-		æ¸²æŸ“ç”»é¢
+	¹¦ÄÜ:
+		äÖÈ¾»­Ãæ
 
-	å‚æ•°:
-		sf::RenderWindow& window    //è¦æ¸²æŸ“åˆ°çš„åœ°æ–¹
+	²ÎÊı:
+		sf::RenderWindow& window    //ÒªäÖÈ¾µ½µÄµØ·½
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
-	//æœ€å…ˆæ¸²æŸ“èƒŒæ™¯å›¾ç‰‡
+	//----------------------ÊµÏÖ------------------------//
+	//×îÏÈäÖÈ¾±³¾°Í¼Æ¬
 	window.draw(BackgroundImage);
 
-	// ... ç»˜åˆ¶æŒ‰é’®
+	// ... »æÖÆ°´Å¥
 	this->home.draw(window);
 
-	//ç»˜åˆ¶æ–‡å­—
+	//»æÖÆÎÄ×Ö
 	window.draw(this->title);
 	window.draw(this->MusicVolume);
 	window.draw(this->SoundVolume);
 	window.draw(this->Mod);
-	//ç»˜åˆ¶éŸ³é‡æ¡
+	//»æÖÆÒôÁ¿Ìõ
 	window.draw(this->Background1);
 	window.draw(this->Background2);
 	window.draw(this->Background3);
@@ -308,7 +347,17 @@ void StateSetting::draw(sf::RenderWindow& window) {
 	window.draw(this->VolumeBall2);
 	window.draw(this->MusicText);
 	window.draw(this->SoundText);
-	//ç»˜åˆ¶æ— æ•Œæ¨¡å¼
+	//»æÖÆÎŞµĞÄ£Ê½
 	window.draw(this->ModBar);
 	window.draw(this->ModBall);
+	//»æÖÆ¼üÎ»
+	SettingsManager& settingsManager = SettingsManager::getInstance();
+	window.draw(this->wasd);
+	window.draw(this->not_wasd);
+	window.draw(this->wasd_shape);
+	window.draw(this->not_wasd_shape);
+	if(settingsManager.iswasd) window.draw(this->wasd_ball);
+	else window.draw(this->not_wasd_ball);
+	
+	
 }
