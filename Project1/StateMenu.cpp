@@ -60,12 +60,19 @@ StateMenu::StateMenu(StateManager& manager)
     exitButton.setColor(sf::Color(200, 200, 200, 50), sf::Color(255, 0, 0, 0), sf::Color(180, 180, 180, 130));
     exitButton.setPosition(50, 750, 400, 80);
 
+    //设置"音乐开关"按钮的位置等信息
+    musicButton.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"音乐开关", 40);
+    musicButton.setColor(sf::Color(200, 200, 200, 100), sf::Color(255, 0, 0, 0), sf::Color(180, 180, 180, 150));
+    musicButton.setPosition(760, 870 , 200, 80);
+
     isSelectStare = false;
     isSelectGallery = false;
     isSelectSettings = false;
     isSelectAbout = false;
     isSelectHowToPlay = false;
     isSelectExit = false;
+    isSelectMusic = false;
+    isMusic = true;
 
     // 创建 TitleAnimation 实例
     std::shared_ptr<TitleAnimation> titleAnimation = std::make_shared<TitleAnimation>();
@@ -158,6 +165,23 @@ void StateMenu::handleInput(sf::RenderWindow& window){
                 return;
             }
 
+            //在音乐开关的上方
+            else if (musicButton.isMouseOver(mousePosition)) {
+                audioManager.playSound("ClickButton");
+
+                if (isMusic == true) {
+                    //暂停播放音乐
+                    audioManager.pauseMusic();
+                    isMusic = false;
+                }
+                else {
+                    //播放音乐
+                    audioManager.resumeMusic();
+                    isMusic = true;
+                }
+                return;
+            }
+
         }
 
         //当鼠标移动时获取鼠标位置，判断是否在某一个按钮上面，是的话讲按钮改变颜色
@@ -247,6 +271,20 @@ void StateMenu::handleInput(sf::RenderWindow& window){
                 isSelectExit = false;
             }
 
+            //在音乐开关按钮的上方
+            if (musicButton.isMouseOver(mousePosition)) {
+                musicButton.onHover();
+                if (!isSelectMusic) {
+                    isSelectMusic = true;
+                    audioManager.playSound("SelectButton");
+                }
+            }
+            else
+            {
+                musicButton.resetColor();
+                isSelectMusic = false;
+            }
+
         }
     }
 
@@ -293,6 +331,7 @@ void StateMenu::draw(sf::RenderWindow& window) {
     aboutButton.draw(window);
     howToPlayButton.draw(window);
     exitButton.draw(window);
+    musicButton.draw(window);
 
     //最后渲染标题动画
     EntityManager::getInstance()->drawEntities(window);
