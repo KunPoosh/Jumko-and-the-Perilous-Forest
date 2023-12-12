@@ -1,4 +1,4 @@
-#include"StateFailure.hpp"
+﻿#include"StateFailure.hpp"
 #include"AssetManager.hpp"
 #include"StateMenu.hpp"
 #include<ctime>
@@ -86,6 +86,9 @@ StateFailure::StateFailure(StateManager& manager) :stateManager(manager)
 
 	//清理所有的实体
 	entityManager->clearAllEntities();
+
+	//保存文件
+	SettingsManager::getInstance().saveSettings("Asset/save.txt");
 }
 
 
@@ -200,6 +203,8 @@ OpenFailureCG::OpenFailureCG(StateManager& manager) :stateManager(manager)
 	FailureCG10.setScale(960.0f / assetManager.getTexture("WEIMEI10").getSize().x, 960.0f / assetManager.getTexture("WEIMEI1").getSize().y);
 	FailureCG10.setPosition(0, 0);
 
+	//保存文件
+	SettingsManager::getInstance().saveSettings("Asset/save.txt");
 }
 //处理输入的事件
 void OpenFailureCG::handleInput(sf::RenderWindow& window)

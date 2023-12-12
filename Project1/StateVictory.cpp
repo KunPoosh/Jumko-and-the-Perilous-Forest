@@ -1,4 +1,4 @@
-#include"StateVictory.hpp"
+﻿#include"StateVictory.hpp"
 #include"StateMenu.hpp"
 
 
@@ -60,6 +60,9 @@ StateVictory::StateVictory(StateManager& manager) :stateManager(manager)
 
 	//清理所有的实体
 	entityManager->clearAllEntities();
+
+	//保存文件
+	SettingsManager::getInstance().saveSettings("Asset/save.txt");
 }
 
 //处理输入的事件
@@ -147,6 +150,9 @@ OpenVictoryCG::OpenVictoryCG(StateManager& manager) :stateManager(manager)
 	{
 		settingManager.unlockedCGs[11] = 1;
 	}
+
+	//保存文件
+	SettingsManager::getInstance().saveSettings("Asset/save.txt");
 }
 
 //处理输入的事件

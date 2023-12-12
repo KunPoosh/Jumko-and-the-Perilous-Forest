@@ -59,6 +59,13 @@ private:
 	sf::CircleShape ModBall;
 	//主菜单的背景图片
 	sf::Sprite BackgroundImage;
+	//键位调整
+	sf::Text wasd;
+	sf::Text not_wasd;
+	sf::CircleShape wasd_shape;
+	sf::CircleShape not_wasd_shape;
+	sf::CircleShape wasd_ball;
+	sf::CircleShape not_wasd_ball;
 };
 
 #endif // WINDOW1STATE

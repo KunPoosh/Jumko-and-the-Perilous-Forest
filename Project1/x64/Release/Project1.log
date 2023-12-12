@@ -1,6 +1,0 @@
-﻿  正在生成代码
-  Previous IPDB not found, fall back to full compilation.
-D:\MyCode\JumkoProject\Project1\Project1\StateManager.cpp(123): warning C4715: “StateManager::createState”: 不是所有的控件路径都返回值
-  All 2162 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  已完成代码的生成
-  Project1.vcxproj -> D:\MyCode\JumkoProject\Project1\x64\Release\酱可与危险之森.exe
