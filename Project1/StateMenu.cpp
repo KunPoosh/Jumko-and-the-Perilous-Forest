@@ -2,10 +2,6 @@
 #include <iostream>
 #include "Animation.hpp"
 
-
-//判断音乐是否开关
-bool isMusic = true;
-
 StateMenu::StateMenu(StateManager& manager)
     : stateManager(manager)
 {
