@@ -43,6 +43,8 @@ public:
     int musicVolume;
     //无敌模式
     bool isInvincible;
+    //键位调整
+    bool iswasd;
 
     //困难模式
     bool isHardCore;

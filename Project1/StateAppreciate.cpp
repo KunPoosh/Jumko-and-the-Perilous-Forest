@@ -1,4 +1,4 @@
-#include"StateAppreciate.hpp"
+﻿#include"StateAppreciate.hpp"
 #include"StateMenu.hpp"
 
 //初始化静态成员

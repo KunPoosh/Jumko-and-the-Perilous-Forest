@@ -1,4 +1,4 @@
-#include "StateSetting.hpp"
+﻿#include "StateSetting.hpp"
 #include "StateMenu.hpp"
 #include "SettingsManager.hpp"
 
@@ -105,9 +105,34 @@ StateSetting::StateSetting(StateManager& manager) : stateManager(manager) {
 		ModBar.setSize(sf::Vector2f(0, 20));
 		ModBall.setPosition(380, 602);
 	}
+	//初始化键位
+	wasd.setFont(assetManager.getFont("simhei"));
+	wasd.setFillColor(sf::Color::White);
+	wasd.setCharacterSize(35);
+	wasd.setString(L"wasd键位");
+	wasd.setPosition(150, 475);
 
+	not_wasd.setFont(assetManager.getFont("simhei"));
+	not_wasd.setFillColor(sf::Color::White);
+	not_wasd.setCharacterSize(35);
+	not_wasd.setString(L"方向键键位");
+	not_wasd.setPosition(150, 525);
 
+	wasd_shape.setRadius(18.f);
+	wasd_shape.setFillColor(sf::Color(0, 0, 0, 128));
+	wasd_shape.setPosition(400, 480);
 
+	not_wasd_shape.setRadius(18.f);
+	not_wasd_shape.setFillColor(sf::Color(0, 0, 0, 128));
+	not_wasd_shape.setPosition(400, 530);
+
+	wasd_ball.setRadius(14.f);
+	wasd_ball.setFillColor(sf::Color::White);
+	wasd_ball.setPosition(404, 484);
+
+	not_wasd_ball.setRadius(14.f);
+	not_wasd_ball.setFillColor(sf::Color::White);
+	not_wasd_ball.setPosition(404, 534);
 
 
 }
@@ -158,6 +183,8 @@ void StateSetting::handleInput(sf::RenderWindow& window) {
 			bool getground1 = Background1.getGlobalBounds().contains(mousePosition);
 			bool getground2 = Background2.getGlobalBounds().contains(mousePosition);
 			bool getground3 = Background3.getGlobalBounds().contains(mousePosition);
+			bool getground4 = wasd_shape.getGlobalBounds().contains(mousePosition);
+			bool getground5 = not_wasd_shape.getGlobalBounds().contains(mousePosition);
 			if (this->home.isMouseOver(mousePosition)) {
 				SettingsManager::getInstance().saveSettings("Asset/save.txt");
 				this->stateManager.changeState(std::make_unique<StateMenu>(stateManager));
@@ -189,6 +216,18 @@ void StateSetting::handleInput(sf::RenderWindow& window) {
 					ModBar.setSize(sf::Vector2f(50, 20));
 					ModBall.setPosition(430, 602);
 				}
+				audioManager.playSound("ClickButton");
+			}
+
+			if (getground4)
+			{
+				settingsManager.iswasd = true;
+				audioManager.playSound("ClickButton");
+			}
+
+			if (getground5)
+			{
+				settingsManager.iswasd = false;
 				audioManager.playSound("ClickButton");
 			}
 
@@ -311,4 +350,14 @@ void StateSetting::draw(sf::RenderWindow& window) {
 	//绘制无敌模式
 	window.draw(this->ModBar);
 	window.draw(this->ModBall);
+	//绘制键位
+	SettingsManager& settingsManager = SettingsManager::getInstance();
+	window.draw(this->wasd);
+	window.draw(this->not_wasd);
+	window.draw(this->wasd_shape);
+	window.draw(this->not_wasd_shape);
+	if(settingsManager.iswasd) window.draw(this->wasd_ball);
+	else window.draw(this->not_wasd_ball);
+	
+	
 }
