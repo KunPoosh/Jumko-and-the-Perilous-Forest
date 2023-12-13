@@ -51,6 +51,7 @@ private:
     float TotalTime;
     int score;          // 分数
     bool isHard;        // 是否开启困难模式
+    bool isBoss;        // 是否开启boss战斗模式
     bool isGameOver;    // 是否通关
     bool isInvincible;  // 是否开启无敌模式
     bool isSkill;       // 是否可以释放技能
@@ -86,6 +87,9 @@ public:
 
     //开启无敌模式
     void Invincible();
+
+    //开启Boss战模式
+    void bossCore();
 
     //设置玩家位置
     void setPosition(sf::Vector2f position);
