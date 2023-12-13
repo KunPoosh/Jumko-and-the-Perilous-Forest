@@ -4,54 +4,54 @@
 #include <string>
 #include <vector>
 
-// -------------------- ç±»è®¾è®¡ --------------------
+// -------------------- ÀàÉè¼Æ --------------------
 /*
-    ã€æ–‡ä»¶ç®¡ç†ç±»ã€‘
-    è´Ÿè´£äººï¼š æ³¢æ³¢æ²™
+    ¡¾ÎÄ¼ş¹ÜÀíÀà¡¿
+    ¸ºÔğÈË£º ²¨²¨É³
 
-    åŠŸèƒ½ï¼šå•ä¾‹æ¨¡å¼ï¼Œå¤åˆ¶ä½äºå­˜æ¡£æ–‡ä»¶çš„è¯»å†™
-        1.è¯»å†™å…¨è‹±æ–‡å­—ç¬¦ä¸²ç§˜é’¥
-        2.è¯»å†™01ç©¿è®°å½•CGè§£é”
-        3.è¯»å†™ä¸¤ä¸ªéŸ³é‡å€¼
-        4.è®°å½•æ˜¯å¦å¼€å¯æ— æ•Œæ¨¡å¼
+    ¹¦ÄÜ£ºµ¥ÀıÄ£Ê½£¬¸´ÖÆÎ»ÓÚ´æµµÎÄ¼şµÄ¶ÁĞ´
+        1.¶ÁĞ´È«Ó¢ÎÄ×Ö·û´®ÃØÔ¿
+        2.¶ÁĞ´01´©¼ÇÂ¼CG½âËø
+        3.¶ÁĞ´Á½¸öÒôÁ¿Öµ
+        4.¼ÇÂ¼ÊÇ·ñ¿ªÆôÎŞµĞÄ£Ê½
 */
 
 class SettingsManager {
 public:
 
-    //å•ä¾‹å”¯ä¸€å…¥å£
+    //µ¥ÀıÎ¨Ò»Èë¿Ú
     static SettingsManager& getInstance();
-    // ç¦ç”¨æ‹·è´å’Œèµ‹å€¼
+    // ½ûÓÃ¿½±´ºÍ¸³Öµ
     SettingsManager(const SettingsManager&) = delete;
     SettingsManager& operator=(const SettingsManager&) = delete;
 
-    //è¯»å–æ–‡ä»¶
+    //¶ÁÈ¡ÎÄ¼ş
     void loadSettings(const std::string& filename);
-    //ä¿å­˜æ–‡ä»¶
+    //±£´æÎÄ¼ş
     void saveSettings(const std::string& filename);
 
-    //æµ‹è¯•
+    //²âÊÔ
     void printSettings() const;
 
-    //ç§˜é’¥
+    //ÃØÔ¿
     std::string englishString;
-    //01CGä¸²
+    //01CG´®
     std::vector<bool> unlockedCGs;
-    //éŸ³æ•ˆéŸ³é‡
+    //ÒôĞ§ÒôÁ¿
     int soundVolume;
-    //éŸ³ä¹éŸ³é‡
+    //ÒôÀÖÒôÁ¿
     int musicVolume;
-    //æ— æ•Œæ¨¡å¼
+    //ÎŞµĞÄ£Ê½
     bool isInvincible;
-    //é”®ä½è°ƒæ•´
-    bool iswasd;
 
-    //å›°éš¾æ¨¡å¼
+    //À§ÄÑÄ£Ê½
     bool isHardCore;
+    //EXÄ£Ê½
+    bool isEXHard;
 
 private:
     
-    SettingsManager() {} // ç§æœ‰æ„é€ å‡½æ•°
+    SettingsManager() {} // Ë½ÓĞ¹¹Ôìº¯Êı
 };
 
 #endif // SETTINGSMANAGER_HPP

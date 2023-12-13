@@ -1,47 +1,47 @@
 #include "Player.hpp"
 
 Player::Player() {
-	//æ„é€ æ–¹æ³•
+	//¹¹Ôì·½·¨
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		åˆå§‹åŒ–ç©å®¶çš„æ‰€æœ‰ä¿¡æ¯
+	¹¦ÄÜ:
+		³õÊ¼»¯Íæ¼ÒµÄËùÓĞĞÅÏ¢
 
-	å‚æ•°: void
+	²ÎÊı: void
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
-	//å¬å”¤ç´ æï¼
+	//ÕÙ»½ËØ²Ä£¡
 	AssetManager& assetManager = AssetManager::getInstance();
 
 	sprite.setTexture(assetManager.getTexture("Jumko"));
 	hitboxSprite.setTexture(assetManager.getTexture("HitBox"));
 
-	health = 2500;
-	maxHealth = 2500;
-	strength = 2000;
+	health = 1000;
+	maxHealth = 1000;
+	strength = 1000;
 	moveSpeed = 600;
 
 	accumulatedTime = 0.f;
 	attackInterval = 0.08f;
 	timeTohealth = 0.f;
-	healthRegenerationRate = 30;
+	healthRegenerationRate = 10;
 	skillCharging = 0;
 
-	atkBullet = 900;
+	atkBullet = 400;
 	helthBullet = 1;
 	speedBullet = 1500;
 
 	TotalTime = 0.f;
 	score = 0;
 	isHard = false;
+	isEX = false;
 	isGameOver = false;
 	isInvincible = false;
 	isSkill = false;
-
 	movingUp = false;
 	movingDown = false;
 	movingLeft = false;
@@ -49,72 +49,85 @@ Player::Player() {
 	slowMovement = false;
 	openFire = false;
 
-	//å°†ä¸­å¿ƒç‚¹è®¾ç½®åˆ°å›¾ç‰‡ä¸­å¿ƒç‚¹
-	//é…±å¯
-	sf::Vector2u textureSize = assetManager.getTexture("Jumko").getSize(); // è·å–è´´å›¾çš„å°ºå¯¸
-	sprite.setOrigin(textureSize.x / 2.f, textureSize.y / 2.f); // è®¾ç½®ç²¾çµçš„åŸç‚¹ä¸ºè´´å›¾ä¸­å¿ƒ
-	//åˆ¤å®šç‚¹
-	textureSize = assetManager.getTexture("HitBox").getSize(); // è·å–è´´å›¾çš„å°ºå¯¸
-	hitboxSprite.setOrigin(textureSize.x / 2.f, textureSize.y / 2.f); // è®¾ç½®ç²¾çµçš„åŸç‚¹ä¸ºè´´å›¾ä¸­å¿ƒ
+	//½«ÖĞĞÄµãÉèÖÃµ½Í¼Æ¬ÖĞĞÄµã
+	//½´¿É
+	sf::Vector2u textureSize = assetManager.getTexture("Jumko").getSize(); // »ñÈ¡ÌùÍ¼µÄ³ß´ç
+	sprite.setOrigin(textureSize.x / 2.f, textureSize.y / 2.f); // ÉèÖÃ¾«ÁéµÄÔ­µãÎªÌùÍ¼ÖĞĞÄ
+	//ÅĞ¶¨µã
+	textureSize = assetManager.getTexture("HitBox").getSize(); // »ñÈ¡ÌùÍ¼µÄ³ß´ç
+	hitboxSprite.setOrigin(textureSize.x / 2.f, textureSize.y / 2.f); // ÉèÖÃ¾«ÁéµÄÔ­µãÎªÌùÍ¼ÖĞĞÄ
 }
 
 
 sf::Vector2f Player::getHitboxPosition() const {
-	//è¿”å›åˆ¤å®šç‚¹ä¸­å¿ƒçš„ä½ç½®
+	//·µ»ØÅĞ¶¨µãÖĞĞÄµÄÎ»ÖÃ
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		ä»…ä»…è¿”å›ä¸€ä¸ªä½ç½®ï¼Œç”¨äºæŒ‡å‘
+	¹¦ÄÜ:
+		½ö½ö·µ»ØÒ»¸öÎ»ÖÃ£¬ÓÃÓÚÖ¸Ïò
 
-	å‚æ•°: void
+	²ÎÊı: void
 
-	è¿”å›å€¼: sf::Vector2f
+	·µ»ØÖµ: sf::Vector2f
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 	return hitboxSprite.getPosition();
 }
 
 void Player::hardCore() {
-	//å¼€å¯å›°éš¾æ¨¡å¼ï¼
+	//¿ªÆôÀ§ÄÑÄ£Ê½£¡
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		ä½¿ç©å®¶è¿›å…¥å›°éš¾æ¨¡å¼,æ”¹å˜ç©å®¶çš„åŸºç¡€æ•°å€¼
+	¹¦ÄÜ:
+		Ê¹Íæ¼Ò½øÈëÀ§ÄÑÄ£Ê½,¸Ä±äÍæ¼ÒµÄ»ù´¡ÊıÖµ
 
-	å‚æ•°: void
+	²ÎÊı: void
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
 	isHard = true;
-	//å…¶ä»–çš„å‚æ•°è°ƒæ•´
+	//ÆäËûµÄ²ÎÊıµ÷Õû
 	//...
-	health = 1800;
-	maxHealth = 1800;
-	healthRegenerationRate = 20;
-	strength = 1000;
-	atkBullet = 600;
+	health = 600;
+	maxHealth = 600;
+	healthRegenerationRate = 5;
 }
 
-void Player::Invincible() {
-	//å¼€å¯æ— æ•Œæ¨¡å¼ï¼
+void Player::exCord() {
+	//¿ªÆôEXÄ£Ê½
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
-
-	åŠŸèƒ½:
-		ä½¿ç©å®¶è¿›å…¥å›°éš¾æ¨¡å¼,æ”¹å˜ç©å®¶çš„åŸºç¡€æ•°å€¼
-
-	å‚æ•°: void
-
-	è¿”å›å€¼: void
+	 ¸ºÔğÈË£ºTiant
+	 ¹¦ÄÜ£º
+	 Íæ¼Ò½øÈëEXÄ£Ê½
+	 ¸Ä±ä»ù´¡ÊıÖµ
+	 ²ÎÊı£ºvoid
+	 ·µ»ØÖµ£ºvoid
 	*/
-	//----------------------å®ç°------------------------//
+	isEX = true;
+	health = 300;
+	maxHealth = 500;
+	healthRegenerationRate = 3;
+}
+void Player::Invincible() {
+	//¿ªÆôÎŞµĞÄ£Ê½£¡
+	/*
+	¸ºÔğÈË: ²¨²¨É³
+
+	¹¦ÄÜ:
+		Ê¹Íæ¼Ò½øÈëÀ§ÄÑÄ£Ê½,¸Ä±äÍæ¼ÒµÄ»ù´¡ÊıÖµ
+
+	²ÎÊı: void
+
+	·µ»ØÖµ: void
+	*/
+	//----------------------ÊµÏÖ------------------------//
 
 	isInvincible = true;
-	//å…¶ä»–å‚æ•°è°ƒæ•´
+	//ÆäËû²ÎÊıµ÷Õû
 	maxHealth = 2000000000;
 	health = 2000000000;
 	healthRegenerationRate = 100000;
@@ -123,240 +136,233 @@ void Player::Invincible() {
 
 
 void Player::setPosition(sf::Vector2f position) {
-	//è®¾ç½®ç©å®¶ä½ç½®
+	//ÉèÖÃÍæ¼ÒÎ»ÖÃ
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		è¾“å…¥ä¸€ä¸ªä½ç½®ï¼Œç”¨æ¥åˆå§‹åŒ–ç©å®¶ä½ç½®
+	¹¦ÄÜ:
+		ÊäÈëÒ»¸öÎ»ÖÃ£¬ÓÃÀ´³õÊ¼»¯Íæ¼ÒÎ»ÖÃ
 
-	å‚æ•°: 
-		sf::Vector2f position	//ç©å®¶çš„ä½ç½®
+	²ÎÊı: 
+		sf::Vector2f position	//Íæ¼ÒµÄÎ»ÖÃ
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
 	sprite.setPosition(position);
 }
 
 const sf::Sprite& Player::getSprite() const {
-	// è¿”å›å¯¹ç©å®¶ç²¾çµçš„å¼•ç”¨
+	// ·µ»Ø¶ÔÍæ¼Ò¾«ÁéµÄÒıÓÃ
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		è¿”å›ç©å®¶ç²¾çµçš„å¼•ç”¨
+	¹¦ÄÜ:
+		·µ»ØÍæ¼Ò¾«ÁéµÄÒıÓÃ
 
-	å‚æ•°:
+	²ÎÊı:
 		void
 
-	è¿”å›å€¼: const sf::Sprite&
+	·µ»ØÖµ: const sf::Sprite&
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
 	return sprite;
 }
 
 const sf::Sprite& Player::getHitBox() const {
-	// è¿”å›å¯¹ç©å®¶ç²¾çµçš„å¼•ç”¨
+	// ·µ»Ø¶ÔÍæ¼Ò¾«ÁéµÄÒıÓÃ
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		è¿”å›ç©å®¶åˆ¤å®šç‚¹çš„å¼•ç”¨
+	¹¦ÄÜ:
+		·µ»ØÍæ¼ÒÅĞ¶¨µãµÄÒıÓÃ
 
-	å‚æ•°:
+	²ÎÊı:
 		void
 
-	è¿”å›å€¼: const sf::Sprite&
+	·µ»ØÖµ: const sf::Sprite&
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
 	return hitboxSprite;
 }
 
 void Player::takeDamage(int damage) {
-	// ç©å®¶å—åˆ°ä¼¤å®³çš„æ–¹æ³•
+	// Íæ¼ÒÊÜµ½ÉËº¦µÄ·½·¨
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		è®©ç©å®¶å—åˆ°ä¼¤å®³
+	¹¦ÄÜ:
+		ÈÃÍæ¼ÒÊÜµ½ÉËº¦
 
-	å‚æ•°:
-		int damage	//ä¼¤å®³é‡
+	²ÎÊı:
+		int damage	//ÉËº¦Á¿
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
 	health -= damage;
 	
 }
 
 int Player::getScore() const {
-	// è·å–ç©å®¶çš„åˆ†æ•°
+	// »ñÈ¡Íæ¼ÒµÄ·ÖÊı
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		è¿”å›ç©å®¶çš„åˆ†æ•°ç»™åœºæ™¯
+	¹¦ÄÜ:
+		·µ»ØÍæ¼ÒµÄ·ÖÊı¸ø³¡¾°
 
-	å‚æ•°:
+	²ÎÊı:
 		void
 
-	è¿”å›å€¼: int
+	·µ»ØÖµ: int
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 	return score;
 }
 
 void Player::addScore(int scoreToAdd) {
-	// å¢åŠ ç©å®¶çš„åˆ†æ•°
+	// Ôö¼ÓÍæ¼ÒµÄ·ÖÊı
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		å¢åŠ ç©å®¶çš„åˆ†æ•°
+	¹¦ÄÜ:
+		Ôö¼ÓÍæ¼ÒµÄ·ÖÊı
 
-	å‚æ•°:
-		int scoreToAdd	//å¢åŠ çš„å€¼
+	²ÎÊı:
+		int scoreToAdd	//Ôö¼ÓµÄÖµ
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
-	if (isHard) {
-		score += scoreToAdd * 1.5;
-	}
-	else
-	{
-		score += scoreToAdd;
-	}
-	
+	//----------------------ÊµÏÖ------------------------//
+	score += scoreToAdd;
 }
 
 int Player::getHealth() {
-	//è·å–ç©å®¶å½“å‰çš„ç”Ÿå‘½å€¼
+	//»ñÈ¡Íæ¼Òµ±Ç°µÄÉúÃüÖµ
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		è¿”å›ç©å®¶çš„ç”Ÿå‘½å€¼
+	¹¦ÄÜ:
+		·µ»ØÍæ¼ÒµÄÉúÃüÖµ
 
-	å‚æ•°:
+	²ÎÊı:
 		void
 
-	è¿”å›å€¼: int
+	·µ»ØÖµ: int
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 	return health;
 }
 
 int Player::getMaxHealth() {
-	//è·å–ç©å®¶å½“å‰çš„ç”Ÿå‘½å€¼ä¸Šé™
+	//»ñÈ¡Íæ¼Òµ±Ç°µÄÉúÃüÖµÉÏÏŞ
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		è¿”å›ç©å®¶çš„ç”Ÿå‘½å€¼ä¸Šé™
+	¹¦ÄÜ:
+		·µ»ØÍæ¼ÒµÄÉúÃüÖµÉÏÏŞ
 
-	å‚æ•°:
+	²ÎÊı:
 		void
 
-	è¿”å›å€¼: int
+	·µ»ØÖµ: int
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 	return maxHealth;
 }
 
 void Player::setSkill(int skill) {
-	//è®¾ç½®ç©å®¶çš„æŠ€èƒ½å……èƒ½
+	//ÉèÖÃÍæ¼ÒµÄ¼¼ÄÜ³äÄÜ
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		åŒæ­¥ä¸»åœºæ™¯çš„æŠ€èƒ½å……èƒ½
+	¹¦ÄÜ:
+		Í¬²½Ö÷³¡¾°µÄ¼¼ÄÜ³äÄÜ
 
-	å‚æ•°:
-		int skill		//ä¸»åœºæ™¯çš„æŠ€èƒ½å……èƒ½å€¼
+	²ÎÊı:
+		int skill		//Ö÷³¡¾°µÄ¼¼ÄÜ³äÄÜÖµ
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 	skillCharging = skill;
 }
 
 void Player::SkillFire() {
-	//ä½¿ç”¨æŠ€èƒ½
+	//Ê¹ÓÃ¼¼ÄÜ
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		é‡Šæ”¾ä¸€æ¬¡æŠ€èƒ½
+	¹¦ÄÜ:
+		ÊÍ·ÅÒ»´Î¼¼ÄÜ
 
-	å‚æ•°:
+	²ÎÊı:
 		void
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 	isSkill = true;
 }
 
 void Player::addPower(int power) {
-	// å¢åŠ ç©å®¶åŠ›é‡
+	// Ôö¼ÓÍæ¼ÒÁ¦Á¿
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™
+	¸ºÔğÈË: ²¨²¨É³
 
-	åŠŸèƒ½:
-		é‡Šæ”¾ä¸€æ¬¡æŠ€èƒ½
+	¹¦ÄÜ:
+		ÊÍ·ÅÒ»´Î¼¼ÄÜ
 
-	å‚æ•°:
+	²ÎÊı:
 		void
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
 	strength += power;
 }
 
 
 void Player::update(float deltaTime) {
-	// æ›´æ–°ç©å®¶çŠ¶æ€
+	// ¸üĞÂÍæ¼Ò×´Ì¬
 	/*
-	è´Ÿè´£äºº: æ³¢æ³¢æ²™,åˆ˜æ™º
+	¸ºÔğÈË: ²¨²¨É³,ÁõÖÇ
 
-	åŠŸèƒ½:
-		è®©ç©å®¶ç§»åŠ¨ï¼Œå°„å‡»
+	¹¦ÄÜ:
+		ÈÃÍæ¼ÒÒÆ¶¯£¬Éä»÷
 
-	å‚æ•°:
-		float deltaTime		//å…¨å±€é—´éš”æ—¶é—´
+	²ÎÊı:
+		float deltaTime		//È«¾Ö¼ä¸ôÊ±¼ä
 
-	è¿”å›å€¼: void
+	·µ»ØÖµ: void
 	*/
-	//----------------------å®ç°------------------------//
+	//----------------------ÊµÏÖ------------------------//
 
 	accumulatedTime += deltaTime;
 
-	// æ”»å‡»é€»è¾‘
+	// ¹¥»÷Âß¼­
 	if (accumulatedTime >= attackInterval) {
-		// æ‰§è¡Œæ”»å‡»
-		accumulatedTime -= attackInterval;  // é‡ç½®ç´¯è®¡æ—¶é—´
+		// Ö´ĞĞ¹¥»÷
+		accumulatedTime -= attackInterval;  // ÖØÖÃÀÛ¼ÆÊ±¼ä
 
 		if (openFire) {
 
-			//å¬å”¤å®ä½“ç®¡ç†å™¨å¤§å“¥å‡†å¤‡æ¥å—å­å¼¹
+			//ÕÙ»½ÊµÌå¹ÜÀíÆ÷´ó¸ç×¼±¸½ÓÊÜ×Óµ¯
 			EntityManager* entityManager = EntityManager::getInstance();
-			//å¬å”¤ç´ æå¤§å“¥
+			//ÕÙ»½ËØ²Ä´ó¸ç
 			AssetManager& assetManager = AssetManager::getInstance();
-			//å¼•ç”¨éŸ³é¢‘æ’­æ”¾å•ä¾‹
+			//ÒıÓÃÒôÆµ²¥·Åµ¥Àı
 			AudioManager& audioManager = AudioManager::getInstance();
 
 			if (strength < 2000) {
-				//ä¸€çº§æ”»å‡»
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				//Ò»¼¶¹¥»÷
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -364,13 +370,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet->setPosition(sprite.getPosition() + sf::Vector2f(-8,-5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet2 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -378,18 +384,18 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet2->setPosition(sprite.getPosition() + sf::Vector2f(8, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet2);
 
-				//å°„å‡»éŸ³æ•ˆ
+				//Éä»÷ÒôĞ§
 				audioManager.playSound("PlayerAttack1");
 			}
 			else if (strength < 3000) {
-				//äºŒçº§æ”»å‡»
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				//¶ş¼¶¹¥»÷
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -397,13 +403,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet->setPosition(sprite.getPosition() + sf::Vector2f(-16, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet2 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -411,13 +417,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet2->setPosition(sprite.getPosition() + sf::Vector2f(16, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet2);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet3 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet3"),
 					sf::Vector2f(0, -1),
@@ -425,18 +431,18 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					(atkBullet * 2)
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet3->setPosition(sprite.getPosition() + sf::Vector2f(0, -10));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet3);
 
-				//å°„å‡»éŸ³æ•ˆ
+				//Éä»÷ÒôĞ§
 				audioManager.playSound("PlayerAttack1");
 			}
 			else if (strength < 4000) {
-				//ä¸‰çº§æ”»å‡»
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				//Èı¼¶¹¥»÷
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -444,13 +450,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet->setPosition(sprite.getPosition() + sf::Vector2f(-15, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet2 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -458,13 +464,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet2->setPosition(sprite.getPosition() + sf::Vector2f(15, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet2);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet3 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet3"),
 					sf::Vector2f(0, -1),
@@ -472,13 +478,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					(atkBullet * 2)
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet3->setPosition(sprite.getPosition() + sf::Vector2f(0, -10));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet3);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet4 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(-0.173648, -0.98526),
@@ -486,13 +492,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet4->setPosition(sprite.getPosition() + sf::Vector2f(-15, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet4);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet5 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0.173648, -0.98526),
@@ -500,18 +506,18 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet5->setPosition(sprite.getPosition() + sf::Vector2f(15, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet5);
 
-				//å°„å‡»éŸ³æ•ˆ
+				//Éä»÷ÒôĞ§
 				audioManager.playSound("PlayerAttack1");
 			}
 			else if (strength < 5000) {
-				//å››çº§æ”»å‡»
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				//ËÄ¼¶¹¥»÷
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -519,13 +525,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet->setPosition(sprite.getPosition() + sf::Vector2f(-15, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet2 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -533,13 +539,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet2->setPosition(sprite.getPosition() + sf::Vector2f(15, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet2);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet3 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet3"),
 					sf::Vector2f(0, -1),
@@ -547,13 +553,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					(atkBullet * 2)
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet3->setPosition(sprite.getPosition() + sf::Vector2f(0, -10));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet3);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet4 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(-0.173648, -0.98526),
@@ -561,13 +567,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet4->setPosition(sprite.getPosition() + sf::Vector2f(-15, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet4);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet5 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0.173648, -0.98526),
@@ -575,13 +581,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet5->setPosition(sprite.getPosition() + sf::Vector2f(15, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet5);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet6 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0.136824, -0.98713),
@@ -589,13 +595,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet6->setPosition(sprite.getPosition() + sf::Vector2f(-20, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet6);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet7 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(-0.136824, -0.98713),
@@ -603,19 +609,19 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet7->setPosition(sprite.getPosition() + sf::Vector2f(20, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet7);
 
-				//å°„å‡»éŸ³æ•ˆ
+				//Éä»÷ÒôĞ§
 				audioManager.playSound("PlayerAttack1");
 			}
 			else
 			{
-				//äº”çº§æ”»å‡»
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				//Îå¼¶¹¥»÷
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -623,13 +629,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet->setPosition(sprite.getPosition() + sf::Vector2f(-10, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet2 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -637,13 +643,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet2->setPosition(sprite.getPosition() + sf::Vector2f(10, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet2);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet3 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet3"),
 					sf::Vector2f(0, -1),
@@ -651,13 +657,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					(atkBullet * 2)
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet3->setPosition(sprite.getPosition() + sf::Vector2f(0, -10));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet3);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet4 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(-0.173648, -0.98526),
@@ -665,13 +671,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet4->setPosition(sprite.getPosition() + sf::Vector2f(-15, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet4);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet5 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0.173648, -0.98526),
@@ -679,13 +685,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet5->setPosition(sprite.getPosition() + sf::Vector2f(15, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet5);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet6 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0.136824, -0.98713),
@@ -693,13 +699,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet6->setPosition(sprite.getPosition() + sf::Vector2f(-20, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet6);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet7 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(-0.136824, -0.98713),
@@ -707,13 +713,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet7->setPosition(sprite.getPosition() + sf::Vector2f(20, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet7);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet8 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -721,13 +727,13 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet8->setPosition(sprite.getPosition() + sf::Vector2f(20, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet8);
 
-				// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+				// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 				std::shared_ptr<Bullet> newBullet9 = std::make_shared<PlayerBullet1>(
 					assetManager.getTexture("Bullet2"),
 					sf::Vector2f(0, -1),
@@ -735,62 +741,62 @@ void Player::update(float deltaTime) {
 					helthBullet,
 					atkBullet
 				);
-				//è®¾ç½®å­å¼¹çš„ä½ç½®
+				//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 				newBullet9->setPosition(sprite.getPosition() + sf::Vector2f(-20, -5));
 
-				// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+				// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 				entityManager->getInstance()->addBullet(newBullet9);
 
-				//å°„å‡»éŸ³æ•ˆ
+				//Éä»÷ÒôĞ§
 				audioManager.playSound("PlayerAttack1");
 			}
 
 		}
 	}
 
-	// ç”Ÿå‘½æ¢å¤é€»è¾‘
+	// ÉúÃü»Ö¸´Âß¼­
 	timeTohealth += deltaTime;
 	if (timeTohealth >= 1.f) { 
 		health += healthRegenerationRate;
 		timeTohealth -= 1.f;
-		if (health >= maxHealth) health = maxHealth;  // é™åˆ¶ç”Ÿå‘½å€¼ä¸Šé™
+		if (health >= maxHealth) health = maxHealth;  // ÏŞÖÆÉúÃüÖµÉÏÏŞ
 	}
 
 
-	// æŠ€èƒ½é‡Šæ”¾é€»è¾‘
+	// ¼¼ÄÜÊÍ·ÅÂß¼­
 	if (isSkill) {
-		//éŸ³é¢‘ç®¡ç†å™¨
+		//ÒôÆµ¹ÜÀíÆ÷
 		AudioManager& audioManager = AudioManager::getInstance();
-		//ç´ æç®¡ç†å™¨
+		//ËØ²Ä¹ÜÀíÆ÷
 		AssetManager& assetManager = AssetManager::getInstance();
-		//å®ä½“ç®¡ç†å™¨
+		//ÊµÌå¹ÜÀíÆ÷
 		EntityManager* entityManager = EntityManager::getInstance();
 
 		isSkill = false;
-		//æŠ€èƒ½çš„è¯¦ç»†å®ç°
+		//¼¼ÄÜµÄÏêÏ¸ÊµÏÖ
 		//...
-		// åˆ›å»ºä¸€ä¸ªæ–°çš„å­å¼¹å®ä¾‹ï¼Œ
+		// ´´½¨Ò»¸öĞÂµÄ×Óµ¯ÊµÀı£¬
 		std::shared_ptr<Bullet> newBullet9 = std::make_shared<PlayerMagicBullet>(
 			assetManager.getTexture("SkillButton"),
 			sf::Vector2f(0, -1),
 			1500,
 			10000,
-			atkBullet * 0.3
+			100
 		);
-		//è®¾ç½®å­å¼¹çš„ä½ç½®
+		//ÉèÖÃ×Óµ¯µÄÎ»ÖÃ
 		newBullet9->setPosition(sprite.getPosition() + sf::Vector2f(-20, -5));
 
-		// å°†å­å¼¹æ·»åŠ åˆ°EntityManagerä¸­
+		// ½«×Óµ¯Ìí¼Óµ½EntityManagerÖĞ
 		entityManager->getInstance()->addBullet(newBullet9);
 
 
-		//æ’­æ”¾æŠ€èƒ½éŸ³æ•ˆ
+		//²¥·Å¼¼ÄÜÒôĞ§
 		audioManager.playSound("PlayerAttack2");
 		audioManager.playSound("PlayerAttack3");
 	}
 
-	// ç§»åŠ¨é€»è¾‘
-	float currentMoveSpeed = slowMovement ? moveSpeed * 0.4f : moveSpeed;  // å‡é€Ÿæ—¶å‡åŠé€Ÿåº¦
+	// ÒÆ¶¯Âß¼­
+	float currentMoveSpeed = slowMovement ? moveSpeed * 0.4f : moveSpeed;  // ¼õËÙÊ±¼õ°ëËÙ¶È
 	sf::Vector2f movement(0.f, 0.f);
 
 	if (movingUp) movement.y -= 1.f;
@@ -798,150 +804,94 @@ void Player::update(float deltaTime) {
 	if (movingLeft) movement.x -= 1.f;
 	if (movingRight) movement.x += 1.f;
 
-	// å¦‚æœåŒæ—¶ç§»åŠ¨åœ¨ä¸¤ä¸ªæ–¹å‘ï¼Œåˆ™å¯¹ç§»åŠ¨å‘é‡è¿›è¡Œå½’ä¸€åŒ–
+	// Èç¹ûÍ¬Ê±ÒÆ¶¯ÔÚÁ½¸ö·½Ïò£¬Ôò¶ÔÒÆ¶¯ÏòÁ¿½øĞĞ¹éÒ»»¯
 	if (movement.x != 0.f && movement.y != 0.f) {
-		movement /= std::sqrt(2.f); // å¯¹è§’ç§»åŠ¨æ—¶åˆ†é‡é•¿åº¦æ˜¯ 1/sqrt(2)
+		movement /= std::sqrt(2.f); // ¶Ô½ÇÒÆ¶¯Ê±·ÖÁ¿³¤¶ÈÊÇ 1/sqrt(2)
 	}
 
-	// åº”ç”¨é€Ÿåº¦å’Œæ—¶é—´é—´éš”
+	// Ó¦ÓÃËÙ¶ÈºÍÊ±¼ä¼ä¸ô
 	movement *= currentMoveSpeed * deltaTime;
 
-	// ç§»åŠ¨ç©å®¶
+	// ÒÆ¶¯Íæ¼Ò
 	sprite.move(movement);
 
-	//é™åˆ¶ç©å®¶ä½ç½®
-	// è·å–æ–°çš„ç©å®¶ä½ç½®
+	//ÏŞÖÆÍæ¼ÒÎ»ÖÃ
+	// »ñÈ¡ĞÂµÄÍæ¼ÒÎ»ÖÃ
 	sf::Vector2f position = sprite.getPosition();
-	// çº¦æŸç©å®¶ä½ç½®åœ¨æ¸¸æˆåŒºåŸŸå†…
+	// Ô¼ÊøÍæ¼ÒÎ»ÖÃÔÚÓÎÏ·ÇøÓòÄÚ
 	if (position.x < 0) position.x = 0;
 	if (position.x > 640) position.x = 640;
 	if (position.y < 0) position.y = 0;
 	if (position.y > 960) position.y = 960;
-	// è®¾ç½®ç©å®¶çš„ä½ç½®
+	// ÉèÖÃÍæ¼ÒµÄÎ»ÖÃ
 	sprite.setPosition(position);
 
-	//å°†åˆ¤å®šç‚¹è®¾ç½®åˆ°ç©å®¶ä¸­å¿ƒ
+	//½«ÅĞ¶¨µãÉèÖÃµ½Íæ¼ÒÖĞĞÄ
 	hitboxSprite.setPosition(sprite.getPosition());
 
-	//å¦‚æœå¼€å¯äº†æ— æ•Œæ¨¡å¼åˆ™ä¸ä¼šè·å¾—åˆ†æ•°
+	//Èç¹û¿ªÆôÁËÎŞµĞÄ£Ê½Ôò²»»á»ñµÃ·ÖÊı
 	if (isInvincible) {
 		score = 0;
 	}
 
-	//æµ‹è¯•åŒº
+	//²âÊÔÇø
 	//std::cout << health << "   " << maxHealth << std::endl;
 	
 }
 
 void Player::handleInput(sf::Event& event) {
-	//å¤„ç†äº‹ä»¶
-	SettingsManager& settingsManager = SettingsManager::getInstance();
+	//´¦ÀíÊÂ¼ş
+
 	if (event.type == sf::Event::KeyPressed) {
-		if (!settingsManager.iswasd)
-		{
-			switch (event.key.code) {
-			case sf::Keyboard::Up:
-				movingUp = true;
-				break;
-			case sf::Keyboard::Down:
-				movingDown = true;
-				break;
-			case sf::Keyboard::Left:
-				movingLeft = true;
-				break;
-			case sf::Keyboard::Right:
-				movingRight = true;
-				break;
-			case sf::Keyboard::LShift:
-				slowMovement = true;
-				break;
-			case sf::Keyboard::Z:
-				openFire = true;
-				break;
-				// ... å…¶ä»–é”®ç›˜äº‹ä»¶ ...
-			}
+		switch (event.key.code) {
+		case sf::Keyboard::Up:
+			movingUp = true;
+			break;
+		case sf::Keyboard::Down:
+			movingDown = true;
+			break;
+		case sf::Keyboard::Left:
+			movingLeft = true;
+			break;
+		case sf::Keyboard::Right:
+			movingRight = true;
+			break;
+		case sf::Keyboard::LShift:
+			slowMovement = true;
+			break;
+		case sf::Keyboard::Z:
+			openFire = true;
+			break;
+			// ... ÆäËû¼üÅÌÊÂ¼ş ...
 		}
-		else
-		{
-			switch (event.key.code) {
-			case sf::Keyboard::W:
-				movingUp = true;
-				break;
-			case sf::Keyboard::S:
-				movingDown = true;
-				break;
-			case sf::Keyboard::A:
-				movingLeft = true;
-				break;
-			case sf::Keyboard::D:
-				movingRight = true;
-				break;
-			case sf::Keyboard::LShift:
-				slowMovement = true;
-				break;
-			case sf::Keyboard::J:
-				openFire = true;
-				break;
-				// ... å…¶ä»–é”®ç›˜äº‹ä»¶ ...
-			}
-		}
-		
 	}
 	else if (event.type == sf::Event::KeyReleased) {
-		if (!settingsManager.iswasd)
-		{
-			switch (event.key.code) {
-			case sf::Keyboard::Up:
-				movingUp = false;
-				break;
-			case sf::Keyboard::Down:
-				movingDown = false;
-				break;
-			case sf::Keyboard::Left:
-				movingLeft = false;
-				break;
-			case sf::Keyboard::Right:
-				movingRight = false;
-				break;
-			case sf::Keyboard::LShift:
-				slowMovement = false;
-				break;
-			case sf::Keyboard::Z:
-				openFire = false;
-				break;
-				// ... å…¶ä»–é”®ç›˜äº‹ä»¶ ...
-			}
+		switch (event.key.code) {
+		case sf::Keyboard::Up:
+			movingUp = false;
+			break;
+		case sf::Keyboard::Down:
+			movingDown = false;
+			break;
+		case sf::Keyboard::Left:
+			movingLeft = false;
+			break;
+		case sf::Keyboard::Right:
+			movingRight = false;
+			break;
+		case sf::Keyboard::LShift:
+			slowMovement = false;
+			break;
+		case sf::Keyboard::Z:
+			openFire = false;
+			break;
+			// ... ÆäËû¼üÅÌÊÂ¼ş ...
 		}
-		else
-		{
-			switch (event.key.code) {
-			case sf::Keyboard::W:
-				movingUp = false;
-				break;
-			case sf::Keyboard::S:
-				movingDown = false;
-				break;
-			case sf::Keyboard::A:
-				movingLeft = false;
-				break;
-			case sf::Keyboard::D:
-				movingRight = false;
-				break;
-			case sf::Keyboard::LShift:
-				slowMovement = false;
-				break;
-			case sf::Keyboard::J:
-				openFire = false;
-				break;
-				// ... å…¶ä»–é”®ç›˜äº‹ä»¶ ...
-			}
-		}
-		
 	}
 }
 
 void Player::draw(sf::RenderWindow& window) {
-	//æ¸²æŸ“
+	//äÖÈ¾
 	window.draw(sprite);
 	window.draw(hitboxSprite);
 }
