@@ -56,6 +56,8 @@ private:
     Button howToPlayButton;
     //退出游戏
     Button exitButton;
+    //音乐开关
+    Button musicButton;
 
     //是否选择按钮，用于播放音效
     bool isSelectStare;
@@ -64,6 +66,10 @@ private:
     bool isSelectAbout;
     bool isSelectHowToPlay;
     bool isSelectExit;
+    bool isSelectMusic;
+
+    //判断音乐是否开关
+    bool isMusic;
 
     //...
     //...
