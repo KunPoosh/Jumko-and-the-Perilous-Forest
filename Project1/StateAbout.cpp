@@ -3,56 +3,68 @@
 #include "StateMenu.hpp"
 #include "AudioManager.hpp"
 bool isSelectHome = false;
+bool isSlectLink = false;
 StateAbout::StateAbout(StateManager& manager) : stateManager(manager) {
-	//ç´ æç®¡ç†å™¨å•ä¾‹
+	//ËØ²Ä¹ÜÀíÆ÷µ¥Àı
 	AssetManager& assetmanager = AssetManager::getInstance();
 
-	//æŒ‰é’®çš„ç›¸å…³ä¿¡æ¯
-	home.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"è¿”å›", 30);
+	//°´Å¥µÄÏà¹ØĞÅÏ¢
+	home.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"·µ»Ø", 30);
 	home.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	home.setPosition(50, 50, 200, 50);
 
-	//æ ‡é¢˜çš„ç›¸å…³ä¿¡æ¯
+	//±êÌâµÄÏà¹ØĞÅÏ¢
 	title.setFont(assetmanager.getFont("simhei"));
 	title.setFillColor(sf::Color::White);
 	title.setCharacterSize(70);
-	title.setString(L"å…³äº");
+	title.setString(L"¹ØÓÚ");
 	title.setPosition(400, 50);
 
-	//è®¾ç½®èƒŒæ™¯å›¾ç‰‡
+	//ÉèÖÃ±³¾°Í¼Æ¬
 	BackgroundImage.setTexture(assetmanager.getTexture("JumkoMenu"));
 
-	//ä½¿å›¾ç‰‡å˜æš—ä½†ä»ç„¶å¯è§
+	//Ê¹Í¼Æ¬±ä°µµ«ÈÔÈ»¿É¼û
 	BackgroundImage.setColor(sf::Color(128, 128, 128, 255));
 
-	//è®¾ç½®å…³äºäººå‘˜å›¾ç‰‡
-	About.setTexture(assetmanager.getTexture("TextAbout"));//ä»assetmanagerä¸­ç´¢å–å›¾ç‰‡
+	//ÉèÖÃ¹ØÓÚÈËÔ±Í¼Æ¬
+	About.setTexture(assetmanager.getTexture("TextAbout"));//´ÓassetmanagerÖĞË÷È¡Í¼Æ¬
 	About.setPosition(sf::Vector2f(0, 0));
-}
 
-//------------åŠŸèƒ½---------------
-// //ç”¨äºå­˜å…¥æ˜¾ç¤ºçš„å…³äºå†…å®¹
+	//ÉèÖÃÎÒµÄÏîÄ¿°´Å¥
+	visitLink.setFont(assetmanager.getFont("simhei"));
+	visitLink.setFillColor(sf::Color::White);
+	visitLink.setCharacterSize(30);
+	visitLink.setString(L"ÎÒµÄÏîÄ¿");
+	visitLink.setPosition(160, 900);
+
+	
+
+} 
+
+//------------¹¦ÄÜ---------------
+// //ÓÃÓÚ´æÈëÏÔÊ¾µÄ¹ØÓÚÄÚÈİ
 
 void StateAbout::handleInput(sf::RenderWindow& window) {
 	AudioManager& audioManager = AudioManager::getInstance();
 	sf::Event event;
 	while (window.pollEvent(event)) {
-		//è·å–é¼ æ ‡ä½ç½®
+		//»ñÈ¡Êó±êÎ»ÖÃ
 		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 
-		//å¤„ç†å…³é—­ç•Œé¢
+		//´¦Àí¹Ø±Õ½çÃæ
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
-		//å¤„ç†é¼ æ ‡ç‚¹å‡»æŒ‰é’®äº‹ä»¶
+		//´¦ÀíÊó±êµã»÷°´Å¥ÊÂ¼ş
 		if (event.type == sf::Event::MouseButtonPressed) {
 			if (home.isMouseOver(mousePosition)) {
 				stateManager.changeState(std::make_unique<StateMenu>(stateManager));
 				audioManager.playSound("ClickButton");
+
 				//entityManager->clearAllEntities();
 			}
 		}
-		//å¤„ç†é¼ æ ‡ç§»åŠ¨åˆ°æŒ‰é’®å˜è‰²
+		//´¦ÀíÊó±êÒÆ¶¯µ½°´Å¥±äÉ«
 		if (event.type == sf::Event::MouseMoved) {
 			if (home.isMouseOver(mousePosition)) {
 				home.onHover();
@@ -66,6 +78,16 @@ void StateAbout::handleInput(sf::RenderWindow& window) {
 				isSelectHome = false;
 			}
 		}
+		//´¦ÀíÊó±êµã»÷ÎÒµÄÏîÄ¿ÊÂ¼ş
+		if (event.type == sf::Event::MouseButtonPressed) {
+			if (home.isMouseOver(mousePosition)) {
+				stateManager.changeState(std::make_unique<StateMenu>(stateManager));
+				audioManager.playSound("ClickButton");
+			}
+			else if (visitLink.getGlobalBounds().contains(mousePosition)) {
+				system("start https://github.com/KunPoosh/Jumko-and-the-Perilous-Forest");
+			}
+		}
 	}
 }
 
@@ -75,13 +97,15 @@ void StateAbout::update(float deltaTime) {
 
 void StateAbout::draw(sf::RenderWindow& window) {
 	AssetManager& assetmanager = AssetManager::getInstance();
-	//ç»˜åˆ¶èƒŒæ™¯
+	//»æÖÆ±³¾°
 	window.draw(BackgroundImage);
-	//ç»˜åˆ¶æ ‡é¢˜
+	//»æÖÆ±êÌâ
 	window.draw(title);
-	//ç»˜åˆ¶å…³äºäººå‘˜
+	//»æÖÆ¹ØÓÚÈËÔ±
 	window.draw(About);
 
-	//ç»˜åˆ¶æŒ‰é’®
+	//»æÖÆ°´Å¥
 	home.draw(window);
+
+	window.draw(visitLink);
 }
