@@ -61,7 +61,13 @@ void StateAbout::handleInput(sf::RenderWindow& window) {
 
 				//entityManager->clearAllEntities();
 			}
+			//处理鼠标点击我的项目事件
+			else if (visitLink.getGlobalBounds().contains(mousePosition)) {
+				system("start https://github.com/KunPoosh/Jumko-and-the-Perilous-Forest");
+				audioManager.playSound("ClickButton");
+			}
 		}
+		
 		//处理鼠标移动到按钮变色
 		if (event.type == sf::Event::MouseMoved) {
 			if (home.isMouseOver(mousePosition)) {
@@ -76,16 +82,7 @@ void StateAbout::handleInput(sf::RenderWindow& window) {
 				isSelectHome = false;
 			}
 		}
-		//处理鼠标点击我的项目事件
-		if (event.type == sf::Event::MouseButtonPressed) {
-			if (home.isMouseOver(mousePosition)) {
-				stateManager.changeState(std::make_unique<StateMenu>(stateManager));
-				audioManager.playSound("ClickButton");
-			}
-			else if (visitLink.getGlobalBounds().contains(mousePosition)) {
-				system("start https://github.com/KunPoosh/Jumko-and-the-Perilous-Forest");
-			}
-		}
+		
 	}
 }
 
