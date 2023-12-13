@@ -4496,7 +4496,6 @@ void StateMainGame::ADDENEMYS()
 			{
 			case 0: ENEMYOUT2S++; ENEMYOUT2STIME = 0.f;
 				//释放敌人
-                                EnemyFactory::createEnemy("Enemy6", assetManager.getTexture("Spider"), sf::Vector2f(640, 0), sf::Vector2f(0, 1), 5000, 200);
 				EnemyFactory::createEnemy("Enemy3", assetManager.getTexture("SlimeYellow"), sf::Vector2f(400, 0), sf::Vector2f(0, 1), 2000, 150);
 				EnemyFactory::createEnemy("Enemy3", assetManager.getTexture("SlimeYellow"), sf::Vector2f(460, -60), sf::Vector2f(0, 1), 3000, 150);
 				break;
@@ -4567,7 +4566,6 @@ void StateMainGame::ADDENEMYS()
 			{
 			case 0: ENEMYOUT2S++; ENEMYOUT2STIME = 0.f;
 				//释放敌人
-                                EnemyFactory::createEnemy("Enemy6", assetManager.getTexture("Spider"), sf::Vector2f(0, 0), sf::Vector2f(0, 1), 5000, 200);
 				EnemyFactory::createEnemy("Enemy3", assetManager.getTexture("SlimeRed"), sf::Vector2f(80, 0), sf::Vector2f(0, 1), 2000, 150);
 				EnemyFactory::createEnemy("Enemy3", assetManager.getTexture("SlimeRed"), sf::Vector2f(80, -50), sf::Vector2f(0, 1), 3000, 150);
 				break;
@@ -4678,7 +4676,6 @@ void StateMainGame::ADDENEMYS()
 			{
 			case 0: ENEMYOUT2S++; ENEMYOUT2STIME = 0.f;
 				//释放敌人
-                                EnemyFactory::createEnemy("Enemy6", assetManager.getTexture("Spider"), sf::Vector2f(640, 0), sf::Vector2f(0, 1), 5000, 200);
 				EnemyFactory::createEnemy("Enemy3", assetManager.getTexture("SlimeRed"), sf::Vector2f(400, 0), sf::Vector2f(0, 1), 2000, 150);
 				EnemyFactory::createEnemy("Enemy3", assetManager.getTexture("SlimeRed"), sf::Vector2f(400, -50), sf::Vector2f(0, 1), 3000, 150);
 				break;
@@ -5665,8 +5662,6 @@ void StateMainGame::ADDENEMYS()
 		if (TOTALTIME > 205.0f) {
 			//Boss战开始
 			audioManager.playMusic("Boss1", false);
-                        EnemyFactory::createEnemy("Enemy6", assetManager.getTexture("Spider"), sf::Vector2f(80, 0), sf::Vector2f(0, 1), 2000, 200);
-                        EnemyFactory::createEnemy("Enemy6", assetManager.getTexture("Spider"), sf::Vector2f(560, 0), sf::Vector2f(0, 1), 2000, 200);
 			TIMEFORPLAY++;
 			
 		}
