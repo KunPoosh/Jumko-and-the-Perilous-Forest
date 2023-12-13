@@ -1,4 +1,4 @@
-﻿#include "StateMainGame.hpp"
+#include "StateMainGame.hpp"
 #include <iostream>
 #include "Animation.hpp"
 #include "StateMenu.hpp"

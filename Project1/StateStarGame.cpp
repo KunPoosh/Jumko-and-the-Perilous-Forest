@@ -1,103 +1,103 @@
 #include "StateStarGame.hpp"
 
 StateStartGame::StateStartGame(StateManager& manager) : stateManager(manager) {
-	//¹¹Ôì·½·¨
+	//æ„é€ æ–¹æ³•
 	/*
-	¸ºÔğÈË: ²¨²¨É³
+	è´Ÿè´£äºº: æ³¢æ³¢æ²™
 
-	¹¦ÄÜ:
-		³õÊ¼»¯¿ªÊ¼³¡¾°
-			1.´´½¨°´Å¥
-			2.´´½¨Í¼Æ¬
-			3.´´½¨ÎÄ×Ö
-			4.¿ªÊ¼¼ÆÊ±
+	åŠŸèƒ½:
+		åˆå§‹åŒ–å¼€å§‹åœºæ™¯
+			1.åˆ›å»ºæŒ‰é’®
+			2.åˆ›å»ºå›¾ç‰‡
+			3.åˆ›å»ºæ–‡å­—
+			4.å¼€å§‹è®¡æ—¶
 
-	²ÎÊı:
-		StateManager& manager   //³¡¾°¹ÜÀíÆ÷µ¥Àı£¬¹ØÁªµ½ÀàÖĞµÄ³¡¾°¹ÜÀíÆ÷Ö¸ÕëÉÏ¡£
+	å‚æ•°:
+		StateManager& manager   //åœºæ™¯ç®¡ç†å™¨å•ä¾‹ï¼Œå…³è”åˆ°ç±»ä¸­çš„åœºæ™¯ç®¡ç†å™¨æŒ‡é’ˆä¸Šã€‚
 
-	·µ»ØÖµ: StateStartGame
+	è¿”å›å€¼: StateStartGame
 	*/
-	//----------------------ÊµÏÖ------------------------//
+	//----------------------å®ç°------------------------//
 
-	//ËØ²Ä¹ÜÀíÆ÷µ¥Àı
+	//ç´ æç®¡ç†å™¨å•ä¾‹
 	AssetManager& assetManager = AssetManager::getInstance();
 
-	//ÉèÖÃ"ÉèÖÃ"°´Å¥µÄÎ»ÖÃµÈĞÅÏ¢¡£
-	Next.setFont(assetManager.getFont("simhei"), sf::Color::White, L">ÏÂÒ»²½", 25);
+	//è®¾ç½®"è®¾ç½®"æŒ‰é’®çš„ä½ç½®ç­‰ä¿¡æ¯ã€‚
+	Next.setFont(assetManager.getFont("simhei"), sf::Color::White, L">ä¸‹ä¸€æ­¥", 25);
 	Next.setColor(sf::Color(200, 200, 200, 0), sf::Color(100, 100, 100, 0), sf::Color(255, 255, 255, 100));
 	Next.setPosition(700, 850, 200, 50);
 
-	//Í¼Æ¬ÊäÈë
+	//å›¾ç‰‡è¾“å…¥
 	Pic1.setTexture(assetManager.getTexture("StartPic"));
 	Pic1.setPosition(320,200);
 
-	//ÎÄ±¾´´½¨,ÎÄ×Ö¶¼ÔÚÕâÀïÊäÈë
+	//æ–‡æœ¬åˆ›å»º,æ–‡å­—éƒ½åœ¨è¿™é‡Œè¾“å…¥
 	text1.setFont(assetManager.getFont("simhei"));
 	text1.setFillColor(sf::Color::White);
 	text1.setCharacterSize(30);
-	text1.setString(L"½´¿É´ÓĞ¡¾ÍÌı×åÀïµÄ´óÈË½²Êö×ÅÕâÆ¬¡°Î£ÏÕÖ®É­¡±µÄ¡°À¡Ôù¡±");
+	text1.setString(L"é…±å¯ä»å°å°±å¬æ—é‡Œçš„å¤§äººè®²è¿°ç€è¿™ç‰‡â€œå±é™©ä¹‹æ£®â€çš„â€œé¦ˆèµ â€");
 	text1.setPosition(90, 400);
 
 	text2.setFont(assetManager.getFont("simhei"));
 	text2.setFillColor(sf::Color::White);
 	text2.setCharacterSize(30);
-	text2.setString(L"µ«ÊÇ´Ó½´¿É¿´µ½°Ö°Ö½øÈëÎ£ÏÕÖ®É­ÒÑ¾­¹ıÈ¥ÈıÌìÁË");
+	text2.setString(L"ä½†æ˜¯ä»é…±å¯çœ‹åˆ°çˆ¸çˆ¸è¿›å…¥å±é™©ä¹‹æ£®å·²ç»è¿‡å»ä¸‰å¤©äº†");
 	text2.setPosition(170, 450);
 
 	text3.setFont(assetManager.getFont("simhei"));
 	text3.setFillColor(sf::Color::White);
 	text3.setCharacterSize(30);
-	text3.setString(L"ÕâÌì½´¿ÉÖÕÓÚ¾öĞÄ½øÈëÎ£ÏÕÖ®É­");
+	text3.setString(L"è¿™å¤©é…±å¯ç»ˆäºå†³å¿ƒè¿›å…¥å±é™©ä¹‹æ£®");
 	text3.setPosition(250, 500);
 
 	text4.setFont(assetManager.getFont("simhei"));
 	text4.setFillColor(sf::Color::White);
 	text4.setCharacterSize(30);
-	text4.setString(L"Ñ°ÕÒ°Ö°ÖµÄ×Ù¼£......");
+	text4.setString(L"å¯»æ‰¾çˆ¸çˆ¸çš„è¸ªè¿¹......");
 	text4.setPosition(350, 550);
 
 
 
 
 
-	//Ê±¼äÖÃÁã
+	//æ—¶é—´ç½®é›¶
 	TotalTime = 0.f;
 
-	//3Ãë½¥½ø
+	//3ç§’æ¸è¿›
 	animationDuration = 3.f;
 }
 
 void StateStartGame::handleInput(sf::RenderWindow& window) {
-	//´¦ÀíÊäÈëµÄÊÂ¼ş
+	//å¤„ç†è¾“å…¥çš„äº‹ä»¶
 	/*
-	¸ºÔğÈË: ²¨²¨É³
+	è´Ÿè´£äºº: æ³¢æ³¢æ²™
 
-	¹¦ÄÜ:
-		¶ÁÈ¡ÓÃ»§ÊäÈë£¬´¦Àí°´Å¥
+	åŠŸèƒ½:
+		è¯»å–ç”¨æˆ·è¾“å…¥ï¼Œå¤„ç†æŒ‰é’®
 
-	²ÎÊı:
-		sf::RenderWindow& window   //´Ó´°¿Ú»ñµÃÊÂ¼ş
+	å‚æ•°:
+		sf::RenderWindow& window   //ä»çª—å£è·å¾—äº‹ä»¶
 
-	·µ»ØÖµ: void
+	è¿”å›å€¼: void
 	*/
-	//----------------------ÊµÏÖ------------------------//
+	//----------------------å®ç°------------------------//
 
-	//ÊÂ¼ş
+	//äº‹ä»¶
 	sf::Event event;
 	while (window.pollEvent(event))
 	{
-		//µ±µã»÷¹Ø±ÕÊ±¹Ø±Õ´°¿Ú
+		//å½“ç‚¹å‡»å…³é—­æ—¶å…³é—­çª—å£
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
 
-		//µã»÷ÏÂÒ»²½°´Å¥
+		//ç‚¹å‡»ä¸‹ä¸€æ­¥æŒ‰é’®
 		if (event.type == sf::Event::MouseButtonPressed) {
 			if (this->Next.isMouseOver(window)) {
 				stateManager.changeState(stateManager.createState("StateSelectDifficulty"));
 			}
 		}
-		//ĞüÍ£ÔÚ°´Å¥ÉÏÃæ
+		//æ‚¬åœåœ¨æŒ‰é’®ä¸Šé¢
 		if (event.type == sf::Event::MouseMoved) {
 			if (Next.isMouseOver(window)) {
 				Next.onHover();
@@ -111,19 +111,19 @@ void StateStartGame::handleInput(sf::RenderWindow& window) {
 }
 
 void StateStartGame::update(float deltaTime) {
-	//¸üĞÂÂß¼­
+	//æ›´æ–°é€»è¾‘
 	/*
-	¸ºÔğÈË: ²¨²¨É³
+	è´Ÿè´£äºº: æ³¢æ³¢æ²™
 
-	¹¦ÄÜ:
-		¸üĞÂÍ¼Æ¬ºÍÎÄ×Ö£¬ÊµÏÖ½¥³öµÄĞ§¹û
+	åŠŸèƒ½:
+		æ›´æ–°å›¾ç‰‡å’Œæ–‡å­—ï¼Œå®ç°æ¸å‡ºçš„æ•ˆæœ
 
-	²ÎÊı:
-		float deltaTime		//È«¾Ö¼ä¸ôÊ±¼ä
+	å‚æ•°:
+		float deltaTime		//å…¨å±€é—´éš”æ—¶é—´
 
-	·µ»ØÖµ: void
+	è¿”å›å€¼: void
 	*/
-	//----------------------ÊµÏÖ------------------------//
+	//----------------------å®ç°------------------------//
 
 	TotalTime += deltaTime;
 
@@ -136,19 +136,19 @@ void StateStartGame::update(float deltaTime) {
 }
 
 void StateStartGame::draw(sf::RenderWindow& window) {
-	//äÖÈ¾
+	//æ¸²æŸ“
 	/*
-	¸ºÔğÈË: ²¨²¨É³
+	è´Ÿè´£äºº: æ³¢æ³¢æ²™
 
-	¹¦ÄÜ:
-		äÖÈ¾Õâ¸ö´°¿Ú¸ÄäÖÈ¾µÄ¶«Î÷
+	åŠŸèƒ½:
+		æ¸²æŸ“è¿™ä¸ªçª—å£æ”¹æ¸²æŸ“çš„ä¸œè¥¿
 
-	²ÎÊı:
-		sf::RenderWindow& window		//ĞèÒªäÖÈ¾µ½µÄµØ·½
+	å‚æ•°:
+		sf::RenderWindow& window		//éœ€è¦æ¸²æŸ“åˆ°çš„åœ°æ–¹
 
-	·µ»ØÖµ: void
+	è¿”å›å€¼: void
 	*/
-	//----------------------ÊµÏÖ------------------------//
+	//----------------------å®ç°------------------------//
 
 	window.draw(Pic1);
 	window.draw(text1);
@@ -161,51 +161,51 @@ void StateStartGame::draw(sf::RenderWindow& window) {
 }
 
 StateSelectDifficulty::StateSelectDifficulty(StateManager& manager) : stateManager(manager) {
-	// ¹¹Ôì·½·¨
+	// æ„é€ æ–¹æ³•
 	/*
-	¸ºÔğÈË: ²¨²¨É³
+	è´Ÿè´£äºº: æ³¢æ³¢æ²™
 
-	¹¦ÄÜ:
-		³õÊ¼»¯Ñ¡ÔñÄÑ¶ÈµÄ³¡¾°
-		1.ÎÄ±¾
-		2.°´Å¥
+	åŠŸèƒ½:
+		åˆå§‹åŒ–é€‰æ‹©éš¾åº¦çš„åœºæ™¯
+		1.æ–‡æœ¬
+		2.æŒ‰é’®
 
-	²ÎÊı:
-		StateManager& manager	//³¡¾°¹ÜÀíÆ÷
+	å‚æ•°:
+		StateManager& manager	//åœºæ™¯ç®¡ç†å™¨
 
-	·µ»ØÖµ: StateSelectDifficulty
+	è¿”å›å€¼: StateSelectDifficulty
 	*/
-	//----------------------ÊµÏÖ------------------------//
+	//----------------------å®ç°------------------------//
 
-	//ËØ²Ä¹ÜÀíÆ÷
+	//ç´ æç®¡ç†å™¨
 	AssetManager& assetManager = AssetManager::getInstance();
 
-	// ÉèÖÃÄÑ¶È°´Å¥
-	easyButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"¼òµ¥", 25);
+	// è®¾ç½®éš¾åº¦æŒ‰é’®
+	easyButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"ç®€å•", 25);
 	easyButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
 	easyButton.setPosition(240, 500, 200, 50);
 
-	hardButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"À§ÄÑ", 25);
+	hardButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"å›°éš¾", 25);
 	hardButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
 	hardButton.setPosition(540, 500, 200, 50);
 
 
-	EXButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"EXÄ£Ê½", 25);
+	EXButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"EXæ¨¡å¼", 25);
 	EXButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
 	EXButton.setPosition(240, 600, 200, 50);
 
-	// ÄÑ¶ÈÑ¡ÔñÎÄ±¾
+	// éš¾åº¦é€‰æ‹©æ–‡æœ¬
 
-	bossButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"è¿›å…¥Boosæˆ?, 25);
+	bossButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"æ©æ¶˜å†Boosé´?, 25);
 	bossButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
 	bossButton.setPosition(540, 600, 200, 50);
 
-	// éš¾åº¦é€‰æ‹©æ–‡æœ¬
+	// é—…æƒ§å®³é–«å¤‹å«¨é‚å›¨æ¹°
 
 	difficultyText.setFont(assetManager.getFont("simhei"));
 	difficultyText.setFillColor(sf::Color::White);
 	difficultyText.setCharacterSize(50);
-	difficultyText.setString(L"ÇëÑ¡ÔñÓÎÏ·ÄÑ¶È");
+	difficultyText.setString(L"è¯·é€‰æ‹©æ¸¸æˆéš¾åº¦");
 	difficultyText.setPosition(310, 300);
 
 	isEasyButton = false;
@@ -214,25 +214,25 @@ StateSelectDifficulty::StateSelectDifficulty(StateManager& manager) : stateManag
 }
 
 void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
-	// Ö÷Òª´¦ÀíÊó±êµã»÷°´Å¥
+	// ä¸»è¦å¤„ç†é¼ æ ‡ç‚¹å‡»æŒ‰é’®
 	/*
-	¸ºÔğÈË: ²¨²¨É³
+	è´Ÿè´£äºº: æ³¢æ³¢æ²™
 
-	¹¦ÄÜ:
-		³õÊ¼»¯Ñ¡ÔñÄÑ¶ÈµÄ³¡¾°
-		¸ù¾İ²»Í¬µÄ°´Å¥Ñ¡Ôñ³õÊ¼»¯²»Í¬µÄÓÎÏ·³¡¾°
+	åŠŸèƒ½:
+		åˆå§‹åŒ–é€‰æ‹©éš¾åº¦çš„åœºæ™¯
+		æ ¹æ®ä¸åŒçš„æŒ‰é’®é€‰æ‹©åˆå§‹åŒ–ä¸åŒçš„æ¸¸æˆåœºæ™¯
 
-	²ÎÊı:
-		sf::RenderWindow& window	//ÊäÈëµÄÊÂ¼ş´Ó´°¿Ú»ñµÃ
+	å‚æ•°:
+		sf::RenderWindow& window	//è¾“å…¥çš„äº‹ä»¶ä»çª—å£è·å¾—
 
-	·µ»ØÖµ: void
+	è¿”å›å€¼: void
 	*/
-	//----------------------ÊµÏÖ------------------------//
+	//----------------------å®ç°------------------------//
 
-	//ÕÙ»½¿¸×ÅÒôÏìµÄ´ó¸ç
+	//å¬å”¤æ‰›ç€éŸ³å“çš„å¤§å“¥
 	AudioManager& audioManager = AudioManager::getInstance();
 
-	//¼ÇÊÂ±¾´ó¸ç
+	//è®°äº‹æœ¬å¤§å“¥
 	SettingsManager& settingsManager = settingsManager.getInstance();
 
 	sf::Event event;
@@ -242,27 +242,27 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 		}
 
 
-		// ¼ì²âÄÑ¶È°´Å¥µÄµã»÷
+		// æ£€æµ‹éš¾åº¦æŒ‰é’®çš„ç‚¹å‡»
 
-		// æ£€æµ‹éš¾åº¦å’Œbossæˆ˜æŒ‰é’®çš„ç‚¹å‡»
+		// å¦«â‚¬å¨´å¬®æ¯¦æ´ï¹€æ‹°bossé´æ¨»å¯œé–½î†¾æ®‘éç‘°åš®
 
 		if (event.type == sf::Event::MouseButtonPressed) {
 			if (easyButton.isMouseOver(window)) {
-				// ´¦Àí¼òµ¥ÄÑ¶ÈµÄÑ¡Ôñ
+				// å¤„ç†ç®€å•éš¾åº¦çš„é€‰æ‹©
 				audioManager.playSound("ClickButton");
 				settingsManager.isHardCore = false;
 				settingsManager.isEXHard = false;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}
 			else if (hardButton.isMouseOver(window)) {
-				// ´¦ÀíÀ§ÄÑÄÑ¶ÈµÄÑ¡Ôñ
+				// å¤„ç†å›°éš¾éš¾åº¦çš„é€‰æ‹©
 				audioManager.playSound("ClickButton");
 				settingsManager.isHardCore = true;
 				settingsManager.isEXHard = false;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}
 			else if (EXButton.isMouseOver(window)) {
-				// ´¦ÀíEXÄÑ¶ÈµÄÑ¡Ôñ
+				// å¤„ç†EXéš¾åº¦çš„é€‰æ‹©
 				audioManager.playSound("ClickButton");
 				settingsManager.isEXHard = true;
 				stateManager.changeState(stateManager.createState("NewGame"));
@@ -275,7 +275,7 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 			}
 		}
 
-		// °´Å¥ĞüÍ£Ğ§¹û
+		// æŒ‰é’®æ‚¬åœæ•ˆæœ
 		if (event.type == sf::Event::MouseMoved) {
 			if (easyButton.isMouseOver(window)) {
 				easyButton.onHover();
@@ -311,7 +311,7 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 				EXButton.resetColor();
 				isEXButton = false;
 			}
-			//æ‚¬åœbossæˆ˜æŒ‰é’?
+			//é®î„€ä» bossé´æ¨»å¯œé–½?
 			if (bossButton.isMouseOver(mousePosition)) {
 				bossButton.onHover();
 				if (!isbossButton) {
@@ -328,36 +328,36 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 }
 
 void StateSelectDifficulty::update(float deltaTime) {
-	// ¸üĞÂ
+	// æ›´æ–°
 	/*
-	¸ºÔğÈË: ²¨²¨É³
+	è´Ÿè´£äºº: æ³¢æ³¢æ²™
 
-	¹¦ÄÜ:
-		Õâ¸ö³¡¾°²»ĞèÒª¸üĞÂ
+	åŠŸèƒ½:
+		è¿™ä¸ªåœºæ™¯ä¸éœ€è¦æ›´æ–°
 
-	²ÎÊı:
-		sf::RenderWindow& window	//ÊäÈëµÄÊÂ¼ş´Ó´°¿Ú»ñµÃ
+	å‚æ•°:
+		sf::RenderWindow& window	//è¾“å…¥çš„äº‹ä»¶ä»çª—å£è·å¾—
 
-	·µ»ØÖµ: void
+	è¿”å›å€¼: void
 	*/
-	//----------------------ÊµÏÖ------------------------//
+	//----------------------å®ç°------------------------//
 }
 
 void StateSelectDifficulty::draw(sf::RenderWindow& window) {
-	// äÖÈ¾ 
+	// æ¸²æŸ“ 
 	/*
-	¸ºÔğÈË: ²¨²¨É³
+	è´Ÿè´£äºº: æ³¢æ³¢æ²™
 
-	¹¦ÄÜ:
-		³õÊ¼»¯Ñ¡ÔñÄÑ¶ÈµÄ³¡¾°
-		¸ù¾İ²»Í¬µÄ°´Å¥Ñ¡Ôñ³õÊ¼»¯²»Í¬µÄÓÎÏ·³¡¾°
+	åŠŸèƒ½:
+		åˆå§‹åŒ–é€‰æ‹©éš¾åº¦çš„åœºæ™¯
+		æ ¹æ®ä¸åŒçš„æŒ‰é’®é€‰æ‹©åˆå§‹åŒ–ä¸åŒçš„æ¸¸æˆåœºæ™¯
 
-	²ÎÊı:
-		sf::RenderWindow& window	//ÊäÈëµÄÊÂ¼ş´Ó´°¿Ú»ñµÃ
+	å‚æ•°:
+		sf::RenderWindow& window	//è¾“å…¥çš„äº‹ä»¶ä»çª—å£è·å¾—
 
-	·µ»ØÖµ: void
+	è¿”å›å€¼: void
 	*/
-	//----------------------ÊµÏÖ------------------------//
+	//----------------------å®ç°------------------------//
 	window.draw(difficultyText);
 	easyButton.draw(window);
 	hardButton.draw(window);

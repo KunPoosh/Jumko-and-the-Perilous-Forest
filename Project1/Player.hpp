@@ -10,152 +10,152 @@
 #include <iostream>
 
 
-// -------------------- ÀàÉè¼Æ --------------------
+// -------------------- ç±»è®¾è®¡ --------------------
 /*
-    ¡¾Íæ¼ÒÀà¡¿£¨Î´Íê³É£©
-    ¸ºÔğÈË£º ²¨²¨É³
+    ã€ç©å®¶ç±»ã€‘ï¼ˆæœªå®Œæˆï¼‰
+    è´Ÿè´£äººï¼š æ³¢æ³¢æ²™
 
-    ¹¦ÄÜ£ºÍæ¼Ò
-        1.ÒÆ¶¯
-        2.½ÓÊÜÊÂ¼ş
-            .´¦ÀíÒÆ¶¯
-            .´¦Àí¹¥»÷
-        3.¸üĞÂ
-            .ÉúÃü»Ö¸´
-            .µÀ¾ßĞ§¹û£¨¸éÖÃ£©
-        4.ÓµÓĞµÀ¾ß(¸éÖÃ)
+    åŠŸèƒ½ï¼šç©å®¶
+        1.ç§»åŠ¨
+        2.æ¥å—äº‹ä»¶
+            .å¤„ç†ç§»åŠ¨
+            .å¤„ç†æ”»å‡»
+        3.æ›´æ–°
+            .ç”Ÿå‘½æ¢å¤
+            .é“å…·æ•ˆæœï¼ˆæç½®ï¼‰
+        4.æ‹¥æœ‰é“å…·(æç½®)
 
 */
 
 class Player : public Entity {
 private:
-    sf::Sprite sprite;             // Íæ¼Ò½ÇÉ«µÄ¾«Áé
-    sf::Sprite hitboxSprite;       // ÅĞ¶¨µãµÄ¾«Áé
+    sf::Sprite sprite;             // ç©å®¶è§’è‰²çš„ç²¾çµ
+    sf::Sprite hitboxSprite;       // åˆ¤å®šç‚¹çš„ç²¾çµ
 
-    int health;                    // ÉúÃüÖµ
-    int maxHealth;                 // ÉúÃüÖµÉÏÏŞ
-    int strength;                  // Á¦Á¿Öµ
-    float moveSpeed;               // ÒÆ¶¯ËÙ¶È
+    int health;                    // ç”Ÿå‘½å€¼
+    int maxHealth;                 // ç”Ÿå‘½å€¼ä¸Šé™
+    int strength;                  // åŠ›é‡å€¼
+    float moveSpeed;               // ç§»åŠ¨é€Ÿåº¦
 
-    float accumulatedTime;         // ÀÛ¼ÆÊ±¼ä(¹¥»÷)
-    float attackInterval;          // ¹¥»÷¼ä¸ô
-    float timeTohealth;            // ÀÛ¼ÆÊ±¼ä(ÉúÃüÔÙÉú)
-    int healthRegenerationRate;    // ÉúÃüÔÙÉúËÙ¶È
-    int skillCharging;             // ¼¼ÄÜ³äÄÜµãÊı
+    float accumulatedTime;         // ç´¯è®¡æ—¶é—´(æ”»å‡»)
+    float attackInterval;          // æ”»å‡»é—´éš”
+    float timeTohealth;            // ç´¯è®¡æ—¶é—´(ç”Ÿå‘½å†ç”Ÿ)
+    int healthRegenerationRate;    // ç”Ÿå‘½å†ç”Ÿé€Ÿåº¦
+    int skillCharging;             // æŠ€èƒ½å……èƒ½ç‚¹æ•°
 
-    int atkBullet;                 // ×Óµ¯µÄÉËº¦
-    int helthBullet;               // ×Óµ¯µÄÑªÁ¿
-    int speedBullet;               // ×Óµ¯µÄËÙ¶È
+    int atkBullet;                 // å­å¼¹çš„ä¼¤å®³
+    int helthBullet;               // å­å¼¹çš„è¡€é‡
+    int speedBullet;               // å­å¼¹çš„é€Ÿåº¦
 
     float TotalTime;
-    int score;          // ·ÖÊı
-    bool isHard;        // ÊÇ·ñ¿ªÆôÀ§ÄÑÄ£Ê½
+    int score;          // åˆ†æ•°
+    bool isHard;        // æ˜¯å¦å¼€å¯å›°éš¾æ¨¡å¼
     bool isBoss;
-    bool isGameOver;    // ÊÇ·ñÍ¨¹Ø
-    bool isInvincible;  // ÊÇ·ñ¿ªÆôÎŞµĞÄ£Ê½
-    bool isSkill;       // ÊÇ·ñ¿ÉÒÔÊÍ·Å¼¼ÄÜ
-    bool isEX;          //ÊÇ·ñ¿ªÆôEXÄ£Ê½
-    //ÊÂ¼ş²Ù×÷
-    bool movingUp;      // ÓÃÓÚ¸ú×Ù ÉÏ ¼üÊÇ·ñ±»°´ÏÂ
-    bool movingDown;    // ÓÃÓÚ¸ú×Ù ÏÂ ¼üÊÇ·ñ±»°´ÏÂ
-    bool movingLeft;    // ÓÃÓÚ¸ú×Ù ×ó ¼üÊÇ·ñ±»°´ÏÂ
-    bool movingRight;   // ÓÃÓÚ¸ú×Ù ÓÒ ¼üÊÇ·ñ±»°´ÏÂ
-    bool slowMovement;  // ÓÃÓÚ¸ú×Ù Shift ¼üÊÇ·ñ±»°´ÏÂ
-    bool openFire;      // ÓÃÓÚ¸ú×Ù Z ¼üÊÇ·ñ±»°´ÏÂ
+    bool isGameOver;    // æ˜¯å¦é€šå…³
+    bool isInvincible;  // æ˜¯å¦å¼€å¯æ— æ•Œæ¨¡å¼
+    bool isSkill;       // æ˜¯å¦å¯ä»¥é‡Šæ”¾æŠ€èƒ½
+    bool isEX;          //æ˜¯å¦å¼€å¯EXæ¨¡å¼
+    //äº‹ä»¶æ“ä½œ
+    bool movingUp;      // ç”¨äºè·Ÿè¸ª ä¸Š é”®æ˜¯å¦è¢«æŒ‰ä¸‹
+    bool movingDown;    // ç”¨äºè·Ÿè¸ª ä¸‹ é”®æ˜¯å¦è¢«æŒ‰ä¸‹
+    bool movingLeft;    // ç”¨äºè·Ÿè¸ª å·¦ é”®æ˜¯å¦è¢«æŒ‰ä¸‹
+    bool movingRight;   // ç”¨äºè·Ÿè¸ª å³ é”®æ˜¯å¦è¢«æŒ‰ä¸‹
+    bool slowMovement;  // ç”¨äºè·Ÿè¸ª Shift é”®æ˜¯å¦è¢«æŒ‰ä¸‹
+    bool openFire;      // ç”¨äºè·Ÿè¸ª Z é”®æ˜¯å¦è¢«æŒ‰ä¸‹
 
 
 public:
 
-    //¹¹Ôì·½·¨£¬ÊÖ¶¯´´½¨
+    //æ„é€ æ–¹æ³•ï¼Œæ‰‹åŠ¨åˆ›å»º
     Player();
 
-    //¸üĞÂ
+    //æ›´æ–°
     void update(float deltaTime) override;
 
-    //´¦ÀíÊÂ¼ş
+    //å¤„ç†äº‹ä»¶
     void handleInput(sf::Event& event);
 
-    //äÖÈ¾
+    //æ¸²æŸ“
     void draw(sf::RenderWindow& window) override;
 
 
-    //·µ»ØÅĞ¶¨µãÖĞĞÄµÄÎ»ÖÃ
+    //è¿”å›åˆ¤å®šç‚¹ä¸­å¿ƒçš„ä½ç½®
     sf::Vector2f getHitboxPosition() const;
 
-    //¿ªÆôÀ§ÄÑÄ£Ê½£¡
+    //å¼€å¯å›°éš¾æ¨¡å¼ï¼
     void hardCore();
 
-    //¿ªÆôEXÄ£Ê½
+    //å¼€å¯EXæ¨¡å¼
     void exCord();
 
-    //¿ªÆôÎŞµĞÄ£Ê½
+    //å¼€å¯æ— æ•Œæ¨¡å¼
     void Invincible();
-
-    //ÉèÖÃÍæ¼ÒÎ»ÖÃ
-
-    //å¼€å¯Bossæˆ˜æ¨¡å¼?
-    void bossCore();
 
     //è®¾ç½®ç©å®¶ä½ç½®
 
+    //å¯®â‚¬éšç–Šossé´æ¨»Äå¯®?
+    void bossCore();
+
+    //ç’å‰§ç–†éœâ•î†æµ£å¶‡ç–†
+
     void setPosition(sf::Vector2f position);
 
-    // ·µ»Ø¶ÔÍæ¼Ò¾«ÁéµÄÒıÓÃ
+    // è¿”å›å¯¹ç©å®¶ç²¾çµçš„å¼•ç”¨
     const sf::Sprite& getSprite() const;
 
-    // ·µ»Ø¶ÔÍæ¼ÒÅĞ¶¨µãµÄÒıÓÃ
+    // è¿”å›å¯¹ç©å®¶åˆ¤å®šç‚¹çš„å¼•ç”¨
     const sf::Sprite& getHitBox() const;
 
-    // »ñÈ¡Íæ¼ÒµÄ·ÖÊı
+    // è·å–ç©å®¶çš„åˆ†æ•°
     int getScore() const;
 
-    // Ôö¼ÓÍæ¼ÒµÄ·ÖÊı
+    // å¢åŠ ç©å®¶çš„åˆ†æ•°
     void addScore(int score);
 
-    // Ôö¼ÓÍæ¼ÒÁ¦Á¿
+    // å¢åŠ ç©å®¶åŠ›é‡
     void addPower(int power);
 
-    // Íæ¼ÒÊÜµ½ÉËº¦µÄ·½·¨
+    // ç©å®¶å—åˆ°ä¼¤å®³çš„æ–¹æ³•
     void takeDamage(int damage);
 
-    //»ñÈ¡Íæ¼Òµ±Ç°µÄÉúÃüÖµ
+    //è·å–ç©å®¶å½“å‰çš„ç”Ÿå‘½å€¼
     int getHealth();
 
-    //»ñÈ¡Íæ¼Òµ±Ç°µÄÉúÃüÉÏÏŞ
+    //è·å–ç©å®¶å½“å‰çš„ç”Ÿå‘½ä¸Šé™
     int getMaxHealth();
 
-    //ÉèÖÃÍæ¼ÒµÄ¼¼ÄÜµãÊı
+    //è®¾ç½®ç©å®¶çš„æŠ€èƒ½ç‚¹æ•°
     void setSkill(int skill);
 
-    //Ê¹ÓÃ¼¼ÄÜ
+    //ä½¿ç”¨æŠ€èƒ½
     void SkillFire();
 
-    //ÉèÖÃ×ÜÊ±¼ä
+    //è®¾ç½®æ€»æ—¶é—´
     void setTime(float time) {
         TotalTime = time;
     }
 
-    //»ñÈ¡×ÜÊ±¼ä
+    //è·å–æ€»æ—¶é—´
     float getTime() {
         return TotalTime;
     }
 
-    // Íæ¼Ò»ñÊ¤
+    // ç©å®¶è·èƒœ
     void victory() {
         isGameOver = true;
     }
 
-    //»ñÈ¡Íæ¼ÒÊÇ·ñ»ñÊ¤
+    //è·å–ç©å®¶æ˜¯å¦è·èƒœ
     bool isVictory() {
         return isGameOver;
     }
 
-    //»ñÈ¡Íæ¼ÒÊÇ·ñ¿ªÆôÀ§ÄÑÄ£Ê½
+    //è·å–ç©å®¶æ˜¯å¦å¼€å¯å›°éš¾æ¨¡å¼
     bool isHardCore() {
         return isHard;
     }
 
-    // ÉèÖÃºÍ»ñÈ¡ÊôĞÔµÄ·½·¨
+    // è®¾ç½®å’Œè·å–å±æ€§çš„æ–¹æ³•
     // ...
 };
 

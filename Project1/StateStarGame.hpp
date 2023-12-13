@@ -9,96 +9,96 @@
 #include "SettingsManager.hpp"
 #include "StateVictory.hpp"
 
-// -------------------- ÀàÉè¼Æ --------------------
+// -------------------- ç±»è®¾è®¡ --------------------
 /*
-	¡¾¿ªÊ¼½çÃæÀà¡¿
-	¸ºÔğÈË£º²¨²¨É³
+	ã€å¼€å§‹ç•Œé¢ç±»ã€‘
+	è´Ÿè´£äººï¼šæ³¢æ³¢æ²™
 
-	¹¦ÄÜ£º²¥·Å¿ª³¡¶¯»­£¬µ÷×ªµ½Ñ¡ÔñÄÑ¶È³¡¾°
+	åŠŸèƒ½ï¼šæ’­æ”¾å¼€åœºåŠ¨ç”»ï¼Œè°ƒè½¬åˆ°é€‰æ‹©éš¾åº¦åœºæ™¯
 */
 
 class StateStartGame : public State {
 public:
-	//¹¹Ôì·½·¨
+	//æ„é€ æ–¹æ³•
 	StateStartGame(StateManager& manager);
 
-	//´¦ÀíÊäÈëµÄÊÂ¼ş
+	//å¤„ç†è¾“å…¥çš„äº‹ä»¶
 	void handleInput(sf::RenderWindow& window) override;
 
-	//¸üĞÂ£¨Î´Íê³É£©
+	//æ›´æ–°ï¼ˆæœªå®Œæˆï¼‰
 	void update(float deltaTime) override;
 
-	//äÖÈ¾£¨Î´Íê³É£©
+	//æ¸²æŸ“ï¼ˆæœªå®Œæˆï¼‰
 	void draw(sf::RenderWindow& window) override;
 
 private:
-	//³£¼û¹ÜÀíÆ÷µÄÒıÓÃ
+	//å¸¸è§ç®¡ç†å™¨çš„å¼•ç”¨
 	StateManager& stateManager;
 
-	//ÏÂÒ»²½°´Å¥
+	//ä¸‹ä¸€æ­¥æŒ‰é’®
 	Button Next;
 	
-	//Ò»ÕÅÍ¼Æ¬
+	//ä¸€å¼ å›¾ç‰‡
 	sf::Sprite Pic1;
-	//Ò»¶ÎÎÄ×Ö
+	//ä¸€æ®µæ–‡å­—
 	sf::Text text1;
 	sf::Text text2;
 	sf::Text text3;
 	sf::Text text4;
 
-	//¼ÆÊ±Æ÷
+	//è®¡æ—¶å™¨
 	float TotalTime;
 
-	//¶à¾ÃÏÔÊ¾Íê³É
+	//å¤šä¹…æ˜¾ç¤ºå®Œæˆ
 	float animationDuration;
 
 	
 };
 
-// -------------------- ÀàÉè¼Æ --------------------
+// -------------------- ç±»è®¾è®¡ --------------------
 /*
-	¡¾Ñ¡ÔñÄÑ¶ÈÀà¡¿
-	¸ºÔğÈË£º²¨²¨É³
+	ã€é€‰æ‹©éš¾åº¦ç±»ã€‘
+	è´Ÿè´£äººï¼šæ³¢æ³¢æ²™
 
-	¹¦ÄÜ£ºÁ½¸öÄÑ¶ÈÑ¡Ò»¸ö£¬²¢ÇÒ´«Èë³¡¾°
+	åŠŸèƒ½ï¼šä¸¤ä¸ªéš¾åº¦é€‰ä¸€ä¸ªï¼Œå¹¶ä¸”ä¼ å…¥åœºæ™¯
 */
 class StateSelectDifficulty : public State {
 public:
-	// ¹¹Ôì·½·¨
+	// æ„é€ æ–¹æ³•
 	StateSelectDifficulty(StateManager& manager);
 
-	// ´¦ÀíÊäÈëµÄÊÂ¼ş
+	// å¤„ç†è¾“å…¥çš„äº‹ä»¶
 	void handleInput(sf::RenderWindow& window) override;
 
-	// ¸üĞÂ£¨Î´Íê³É£©
+	// æ›´æ–°ï¼ˆæœªå®Œæˆï¼‰
 	void update(float deltaTime) override;
 
-	// äÖÈ¾£¨Î´Íê³É£©
+	// æ¸²æŸ“ï¼ˆæœªå®Œæˆï¼‰
 	void draw(sf::RenderWindow& window) override;
 
 private:
-	// ×´Ì¬¹ÜÀíÆ÷µÄÒıÓÃ
+	// çŠ¶æ€ç®¡ç†å™¨çš„å¼•ç”¨
 	StateManager& stateManager;
 
-	// Ñ¡ÔñÄÑ¶ÈµÄ°´Å¥
+	// é€‰æ‹©éš¾åº¦çš„æŒ‰é’®
 	Button easyButton;
 	Button hardButton;
 
 	Button EXButton;
-	//ÊÇ·ñ²¥·Å¹ıÒôĞ§
+	//æ˜¯å¦æ’­æ”¾è¿‡éŸ³æ•ˆ
 	bool isEasyButton;
 	bool ishardButton;
 	bool isEXButton;
-	// ÏÔÊ¾ÄÑ¶ÈÑ¡ÔñµÄÎÄ×Ö
+	// æ˜¾ç¤ºéš¾åº¦é€‰æ‹©çš„æ–‡å­—
 
-	Button bossButton; // ä¸€é”®è¿›å…¥bossæˆ?
+	Button bossButton; // æ¶“â‚¬é–¿î†¿ç¹˜éî™¨ossé´?
 
 	bool isbossButton;
 
-	// æ˜¾ç¤ºéš¾åº¦é€‰æ‹©çš„æ–‡å­?
+	// é„å‰§ãšé—…æƒ§å®³é–«å¤‹å«¨é¨å‹¬æƒç€›?
 	sf::Text difficultyText;
 
-	// ¿ÉÄÜĞèÒªµÄÆäËû³ÉÔ±±äÁ¿...
+	// å¯èƒ½éœ€è¦çš„å…¶ä»–æˆå‘˜å˜é‡...
 };
 
 #endif

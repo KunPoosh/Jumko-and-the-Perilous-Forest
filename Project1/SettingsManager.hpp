@@ -1,50 +1,50 @@
-ï»¿#ifndef SETTINGSMANAGER_HPP
+#ifndef SETTINGSMANAGER_HPP
 #define SETTINGSMANAGER_HPP
 
 #include <string>
 #include <vector>
 
-// -------------------- ÀàÉè¼Æ --------------------
+// -------------------- ï¿½ï¿½ï¿½ï¿½ï¿½ --------------------
 /*
-    ¡¾ÎÄ¼þ¹ÜÀíÀà¡¿
-    ¸ºÔðÈË£º ²¨²¨É³
+    ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à¡¿
+    ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ ï¿½ï¿½ï¿½ï¿½É³
 
-    ¹¦ÄÜ£ºµ¥ÀýÄ£Ê½£¬¸´ÖÆÎ»ÓÚ´æµµÎÄ¼þµÄ¶ÁÐ´
-        1.¶ÁÐ´È«Ó¢ÎÄ×Ö·û´®ÃØÔ¿
-        2.¶ÁÐ´01´©¼ÇÂ¼CG½âËø
-        3.¶ÁÐ´Á½¸öÒôÁ¿Öµ
-        4.¼ÇÂ¼ÊÇ·ñ¿ªÆôÎÞµÐÄ£Ê½
+    ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ú´æµµï¿½Ä¼ï¿½ï¿½Ä¶ï¿½Ð´
+        1.ï¿½ï¿½Ð´È«Ó¢ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿
+        2.ï¿½ï¿½Ð´01ï¿½ï¿½ï¿½ï¿½Â¼CGï¿½ï¿½ï¿½ï¿½
+        3.ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+        4.ï¿½ï¿½Â¼ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Þµï¿½Ä£Ê½
 */
 
 class SettingsManager {
 public:
 
-    //µ¥ÀýÎ¨Ò»Èë¿Ú
+    //ï¿½ï¿½ï¿½ï¿½Î¨Ò»ï¿½ï¿½ï¿½
     static SettingsManager& getInstance();
-    // ½ûÓÃ¿½±´ºÍ¸³Öµ
+    // ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Í¸ï¿½Öµ
     SettingsManager(const SettingsManager&) = delete;
     SettingsManager& operator=(const SettingsManager&) = delete;
 
-    //¶ÁÈ¡ÎÄ¼þ
+    //ï¿½ï¿½È¡ï¿½Ä¼ï¿½
     void loadSettings(const std::string& filename);
-    //±£´æÎÄ¼þ
+    //ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
     void saveSettings(const std::string& filename);
 
-    //²âÊÔ
+    //ï¿½ï¿½ï¿½ï¿½
     void printSettings() const;
 
-    //ÃØÔ¿
+    //ï¿½ï¿½Ô¿
     std::string englishString;
-    //01CG´®
+    //01CGï¿½ï¿½
     std::vector<bool> unlockedCGs;
-    //ÒôÐ§ÒôÁ¿
+    //ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½
     int soundVolume;
-    //ÒôÀÖÒôÁ¿
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     int musicVolume;
-    //ÎÞµÐÄ£Ê½
+    //ï¿½Þµï¿½Ä£Ê½
     bool isInvincible;
 
-    //À§ÄÑÄ£Ê½
+    //ï¿½ï¿½ï¿½ï¿½Ä£Ê½
     bool isHardCore;
     //EXÄ£Ê½
     bool isEXHard;
@@ -54,7 +54,7 @@ public:
 
 private:
     
-    SettingsManager() {} // Ë½ÓÐ¹¹Ôìº¯Êý
+    SettingsManager() {} // Ë½ï¿½Ð¹ï¿½ï¿½ìº¯ï¿½ï¿½
 };
 
 #endif // SETTINGSMANAGER_HPP

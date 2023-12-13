@@ -14,114 +14,114 @@
 #include <iomanip>
 #include <string>
 
-// -------------------- ÀàÉè¼Æ --------------------
+// -------------------- ç±»è®¾è®¡ --------------------
 /*
-    ¡¾ÓÎÏ·Ö÷³¡¾°Àà¡¿(Î´Íê³É)
-    ¸ºÔğÈË£º ²¨²¨É³
+    ã€æ¸¸æˆä¸»åœºæ™¯ç±»ã€‘(æœªå®Œæˆ)
+    è´Ÿè´£äººï¼š æ³¢æ³¢æ²™
 
-    ¹¦ÄÜ£º
-        ÊµÏÖÓÎÏ·Ö÷ÓÎÏ·³¡¾°µÄ¹¦ÄÜ
-        1.ÏÔÊ¾ÓÎÏ·±³¾°
-            ÓÎÏ·Õ½¶·½çÃæµÄ±³¾°Í¼Æ¬
-            ÓÒ±ßUIµÄ±³¾°¾ØĞÎ
-            ÈËÎïÁ¢»æ
-            Á¢»æµ×ÏÂµÄÒ»¸ö»ÒÉ«¾ØĞÎ
-            Ò»¸ö¼¼ÄÜµÄÍ¼±êÍ¼Æ¬
-            Á½¸ö±íÊ¾³äÄÜµÄÂÌÉ«¾ØĞÎ
-            Ò»¸öÔÚ¼¼ÄÜÕıÏÂ·½µÄ¼¼ÄÜÀäÈ´Ìõ
-            Ò»¸öÍæ¼ÒµÄÑªÌõ
-            ÎÄ±¾ Ê±¼ä
-            ÎÄ±¾ ·ÖÊı
-            ÎÄ±¾ Íæ¼Òµ±Ç°µÄÁ¦Á¿Öµ
+    åŠŸèƒ½ï¼š
+        å®ç°æ¸¸æˆä¸»æ¸¸æˆåœºæ™¯çš„åŠŸèƒ½
+        1.æ˜¾ç¤ºæ¸¸æˆèƒŒæ™¯
+            æ¸¸æˆæˆ˜æ–—ç•Œé¢çš„èƒŒæ™¯å›¾ç‰‡
+            å³è¾¹UIçš„èƒŒæ™¯çŸ©å½¢
+            äººç‰©ç«‹ç»˜
+            ç«‹ç»˜åº•ä¸‹çš„ä¸€ä¸ªç°è‰²çŸ©å½¢
+            ä¸€ä¸ªæŠ€èƒ½çš„å›¾æ ‡å›¾ç‰‡
+            ä¸¤ä¸ªè¡¨ç¤ºå……èƒ½çš„ç»¿è‰²çŸ©å½¢
+            ä¸€ä¸ªåœ¨æŠ€èƒ½æ­£ä¸‹æ–¹çš„æŠ€èƒ½å†·å´æ¡
+            ä¸€ä¸ªç©å®¶çš„è¡€æ¡
+            æ–‡æœ¬ æ—¶é—´
+            æ–‡æœ¬ åˆ†æ•°
+            æ–‡æœ¬ ç©å®¶å½“å‰çš„åŠ›é‡å€¼
 
-        2.¹ÜÀíºÍ¸üĞÂÓÎÏ·ÊµÌå£¨ÈçÍæ¼Ò½ÇÉ«£¬µĞÈË£¬ÕÏ°­ÎïµÈ£©
-        3.´¦ÀíÓÎÏ·Âß¼­£¨ÈçÍæ¼ÒÊäÈë£¬Åö×²¼ì²âµÈ£©
-        4.äÖÈ¾ÓÎÏ·ÊµÌåºÍ½çÃæÔªËØ
+        2.ç®¡ç†å’Œæ›´æ–°æ¸¸æˆå®ä½“ï¼ˆå¦‚ç©å®¶è§’è‰²ï¼Œæ•Œäººï¼Œéšœç¢ç‰©ç­‰ï¼‰
+        3.å¤„ç†æ¸¸æˆé€»è¾‘ï¼ˆå¦‚ç©å®¶è¾“å…¥ï¼Œç¢°æ’æ£€æµ‹ç­‰ï¼‰
+        4.æ¸²æŸ“æ¸¸æˆå®ä½“å’Œç•Œé¢å…ƒç´ 
 
-        Êı¾İ
-            Íæ¼ÒÊÇ·ñ¿ªÆôÁËÀ§ÄÑÄ£Ê½
-            µ±Ç°ÀÛ¼ÆÊ±¼ä
-            µ±Ç°·ÖÊı
+        æ•°æ®
+            ç©å®¶æ˜¯å¦å¼€å¯äº†å›°éš¾æ¨¡å¼
+            å½“å‰ç´¯è®¡æ—¶é—´
+            å½“å‰åˆ†æ•°
 */
 
 class StateMainGame : public State {
     friend class StateFailure;
 public:
-    //¹¹Ôì·½·¨£¬´«ÈëÒ»¸ö³¡¾°¹ÜÀíÆ÷µÄÒıÓÃ£¬·½±ãµ÷ÓÃ³¡¾°¹ÜÀíÆ÷µÄ·½·¨¡£(Î´Íê³É)
+    //æ„é€ æ–¹æ³•ï¼Œä¼ å…¥ä¸€ä¸ªåœºæ™¯ç®¡ç†å™¨çš„å¼•ç”¨ï¼Œæ–¹ä¾¿è°ƒç”¨åœºæ™¯ç®¡ç†å™¨çš„æ–¹æ³•ã€‚(æœªå®Œæˆ)
     StateMainGame(StateManager& manager);
 
-    //´¦ÀíÓÎÏ·Âß¼­£¬ÈçÍæ¼ÒÊäÈë¡¢Åö×²¼ì²âµÈ¡£(Î´Íê³É)
+    //å¤„ç†æ¸¸æˆé€»è¾‘ï¼Œå¦‚ç©å®¶è¾“å…¥ã€ç¢°æ’æ£€æµ‹ç­‰ã€‚(æœªå®Œæˆ)
     void handleInput(sf::RenderWindow& window) override;
 
-    //¸üĞÂÓÎÏ·×´Ì¬£¬ÈçÊµÌåÎ»ÖÃ¡¢ÓÎÏ··ÖÊıµÈ¡£(Î´Íê³É)
+    //æ›´æ–°æ¸¸æˆçŠ¶æ€ï¼Œå¦‚å®ä½“ä½ç½®ã€æ¸¸æˆåˆ†æ•°ç­‰ã€‚(æœªå®Œæˆ)
     void update(float deltaTime) override;
 
-    //äÖÈ¾ÓÎÏ·ÊµÌåºÍ½çÃæÔªËØ¡£(Î´Íê³É)
+    //æ¸²æŸ“æ¸¸æˆå®ä½“å’Œç•Œé¢å…ƒç´ ã€‚(æœªå®Œæˆ)
     void draw(sf::RenderWindow& window) override;
 
-    //----------Ìí¼ÓµĞÈË---------//
+    //----------æ·»åŠ æ•Œäºº---------//
     //                          //
     void ADDENEMYS();           //
     //                          //
-    //----------Ìí¼ÓµĞÈË---------//
+    //----------æ·»åŠ æ•Œäºº---------//
 
 private:
-    // ³¡¾°¹ÜÀíÆ÷
+    // åœºæ™¯ç®¡ç†å™¨
     StateManager& stateManager;
 
-    // ÓÎÏ·±³¾°
+    // æ¸¸æˆèƒŒæ™¯
     sf::Sprite gameBackground;
 
-    // UIÔªËØ
-    sf::RectangleShape uiBackground;        // ÓÒ±ßUIµÄ±³¾°¾ØĞÎ
-    sf::Sprite characterPortrait;           // ÈËÎïÁ¢»æ
-    sf::RectangleShape portraitBackground;  // Á¢»æµ×ÏÂµÄ»ÒÉ«¾ØĞÎ
-    sf::Sprite skillIcon;                   // ¼¼ÄÜÍ¼±ê
-    sf::RectangleShape energyBars1;         // Á½¸ö±íÊ¾³äÄÜµÄÂÌÉ«¾ØĞÎ
+    // UIå…ƒç´ 
+    sf::RectangleShape uiBackground;        // å³è¾¹UIçš„èƒŒæ™¯çŸ©å½¢
+    sf::Sprite characterPortrait;           // äººç‰©ç«‹ç»˜
+    sf::RectangleShape portraitBackground;  // ç«‹ç»˜åº•ä¸‹çš„ç°è‰²çŸ©å½¢
+    sf::Sprite skillIcon;                   // æŠ€èƒ½å›¾æ ‡
+    sf::RectangleShape energyBars1;         // ä¸¤ä¸ªè¡¨ç¤ºå……èƒ½çš„ç»¿è‰²çŸ©å½¢
     sf::RectangleShape energyBars2;
-    sf::RectangleShape skillCooldownBar;    // ¼¼ÄÜÀäÈ´Ìõ
-    sf::RectangleShape healthBar;           // Íæ¼ÒÑªÌõ
-    sf::RectangleShape healthBarBackground; // Íæ¼ÒÑªÌõµ×°å
-    sf::RectangleShape skillBar;            // ¼¼ÄÜÀäÈ´Ìõ
-    sf::RectangleShape skillBarBackground;  // ¼¼ÄÜÀäÈ´Ìõµ×°å
-    sf::RectangleShape ground;              // ÔİÍ£±³¾°°å
+    sf::RectangleShape skillCooldownBar;    // æŠ€èƒ½å†·å´æ¡
+    sf::RectangleShape healthBar;           // ç©å®¶è¡€æ¡
+    sf::RectangleShape healthBarBackground; // ç©å®¶è¡€æ¡åº•æ¿
+    sf::RectangleShape skillBar;            // æŠ€èƒ½å†·å´æ¡
+    sf::RectangleShape skillBarBackground;  // æŠ€èƒ½å†·å´æ¡åº•æ¿
+    sf::RectangleShape ground;              // æš‚åœèƒŒæ™¯æ¿
     sf::RectangleShape ground2;
     Button Continue;
     Button Return;
 
-    // ÎÄ±¾ÔªËØ
-    sf::Text timeText;   // ÏÔÊ¾Ê±¼ä
-    sf::Text scoreText;  // ÏÔÊ¾·ÖÊı
-    sf::Text powerText;  // ÏÔÊ¾Íæ¼Òµ±Ç°µÄÁ¦Á¿Öµ
-    sf::Text HP;         // ÏÔÊ¾Íæ¼ÒÑªÁ¿
-    sf::Text FPS;        // ÏÔÊ¾µ±Ç°ÓÎÏ·Ö¡Êı
+    // æ–‡æœ¬å…ƒç´ 
+    sf::Text timeText;   // æ˜¾ç¤ºæ—¶é—´
+    sf::Text scoreText;  // æ˜¾ç¤ºåˆ†æ•°
+    sf::Text powerText;  // æ˜¾ç¤ºç©å®¶å½“å‰çš„åŠ›é‡å€¼
+    sf::Text HP;         // æ˜¾ç¤ºç©å®¶è¡€é‡
+    sf::Text FPS;        // æ˜¾ç¤ºå½“å‰æ¸¸æˆå¸§æ•°
 
 
-    // ÓÎÏ·Âß¼­Ïà¹ØÊı¾İ
-    float elapsedTime;   // µ±Ç°ÀÛ¼ÆÊ±¼ä(²âÊÔÊ¹ÓÃ)
-    bool isHardMode;     // Íæ¼ÒÊÇ·ñ¿ªÆôÁËÀ§ÄÑÄ£Ê½
+    // æ¸¸æˆé€»è¾‘ç›¸å…³æ•°æ®
+    float elapsedTime;   // å½“å‰ç´¯è®¡æ—¶é—´(æµ‹è¯•ä½¿ç”¨)
+    bool isHardMode;     // ç©å®¶æ˜¯å¦å¼€å¯äº†å›°éš¾æ¨¡å¼
     bool isBossMode;
-    float fpsUpdateTime; // ÀÛ¼ÆÊ±¼ä£¬ÓÃÓÚ¸üĞÂFPSÏÔÊ¾
-    float TOTALTIME;     // ×ÜÊ±¼ä
-    int score;           // µ±Ç°·ÖÊı
+    float fpsUpdateTime; // ç´¯è®¡æ—¶é—´ï¼Œç”¨äºæ›´æ–°FPSæ˜¾ç¤º
+    float TOTALTIME;     // æ€»æ—¶é—´
+    int score;           // å½“å‰åˆ†æ•°
     int power;
-    int TIMEFORPLAY;     // ³¡¾°ÇĞ»»ÊıÖµ
-    int ENEMYOUT2S;      // Ğ¡³¡¾°ÇĞ»»¼ÆÊıÆ÷
-    float ENEMYOUT2STIME;// Ğ¡³¡¾°¼ÆÊ±Æ÷
-    //static float RecordTotalTime;//Îª½áÊø³¡¾°¼ÇÂ¼×îºóÊ±¼ä
-    bool isEXMode;       //Íæ¼ÒÊÇ·ñ¿ªÆôÁËEXÄ£Ê½
+    int TIMEFORPLAY;     // åœºæ™¯åˆ‡æ¢æ•°å€¼
+    int ENEMYOUT2S;      // å°åœºæ™¯åˆ‡æ¢è®¡æ•°å™¨
+    float ENEMYOUT2STIME;// å°åœºæ™¯è®¡æ—¶å™¨
+    //static float RecordTotalTime;//ä¸ºç»“æŸåœºæ™¯è®°å½•æœ€åæ—¶é—´
+    bool isEXMode;       //ç©å®¶æ˜¯å¦å¼€å¯äº†EXæ¨¡å¼
 
-    int playerHealth;    //Íæ¼ÒµÄµ±Ç°ÉúÃüÖµ
-    int maxPlayerHealth; //Íæ¼ÒµÄÉúÃüÉÏÏŞ
+    int playerHealth;    //ç©å®¶çš„å½“å‰ç”Ÿå‘½å€¼
+    int maxPlayerHealth; //ç©å®¶çš„ç”Ÿå‘½ä¸Šé™
 
-    float skillCD;       //¼¼ÄÜCD
-    float CDTime;        //µ±Ç°ÀÛ¼ÆµÄ¼¼ÄÜCDÊ±¼ä
-    int skillCharging;   //¼¼ÄÜ³äÄÜµãÊı
-    float skillUseCd;    //¼¼ÄÜ¼äµÄÊÍ·ÅCD
-    float useTime;       //¼¼ÄÜ¼äµÄ¼ÆÊ±
+    float skillCD;       //æŠ€èƒ½CD
+    float CDTime;        //å½“å‰ç´¯è®¡çš„æŠ€èƒ½CDæ—¶é—´
+    int skillCharging;   //æŠ€èƒ½å……èƒ½ç‚¹æ•°
+    float skillUseCd;    //æŠ€èƒ½é—´çš„é‡Šæ”¾CD
+    float useTime;       //æŠ€èƒ½é—´çš„è®¡æ—¶
     //...
 
-    bool isEsc = false;          //ÊÇ·ñ½øÈëÔİÍ£
+    bool isEsc = false;          //æ˜¯å¦è¿›å…¥æš‚åœ
     bool isContinue = false;
     bool isReturn = false;
 

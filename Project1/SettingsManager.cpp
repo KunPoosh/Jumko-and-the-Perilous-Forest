@@ -4,37 +4,37 @@
 #include <sstream>
 
 SettingsManager& SettingsManager::getInstance() {
-    //µ¥ÀıÎ¨Ò»Èë¿Ú
+    //å•ä¾‹å”¯ä¸€å…¥å£
     /*
-    ¸ºÔğÈË: ²¨²¨É³
+    è´Ÿè´£äºº: æ³¢æ³¢æ²™
 
-    ¹¦ÄÜ:
-        µ¥ÀıµÄÎ¨Ò»Èë¿Ú
+    åŠŸèƒ½:
+        å•ä¾‹çš„å”¯ä¸€å…¥å£
 
-    ²ÎÊı: void
+    å‚æ•°: void
 
-    ·µ»ØÖµ: SettingsManager&
+    è¿”å›å€¼: SettingsManager&
     */
-    //----------------------ÊµÏÖ------------------------//
+    //----------------------å®ç°------------------------//
 
     static SettingsManager instance;
     return instance;
 }
 
 void SettingsManager::loadSettings(const std::string& filename) {
-    //¶ÁÈ¡ÎÄ¼ş
+    //è¯»å–æ–‡ä»¶
     /*
-    ¸ºÔğÈË: ²¨²¨É³
+    è´Ÿè´£äºº: æ³¢æ³¢æ²™
 
-    ¹¦ÄÜ:
-        ½«´æµµÎÄ¼şµÄËùÓĞÊı¾İ¶ÁÈëÄÚ´æ
+    åŠŸèƒ½:
+        å°†å­˜æ¡£æ–‡ä»¶çš„æ‰€æœ‰æ•°æ®è¯»å…¥å†…å­˜
 
-    ²ÎÊı: 
-        const std::string& filename //´æµµÎÄ¼şÂ·¾¶
+    å‚æ•°: 
+        const std::string& filename //å­˜æ¡£æ–‡ä»¶è·¯å¾„
 
-    ·µ»ØÖµ: void
+    è¿”å›å€¼: void
     */
-    //----------------------ÊµÏÖ------------------------//
+    //----------------------å®ç°------------------------//
 
     std::ifstream file(filename);
     std::string line;
@@ -63,24 +63,24 @@ void SettingsManager::loadSettings(const std::string& filename) {
         std::cout << "Unable to open file for reading" << std::endl;
     }
 
-    //½øĞĞ²âÊÔ
+    //è¿›è¡Œæµ‹è¯•
     printSettings();
 }
 
 void SettingsManager::saveSettings(const std::string& filename) {
-    //±£´æÎÄ¼ş
+    //ä¿å­˜æ–‡ä»¶
     /*
-    ¸ºÔğÈË: ²¨²¨É³
+    è´Ÿè´£äºº: æ³¢æ³¢æ²™
 
-    ¹¦ÄÜ:
-        ½«ÄÚ´æÖĞµÄÊı¾İ´æµ½ÎÄ¼şÖĞ±£´æ
+    åŠŸèƒ½:
+        å°†å†…å­˜ä¸­çš„æ•°æ®å­˜åˆ°æ–‡ä»¶ä¸­ä¿å­˜
 
-    ²ÎÊı:
-        const std::string& filename //´æµµÎÄ¼şÂ·¾¶
+    å‚æ•°:
+        const std::string& filename //å­˜æ¡£æ–‡ä»¶è·¯å¾„
 
-    ·µ»ØÖµ: void
+    è¿”å›å€¼: void
     */
-    //----------------------ÊµÏÖ------------------------//
+    //----------------------å®ç°------------------------//
 
     std::ofstream file(filename);
 
@@ -112,7 +112,7 @@ void SettingsManager::saveSettings(const std::string& filename) {
         std::cerr << "Error writing isInvincible to file." << std::endl;
     }
 
-    //²âÊÔ
+    //æµ‹è¯•
     std::cout << "English String: " << englishString << std::endl;
     std::cout << "Unlocked CGs: ";
     for (bool cg : unlockedCGs) {
@@ -125,7 +125,7 @@ void SettingsManager::saveSettings(const std::string& filename) {
 }
 
 void SettingsManager::printSettings() const {
-    // ²âÊÔ·½·¨£¬´òÓ¡µ±Ç°ÉèÖÃ
+    // æµ‹è¯•æ–¹æ³•ï¼Œæ‰“å°å½“å‰è®¾ç½®
     std::cout << "English String: " << englishString << std::endl;
     std::cout << "Unlocked CGs: ";
     for (bool cg : unlockedCGs) {
