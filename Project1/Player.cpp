@@ -117,10 +117,10 @@ void Player::bossCore() {
 	isBoss = true;
 	//其他的参数调整
 	//...
-	health = 1200;
-	maxHealth = 1200;
-	healthRegenerationRate = 12;
-	atkBullet = 500;
+	health = 1800;
+	maxHealth = 1800;
+	healthRegenerationRate = 20;
+	atkBullet = 600;
 	strength = 3000;
 }
 
