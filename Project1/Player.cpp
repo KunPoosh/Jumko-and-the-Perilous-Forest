@@ -39,6 +39,7 @@ Player::Player() {
 	score = 0;
 	isHard = false;
 	isEX = false;
+	isBoss = false;
 	isGameOver = false;
 	isInvincible = false;
 	isSkill = false;
@@ -97,8 +98,42 @@ void Player::hardCore() {
 	healthRegenerationRate = 5;
 }
 
+
 void Player::exCord() {
+
 	//����EXģʽ
+	isEX = true;
+	health = 300;
+	maxHealth = 500;
+	healthRegenerationRate = 3;
+
+}
+void Player::bossCore() {
+	//开启Boss战模式！
+	/*
+	负责�? 波波�?
+
+	功能:
+		使玩家进入困难模�?改变玩家的基础数�?
+
+	参数: void
+
+	返回�? void
+	*/
+	//----------------------实现------------------------//
+
+	isBoss = true;
+	//其他的参数调�?
+	//...
+	health = 1800;
+	maxHealth = 1800;
+	healthRegenerationRate = 20;
+	atkBullet = 600;
+	strength = 3000;
+}
+
+void Player::Invincible() {
+	//开启无敌模式！
 	/*
 	 �����ˣ�Tiant
 	 ���ܣ�

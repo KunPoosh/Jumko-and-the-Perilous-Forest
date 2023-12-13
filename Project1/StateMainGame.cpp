@@ -1,4 +1,4 @@
-#include "StateMainGame.hpp"
+ï»¿#include "StateMainGame.hpp"
 #include <iostream>
 #include "Animation.hpp"
 #include "StateMenu.hpp"
@@ -6,46 +6,46 @@
 StateMainGame::StateMainGame(StateManager& manager)
     : stateManager(manager)
 {
-    //¹¹Ôì·½·¨ÊµÏÖ
-    //----------------------ÊµÏÖ------------------------//
-    //ÕÙ»½ËØ²Ä¹ÜÀíÆ÷´ó¸ç
+    //ï¿½ï¿½ï¿½ì·½ï¿½ï¿½Êµï¿½ï¿½
+    //----------------------Êµï¿½ï¿½------------------------//
+    //ï¿½Ù»ï¿½ï¿½Ø²Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     AssetManager& assetManager = AssetManager::getInstance();
 
-    // ³õÊ¼»¯Ê±¼äÎÄ±¾
-    timeText.setFont(assetManager.getFont("simhei"));  // ÉèÖÃ×ÖÌå
-    timeText.setCharacterSize(30);                       // ÉèÖÃ×ÖÌå´óĞ¡
-    timeText.setFillColor(sf::Color::Black);             // ÉèÖÃ×ÖÌåÑÕÉ«
-    timeText.setPosition(680, 20);                      // ÉèÖÃÎÄ±¾Î»ÖÃ
+    // ï¿½ï¿½Ê¼ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ä±ï¿½
+    timeText.setFont(assetManager.getFont("simhei"));  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    timeText.setCharacterSize(30);                       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¡
+    timeText.setFillColor(sf::Color::Black);             // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
+    timeText.setPosition(680, 20);                      // ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½Î»ï¿½ï¿½
 
-    // ³õÊ¼»¯·ÖÊıÎÄ±¾
-    scoreText.setFont(assetManager.getFont("simhei")); // Í¬ÉÏ
-    scoreText.setCharacterSize(30);                      // Í¬ÉÏ
-    scoreText.setFillColor(sf::Color::Black);            // Í¬ÉÏ
-    scoreText.setPosition(680, 60);                     // ÉèÖÃÎÄ±¾Î»ÖÃÉÔÎ¢µÍÓÚÊ±¼äÎÄ±¾
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½
+    scoreText.setFont(assetManager.getFont("simhei")); // Í¬ï¿½ï¿½
+    scoreText.setCharacterSize(30);                      // Í¬ï¿½ï¿½
+    scoreText.setFillColor(sf::Color::Black);            // Í¬ï¿½ï¿½
+    scoreText.setPosition(680, 60);                     // ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½Î»ï¿½ï¿½ï¿½ï¿½Î¢ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ä±ï¿½
 
-    // ³õÊ¼»¯·ÖÊıÎÄ±¾
-    HP.setFont(assetManager.getFont("simhei")); // Í¬ÉÏ
-    HP.setCharacterSize(30);                      // Í¬ÉÏ
-    HP.setFillColor(sf::Color::Black);            // Í¬ÉÏ
-    HP.setPosition(670, 400);                     // ÉèÖÃÎÄ±¾Î»ÖÃÔÚÑªÌõ×ó±ß
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½
+    HP.setFont(assetManager.getFont("simhei")); // Í¬ï¿½ï¿½
+    HP.setCharacterSize(30);                      // Í¬ï¿½ï¿½
+    HP.setFillColor(sf::Color::Black);            // Í¬ï¿½ï¿½
+    HP.setPosition(670, 400);                     // ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½Î»ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½ï¿½ï¿½ï¿½
     HP.setString("HP:");
 
-    // ³õÊ¼»¯FPSÎÄ±¾
-    FPS.setFont(assetManager.getFont("simhei")); // ÉèÖÃ×ÖÌå
-    FPS.setCharacterSize(15);                      // ÉèÖÃ×ÖÌå´óĞ¡
-    FPS.setFillColor(sf::Color::Black);            // ÉèÖÃ×ÖÌåÑÕÉ«
-    FPS.setPosition(880, 5);                      // ÉèÖÃÎÄ±¾Î»ÖÃ£¬ÀıÈçÓÒÉÏ½Ç
+    // ï¿½ï¿½Ê¼ï¿½ï¿½FPSï¿½Ä±ï¿½
+    FPS.setFont(assetManager.getFont("simhei")); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    FPS.setCharacterSize(15);                      // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¡
+    FPS.setFillColor(sf::Color::Black);            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
+    FPS.setPosition(880, 5);                      // ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï½ï¿½
 
-    //ÉèÖÃ±³¾°Í¼Æ¬
+    //ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½Í¼Æ¬
     gameBackground.setTexture(assetManager.getTexture("BackGround2"));
     gameBackground.setPosition(0, -1040);
-    //ÉèÖÃ½´¿ÉÁ¢»æ
+    //ï¿½ï¿½ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     characterPortrait.setTexture(assetManager.getTexture("JumkoPic1"));
     characterPortrait.setPosition(705, 480);
-    //ÉèÖÃ¼¼ÄÜÍ¼±ê
+    //ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½Í¼ï¿½ï¿½
     skillIcon.setTexture(assetManager.getTexture("Skill"));
     skillIcon.setPosition(665, 250);
-    //ÉèÖÃ³äÄÜ¿é
+    //ï¿½ï¿½ï¿½Ã³ï¿½ï¿½Ü¿ï¿½
     energyBars1.setSize(sf::Vector2f(20, 20));
     energyBars1.setPosition(829, 250);
     energyBars1.setFillColor(sf::Color::Green);
@@ -54,50 +54,51 @@ StateMainGame::StateMainGame(StateManager& manager)
     energyBars2.setPosition(829, 280);
     energyBars2.setFillColor(sf::Color::Green);
 
-    // ³õÊ¼»¯ÓÒ±ßUIµÄ±³¾°¾ØĞÎ
-    uiBackground.setSize(sf::Vector2f(320, 960));  // ÉèÖÃ¾ØĞÎµÄ¿í¶ÈÎª360£¬¸ß¶ÈÎª960
-    uiBackground.setPosition(640, 0);              // ½«¾ØĞÎ·ÅÖÃÔÚ´°¿ÚµÄÓÒ²à
-    uiBackground.setFillColor(sf::Color(250, 240, 200));    //ÉèÖÃÑÕÉ«ÎªÃ×É«
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ò±ï¿½UIï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    uiBackground.setSize(sf::Vector2f(320, 960));  // ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ÎµÄ¿ï¿½ï¿½Îª360ï¿½ï¿½ï¿½ß¶ï¿½Îª960
+    uiBackground.setPosition(640, 0);              // ï¿½ï¿½ï¿½ï¿½ï¿½Î·ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½Úµï¿½ï¿½Ò²ï¿½
+    uiBackground.setFillColor(sf::Color(250, 240, 200));    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«Îªï¿½ï¿½É«
 
-    // ³õÊ¼»¯Á¢»æµ×ÏÂµÄ»ÒÉ«¾ØĞÎ
-    portraitBackground.setSize(sf::Vector2f(270, 500)); // ÉèÖÃ¾ØĞÎµÄ¿í¶ÈÎª270£¬¸ß¶ÈÎª500
-    portraitBackground.setPosition(665, 460);           // ÉèÖÃ¾ØĞÎµÄÎ»ÖÃ
-    portraitBackground.setFillColor(sf::Color(128, 128, 128));//ÉèÖÃ¾ØĞÎÑÕÉ«Îª»ÒÉ«
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÂµÄ»ï¿½É«ï¿½ï¿½ï¿½ï¿½
+    portraitBackground.setSize(sf::Vector2f(270, 500)); // ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ÎµÄ¿ï¿½ï¿½Îª270ï¿½ï¿½ï¿½ß¶ï¿½Îª500
+    portraitBackground.setPosition(665, 460);           // ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½Îµï¿½Î»ï¿½ï¿½
+    portraitBackground.setFillColor(sf::Color(128, 128, 128));//ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ï¿½ï¿½ï¿½É«Îªï¿½ï¿½É«
 
-    // ³õÊ¼»¯ÑªÌõµ×°å
-    healthBarBackground.setSize(sf::Vector2f(206, 26));  // ±ÈÑªÌõÉÔ´óÒ»µã
-    healthBarBackground.setPosition(730, 407);          // Î»ÖÃÓëÑªÌõÏàÍ¬»òÂÔÓĞÆ«ÒÆ
-    healthBarBackground.setFillColor(sf::Color(50, 50, 50)); // °µÉ«µ÷£¬ÓëÑªÌõÑÕÉ«ĞÎ³É¶Ô±È
-    // ³õÊ¼»¯ÑªÌõ
-    healthBar.setSize(sf::Vector2f(200, 20));  // ÉèÖÃÑªÌõµÄ´óĞ¡
-    healthBar.setPosition(733, 410);           // ÉèÖÃÑªÌõµÄÎ»ÖÃ
-    healthBar.setFillColor(sf::Color::Red);    // ÉèÖÃÑªÌõÑÕÉ«ÎªºìÉ«
+    // ï¿½ï¿½Ê¼ï¿½ï¿½Ñªï¿½ï¿½ï¿½×°ï¿½
+    healthBarBackground.setSize(sf::Vector2f(206, 26));  // ï¿½ï¿½Ñªï¿½ï¿½ï¿½Ô´ï¿½Ò»ï¿½ï¿½
+    healthBarBackground.setPosition(730, 407);          // Î»ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½
+    healthBarBackground.setFillColor(sf::Color(50, 50, 50)); // ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½ï¿½ï¿½É«ï¿½Î³É¶Ô±ï¿½
+    // ï¿½ï¿½Ê¼ï¿½ï¿½Ñªï¿½ï¿½
+    healthBar.setSize(sf::Vector2f(200, 20));  // ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½ï¿½Ä´ï¿½Ğ¡
+    healthBar.setPosition(733, 410);           // ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
+    healthBar.setFillColor(sf::Color::Red);    // ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½ï¿½ï¿½É«Îªï¿½ï¿½É«
 
-    // ³õÊ¼»¯¼¼ÄÜÀäÈ´Ìõµ×°å
-    skillBarBackground.setSize(sf::Vector2f(14, 130));  // ÉèÖÃ¼¼ÄÜÀäÈ´Ìõµ×°åµÄ´óĞ¡
-    skillBarBackground.setPosition(805, 250);           // ÉèÖÃ¼¼ÄÜÀäÈ´Ìõµ×°åµÄÎ»ÖÃ
-    skillBarBackground.setFillColor(sf::Color(50, 50, 50)); // ÉèÖÃ¼¼ÄÜÀäÈ´Ìõµ×°åÑÕÉ«
-    // ³õÊ¼»¯¼¼ÄÜÀäÈ´Ìõ
-    skillBar.setSize(sf::Vector2f(10, 126));  // ÉèÖÃ¼¼ÄÜÀäÈ´ÌõµÄ³õÊ¼´óĞ¡
-    skillBar.setPosition(807, 252);           // ÉèÖÃ¼¼ÄÜÀäÈ´ÌõµÄÎ»ÖÃ
-    skillBar.setFillColor(sf::Color::Cyan);   // ÉèÖÃ¼¼ÄÜÀäÈ´ÌõÑÕÉ«
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½×°ï¿½
+    skillBarBackground.setSize(sf::Vector2f(14, 130));  // ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½×°ï¿½Ä´ï¿½Ğ¡
+    skillBarBackground.setPosition(805, 250);           // ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½×°ï¿½ï¿½Î»ï¿½ï¿½
+    skillBarBackground.setFillColor(sf::Color(50, 50, 50)); // ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½É«
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½
+    skillBar.setSize(sf::Vector2f(10, 126));  // ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½Ä³ï¿½Ê¼ï¿½ï¿½Ğ¡
+    skillBar.setPosition(807, 252);           // ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
+    skillBar.setFillColor(sf::Color::Cyan);   // ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½ï¿½É«
 
-    // ³õÊ¼»¯ÔİÍ£±³¾°°å
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     ground.setSize(sf::Vector2f(960, 960));
     ground.setPosition(0, 0);
     ground.setFillColor(sf::Color(0, 0, 0, 128));
     ground2.setSize(sf::Vector2f(300, 300));
     ground2.setPosition(300, 300);
     ground2.setFillColor(sf::Color(0, 0, 0, 66));
-    // ³õÊ¼»¯°´Å¥
-    Continue.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"¼ÌĞø", 40);
+    // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Å¥
+    Continue.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"ï¿½ï¿½ï¿½ï¿½", 40);
     Continue.setColor(sf::Color(200, 200, 200, 100), sf::Color(255, 0, 0, 0), sf::Color(180, 180, 180, 150));
     Continue.setPosition(325, 350, 250, 80);
-    Return.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"·µ»Ø±êÌâ½çÃæ", 40);
+    Return.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"ï¿½ï¿½ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", 40);
     Return.setColor(sf::Color(200, 200, 200, 100), sf::Color(255, 0, 0, 0), sf::Color(180, 180, 180, 150));
     Return.setPosition(325, 500, 250, 80);
 
-    //ÊıÖµ³õÊ¼»¯
+
+    //ï¿½ï¿½Öµï¿½ï¿½Ê¼ï¿½ï¿½
     TIMEFORPLAY = 0;
     score = 0;
     TOTALTIME = 0.f;
@@ -105,6 +106,19 @@ StateMainGame::StateMainGame(StateManager& manager)
     fpsUpdateTime = 0.f;
     isHardMode = SettingsManager::getInstance().isHardCore;
     isEXMode = SettingsManager::getInstance().isEXHard;
+    isBossMode = SettingsManager::getInstance().isBossCore;
+
+    //æ•°å€¼åˆå§‹åŒ–
+    score = 0;
+    power = 0;
+    if (isBossMode) {
+        TOTALTIME = 205.0f;
+        TIMEFORPLAY = 104;
+    }
+    else {
+        TOTALTIME = 0.f; 
+        TIMEFORPLAY = 0;
+    }
     ENEMYOUT2S = 0;
     ENEMYOUT2STIME = 0.f;
     //RecordTotalTime = 0.f;
@@ -118,23 +132,29 @@ StateMainGame::StateMainGame(StateManager& manager)
     skillUseCd = 1.0f;
     useTime = 0.f;
     
-    //´´½¨Íæ¼Ò
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     std::shared_ptr<Player> player = std::make_unique<Player>();
-    //ÉèÖÃÍæ¼Ò³õÊ¼Î»ÖÃ
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½Ê¼Î»ï¿½ï¿½
     player->setPosition(sf::Vector2f(300, 800));
-    //ÊÇ·ñ¿ªÆôÀ§ÄÑÄ£Ê½
+    //ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½
     if (isHardMode) {
         player->hardCore();
     }
-    //ÊÇ·ñ¿ªÆôEXÄÑ¶ÈÄ£Ê½
+    //ï¿½Ç·ï¿½ï¿½ï¿½EXï¿½Ñ¶ï¿½Ä£Ê½
     else if (isEXMode) {
         player->exCord();
     }
-    //ÊÇ·ñ¿ªÆôÎŞµĞÄ£Ê½
+    //ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Şµï¿½Ä£Ê½
     if (SettingsManager::getInstance().isInvincible) {
         player->Invincible();
     }
-    //¹ÜÀíÆ÷¹ØÁªÍæ¼Ò
+
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    //æ˜¯å¦å¼€å¯Bossæˆ˜æ¨¡å¼
+    if (isBossMode) {
+        player->bossCore();
+    }
+    //ç®¡ç†å™¨å…³è”ç©å®¶
     EntityManager::getInstance()->setPlayer(player);
 
     //...
@@ -143,15 +163,15 @@ StateMainGame::StateMainGame(StateManager& manager)
 bool isContinue = false;
 bool isReturn = false;
 void StateMainGame::handleInput(sf::RenderWindow& window) {
-    //´¦ÀíÓÎÏ·Âß¼­£¬ÈçÍæ¼ÒÊäÈë¡¢Åö×²¼ì²âµÈ¡£
-    //----------------------ÊµÏÖ------------------------//
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡¢ï¿½ï¿½×²ï¿½ï¿½ï¿½È¡ï¿½
+    //----------------------Êµï¿½ï¿½------------------------//
     // 
-    //´´½¨Ò»¸öÊÂ¼şÀà£¬ÓÃÀ´½ÓÊÜºÍ´¦ÀíÊÂ¼ş
+    //ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Â¼ï¿½ï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÜºÍ´ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
     sf::Event event;
 
-    //ÒıÓÃÒôÆµ²¥·Åµ¥Àı
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½
     AudioManager& audioManager = AudioManager::getInstance();
-    //ÒıÓÃÊµÌå¹ÜÀíÆ÷
+    //ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     EntityManager* entityManager = EntityManager::getInstance();
 
     while (window.pollEvent(event))
@@ -172,10 +192,10 @@ void StateMainGame::handleInput(sf::RenderWindow& window) {
         }
         if (!isEsc)
         {
-            //½«ÊÂ¼ş¾¡Êı´«¸ø½ÇÉ«
+            //ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
             entityManager->getPlayer()->handleInput(event);
 
-            //¼¼ÄÜÊÇ·ñÊÍ·Å
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Í·ï¿½
             if (event.type == sf::Event::KeyPressed) {
                 if (event.key.code == sf::Keyboard::X) {
                     if (skillCharging > 0 && (useTime >= skillUseCd)) {
@@ -192,21 +212,21 @@ void StateMainGame::handleInput(sf::RenderWindow& window) {
         {
             if (event.type == sf::Event::MouseButtonPressed)
             {
-                //ÔÚ°´Å¥¼ÌĞøµÄÉÏ·½
+                //ï¿½Ú°ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½
                 if (Continue.isMouseOver(window)) {
                     audioManager.playSound("ClickButton");
                     isEsc = false;
                     audioManager.resumeMusic();
                 }
 
-                //ÔÚ°´Å¥·µ»Ø±êÌâÒ³ÃæµÄÉÏ·½
+                //ï¿½Ú°ï¿½Å¥ï¿½ï¿½ï¿½Ø±ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½Ï·ï¿½
                 else if (Return.isMouseOver(window)) {
                     entityManager->clearAllEntities();
                     stateManager.changeState(std::make_unique<StateMenu>(stateManager));
                     audioManager.playSound("ClickButton");
 
                     audioManager.playMusic("MenuMusic1", true);
-                    //Ìø×ª³¡¾°Ê±Çå¿Õµ±Ç°µÄÊµÌå
+                    //ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Õµï¿½Ç°ï¿½ï¿½Êµï¿½ï¿½
 
                 }
             }
@@ -239,7 +259,7 @@ void StateMainGame::handleInput(sf::RenderWindow& window) {
                 }
             }
         }
-        //µ±µã»÷¹Ø±ÕÊ±¹Ø±Õ´°¿Ú
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø±ï¿½Ê±ï¿½Ø±Õ´ï¿½ï¿½ï¿½
         if (event.type == sf::Event::Closed) {
             window.close();
         }
@@ -248,27 +268,27 @@ void StateMainGame::handleInput(sf::RenderWindow& window) {
 }
 
 void StateMainGame::update(float deltaTime) {
-    //¸üĞÂÓÎÏ·×´Ì¬£¬ÈçÊµÌåÎ»ÖÃ¡¢ÓÎÏ··ÖÊıµÈ¡£
-    //----------------------ÊµÏÖ------------------------//
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·×´Ì¬ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Î»ï¿½Ã¡ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½
+    //----------------------Êµï¿½ï¿½------------------------//
 
-    //ËØ²Ä´ó¸ç
+    //ï¿½Ø²Ä´ï¿½ï¿½
     AssetManager& assetManager = AssetManager::getInstance();
-    //ÊµÌå¹ÜÀíÆ÷
+    //Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     EntityManager* entityManager = EntityManager::getInstance();
     if (!isEsc)
     {
-        //Ê±¼ä¸üĞÂ£¡£¡£¡
+        //Ê±ï¿½ï¿½ï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½
         ENEMYOUT2STIME += deltaTime;
         TOTALTIME += deltaTime;
         elapsedTime += deltaTime;
         useTime += deltaTime;
         //RecordTotalTime = TOTALTIME;
-        //¸üĞÂÊ±¼äÏÔÊ¾
+        //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê¾
         int minutes = static_cast<int>(TOTALTIME) / 60;
         int seconds = static_cast<int>(TOTALTIME) % 60;
         entityManager->getPlayer()->setTime(TOTALTIME);
 
-        // Ê¹ÓÃstd::setwºÍstd::setfillÀ´È·±£Ê±¼ä×ÜÊÇÒÔÁ½Î»Êı×ÖÏÔÊ¾
+        // Ê¹ï¿½ï¿½std::setwï¿½ï¿½std::setfillï¿½ï¿½È·ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
         std::stringstream timeStream;
         timeStream << std::setfill('0') << std::setw(2) << minutes << ":"
             << std::setfill('0') << std::setw(2) << seconds;
@@ -276,10 +296,10 @@ void StateMainGame::update(float deltaTime) {
 
         ADDENEMYS();
 
-        //¸üĞÂÊµÌå
+        //ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
         entityManager->updateEntities(deltaTime);
 
-        //¸üĞÂ¼¼ÄÜÀäÈ´
+        //ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½È´
         if (skillCharging < 2) {
             CDTime += deltaTime;
             if (CDTime >= skillCD) {
@@ -292,72 +312,72 @@ void StateMainGame::update(float deltaTime) {
             CDTime = 0.f;
         }
         float cooldownRatio = CDTime / skillCD;
-        cooldownRatio = 1.0f - std::max(0.0f, std::min(cooldownRatio, 1.0f)); // È·±£±ÈÀıÔÚ0µ½1Ö®¼ä
-        // ÉèÖÃ¼¼ÄÜÀäÈ´ÌõµÄ¸ß¶È
+        cooldownRatio = 1.0f - std::max(0.0f, std::min(cooldownRatio, 1.0f)); // È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½1Ö®ï¿½ï¿½
+        // ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½Ä¸ß¶ï¿½
         skillBar.setSize(sf::Vector2f(10, 126 * (1 - cooldownRatio)));
 
-        //´ÓÍæ¼Ò´¦¸üĞÂ·ÖÊı
+        //ï¿½ï¿½ï¿½ï¿½Ò´ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½
         score = entityManager->getPlayer()->getScore();
-        //¸üĞÂÏÔÊ¾
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
         scoreText.setString("Score: " + std::to_string(score));
 
-        //´ÓÍæ¼Ò´¦»ñµÃÉúÃüĞÅÏ¢
+        //ï¿½ï¿½ï¿½ï¿½Ò´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
         playerHealth = entityManager->getPlayer()->getHealth();
         maxPlayerHealth = entityManager->getPlayer()->getMaxHealth();
-        //ÅĞ¶¨½ÇÉ«ÊÇ·ñËÀÍö
+        //ï¿½Ğ¶ï¿½ï¿½ï¿½É«ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½
         if (playerHealth <= 0.f) {
-            //ÇĞ»»µ½½áËã³¡¾°
+            //ï¿½Ğ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã³¡ï¿½ï¿½
             stateManager.changeState(stateManager.createState("StateFailure"));
-            //Í£Ö¹²¥·ÅBGM
+            //Í£Ö¹ï¿½ï¿½ï¿½ï¿½BGM
             AudioManager::getInstance().stopMusic();
-            //Çå¿ÕÊµÌåµÄ²Ù×÷ÓÉ½áËã³¡¾°¸ºÔğ
+            //ï¿½ï¿½ï¿½Êµï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½ã³¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             return;
         }
-        //¸üĞÂÏÔÊ¾
-        // ¼ÆËãÑªÌõµÄ³¤¶È±ÈÀı
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
+        // ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½ï¿½Ä³ï¿½ï¿½È±ï¿½ï¿½ï¿½
         float healthRatio = static_cast<float>(playerHealth) / maxPlayerHealth;
-        // ÉèÖÃÑªÌõµÄ³¤¶È
+        // ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½
         healthBar.setSize(sf::Vector2f(200 * healthRatio, 20));
 
 
-        //¸üĞÂÏÔÊ¾FPS
-        fpsUpdateTime += deltaTime; // ÀÛ¼ÓÊ±¼ä
-        // Ã¿Ãë¸üĞÂÒ»´ÎFPSÏÔÊ¾
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾FPS
+        fpsUpdateTime += deltaTime; // ï¿½Û¼ï¿½Ê±ï¿½ï¿½
+        // Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½FPSï¿½ï¿½Ê¾
         if (fpsUpdateTime >= 1.0f) {
-            float currentFPS = 1.0f / deltaTime; // ¼ÆËãFPS
+            float currentFPS = 1.0f / deltaTime; // ï¿½ï¿½ï¿½ï¿½FPS
             FPS.setString("FPS: " + std::to_string(static_cast<int>(currentFPS)));
-            fpsUpdateTime = 0.0f; // ÖØÖÃÀÛ¼ÆÊ±¼ä
+            fpsUpdateTime = 0.0f; // ï¿½ï¿½ï¿½ï¿½ï¿½Û¼ï¿½Ê±ï¿½ï¿½
         }
 
-        //ÒÆ¶¯±³¾°Í¼Æ¬
+        //ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬
         gameBackground.move(sf::Vector2f(0, deltaTime * 2000));
         if (gameBackground.getPosition().y >= 0) {
             gameBackground.setPosition(sf::Vector2f(0, -1040));
         }
 
 
-        //Óë½ÇÉ«Í¬²½ÊıÖµ
-        //Í¬²½¼¼ÄÜ³äÄÜ
+        //ï¿½ï¿½ï¿½É«Í¬ï¿½ï¿½ï¿½ï¿½Öµ
+        //Í¬ï¿½ï¿½ï¿½ï¿½ï¿½Ü³ï¿½ï¿½ï¿½
         entityManager->getPlayer()->setSkill(skillCharging);
 
 
         //...
-        //²âÊÔÇø
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         //std::cout << "TIMEFORPLAY: " << TIMEFORPLAY << std::endl;
     }
 }
 
 void StateMainGame::draw(sf::RenderWindow& window) {
-    //äÖÈ¾ÓÎÏ·ÊµÌåºÍ½çÃæÔªËØ
-    //----------------------ÊµÏÖ------------------------//
+    //ï¿½ï¿½È¾ï¿½ï¿½Ï·Êµï¿½ï¿½Í½ï¿½ï¿½ï¿½Ôªï¿½ï¿½
+    //----------------------Êµï¿½ï¿½------------------------//
     window.draw(gameBackground);
 
 
 
-    //äÖÈ¾ÊµÌå
+    //ï¿½ï¿½È¾Êµï¿½ï¿½
     EntityManager::getInstance()->drawEntities(window);
 
-    //äÖÈ¾UI
+    //ï¿½ï¿½È¾UI
     window.draw(uiBackground);
     window.draw(portraitBackground);
     window.draw(characterPortrait);
@@ -371,7 +391,7 @@ void StateMainGame::draw(sf::RenderWindow& window) {
     window.draw(skillBar);
     window.draw(FPS);
 
-    //¾õµÃÊÇ·ñÒªäÖÈ¾¼¼ÄÜ¿é
+    //ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Òªï¿½ï¿½È¾ï¿½ï¿½ï¿½Ü¿ï¿½
     if (skillCharging >= 1) {
         window.draw(energyBars1);
     }

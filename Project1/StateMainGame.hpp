@@ -96,12 +96,15 @@ private:
     sf::Text HP;         // 显示玩家血量
     sf::Text FPS;        // 显示当前游戏帧数
 
+
     // 游戏逻辑相关数据
     float elapsedTime;   // 当前累计时间(测试使用)
     bool isHardMode;     // 玩家是否开启了困难模式
+    bool isBossMode;
     float fpsUpdateTime; // 累计时间，用于更新FPS显示
     float TOTALTIME;     // 总时间
     int score;           // 当前分数
+    int power;
     int TIMEFORPLAY;     // 场景切换数值
     int ENEMYOUT2S;      // 小场景切换计数器
     float ENEMYOUT2STIME;// 小场景计时器

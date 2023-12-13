@@ -50,6 +50,7 @@ private:
     float TotalTime;
     int score;          // 分数
     bool isHard;        // 是否开启困难模式
+    bool isBoss;
     bool isGameOver;    // 是否通关
     bool isInvincible;  // 是否开启无敌模式
     bool isSkill;       // 是否可以释放技能
@@ -61,6 +62,7 @@ private:
     bool movingRight;   // 用于跟踪 右 键是否被按下
     bool slowMovement;  // 用于跟踪 Shift 键是否被按下
     bool openFire;      // 用于跟踪 Z 键是否被按下
+
 
 public:
 
@@ -90,6 +92,12 @@ public:
     void Invincible();
 
     //设置玩家位置
+
+    //寮�鍚疊oss鎴樻ā寮?
+    void bossCore();
+
+    //璁剧疆鐜╁浣嶇疆
+
     void setPosition(sf::Vector2f position);
 
     // 返回对玩家精灵的引用

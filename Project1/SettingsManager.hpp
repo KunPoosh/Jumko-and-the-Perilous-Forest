@@ -1,4 +1,4 @@
-#ifndef SETTINGSMANAGER_HPP
+﻿#ifndef SETTINGSMANAGER_HPP
 #define SETTINGSMANAGER_HPP
 
 #include <string>
@@ -48,6 +48,9 @@ public:
     bool isHardCore;
     //EXģʽ
     bool isEXHard;
+
+    //一键进入BOSS战模式
+    bool isBossCore = false;
 
 private:
     
