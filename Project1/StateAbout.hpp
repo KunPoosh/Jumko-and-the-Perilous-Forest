@@ -1,46 +1,46 @@
-#pragma once
+ï»¿#pragma once
 #include <SFML/Graphics.hpp>
 #include "State.hpp"
 #include "StateManager.hpp"
 #include "Button.hpp"
 #include "AssetManager.hpp"
-// -------------------- ÀàÉè¼Æ --------------------
+// -------------------- ç±»è®¾è®¡ --------------------
 /*
-	¡¾¹ØÓÚ³¡¾°Àà¡¿£¨Î´Íê³É£©
-	¸ºÔğÈË£ºÖì
+	ã€å…³äºåœºæ™¯ç±»ã€‘ï¼ˆæœªå®Œæˆï¼‰
+	è´Ÿè´£äººï¼šæœ±
 
-	¹¦ÄÜ£ºÊµÏÖ¹ØÓÚ½çÃæµÄ¹¦ÄÜ
-	1.ÏÔÊ¾·µ»Ø°´Å¥
-	2.ÏÔÊ¾ÍÅ¶Ó¿ª·¢ÈËÔ±ÒÔ¼°Ëù¸ºÔğµÄÄ£¿é
-	3.´¦Àíµã»÷ºÍ´¥Åö°´Å¥µÄÏà¹ØÊÂ¼şÏìÓ¦
-	4.ÏÔÊ¾±êÌâ×Ö
+	åŠŸèƒ½ï¼šå®ç°å…³äºç•Œé¢çš„åŠŸèƒ½
+	1.æ˜¾ç¤ºè¿”å›æŒ‰é’®
+	2.æ˜¾ç¤ºå›¢é˜Ÿå¼€å‘äººå‘˜ä»¥åŠæ‰€è´Ÿè´£çš„æ¨¡å—
+	3.å¤„ç†ç‚¹å‡»å’Œè§¦ç¢°æŒ‰é’®çš„ç›¸å…³äº‹ä»¶å“åº”
+	4.æ˜¾ç¤ºæ ‡é¢˜å­—
 */
 class StateAbout : public State {
 public:
-	//¹¹Ôì·½·¨
+	//æ„é€ æ–¹æ³•
 	StateAbout(StateManager& manager);
 
-	//´¦ÀíÊäÈëµÄÊÂ¼ş
+	//å¤„ç†è¾“å…¥çš„äº‹ä»¶
 	void handleInput(sf::RenderWindow& window) override;
 
-	//¸üĞÂ
+	//æ›´æ–°
 	void update(float deltaTime) override;
 
-	//äÖÈ¾
+	//æ¸²æŸ“
 	void draw(sf::RenderWindow& window) override;
 
 private:
 
-	//¹ÜÀíÆ÷µÄÒıÓÃ
+	//ç®¡ç†å™¨çš„å¼•ç”¨
 	StateManager& stateManager;
-	//·µ»Ø°´Å¥
+	//è¿”å›æŒ‰é’®
 	Button home;
-	//±êÌâ
+	//æ ‡é¢˜
 	sf::Text title;
-	//Ö÷²Ëµ¥µÄ±³¾°Í¼Æ¬
+	//ä¸»èœå•çš„èƒŒæ™¯å›¾ç‰‡
 	sf::Sprite BackgroundImage;
-	//ÓÃÀ´Ö±½ÓÌùÎÒÃÇÈËÔ±µÄÍ¼Æ¬
+	//ç”¨æ¥ç›´æ¥è´´æˆ‘ä»¬äººå‘˜çš„å›¾ç‰‡
 	sf::Sprite About;
-	//ÉèÖÃÎÒµÄÏîÄ¿°´Å¥
+	//è®¾ç½®æˆ‘çš„é¡¹ç›®æŒ‰é’®
 	sf::Text visitLink;
 };

@@ -1,61 +1,59 @@
-#include <SFML/Graphics.hpp>
+ï»¿#include <SFML/Graphics.hpp>
 #include "StateAbout.hpp"
 #include "StateMenu.hpp"
 #include "AudioManager.hpp"
 bool isSelectHome = false;
 bool isSlectLink = false;
 StateAbout::StateAbout(StateManager& manager) : stateManager(manager) {
-	//ËØ²Ä¹ÜÀíÆ÷µ¥Àı
+	//ç´ æç®¡ç†å™¨å•ä¾‹
 	AssetManager& assetmanager = AssetManager::getInstance();
 
-	//°´Å¥µÄÏà¹ØĞÅÏ¢
-	home.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"·µ»Ø", 30);
+	//æŒ‰é’®çš„ç›¸å…³ä¿¡æ¯
+	home.setFont(assetmanager.getFont("SIMYOU"), sf::Color::White, L"è¿”å›", 30);
 	home.setColor(sf::Color(200, 200, 200, 150), sf::Color(100, 100, 100, 150), sf::Color(150, 150, 150, 150));
 	home.setPosition(50, 50, 200, 50);
 
-	//±êÌâµÄÏà¹ØĞÅÏ¢
+	//æ ‡é¢˜çš„ç›¸å…³ä¿¡æ¯
 	title.setFont(assetmanager.getFont("simhei"));
 	title.setFillColor(sf::Color::White);
 	title.setCharacterSize(70);
-	title.setString(L"¹ØÓÚ");
+	title.setString(L"å…³äº");
 	title.setPosition(400, 50);
 
-	//ÉèÖÃ±³¾°Í¼Æ¬
+	//è®¾ç½®èƒŒæ™¯å›¾ç‰‡
 	BackgroundImage.setTexture(assetmanager.getTexture("JumkoMenu"));
 
-	//Ê¹Í¼Æ¬±ä°µµ«ÈÔÈ»¿É¼û
+	//ä½¿å›¾ç‰‡å˜æš—ä½†ä»ç„¶å¯è§
 	BackgroundImage.setColor(sf::Color(128, 128, 128, 255));
 
-	//ÉèÖÃ¹ØÓÚÈËÔ±Í¼Æ¬
-	About.setTexture(assetmanager.getTexture("TextAbout"));//´ÓassetmanagerÖĞË÷È¡Í¼Æ¬
+	//è®¾ç½®å…³äºäººå‘˜å›¾ç‰‡
+	About.setTexture(assetmanager.getTexture("TextAbout"));//ä»assetmanagerä¸­ç´¢å–å›¾ç‰‡
 	About.setPosition(sf::Vector2f(0, 0));
 
-	//ÉèÖÃÎÒµÄÏîÄ¿°´Å¥
+	//è®¾ç½®æˆ‘çš„é¡¹ç›®æŒ‰é’®
 	visitLink.setFont(assetmanager.getFont("simhei"));
 	visitLink.setFillColor(sf::Color::White);
 	visitLink.setCharacterSize(30);
-	visitLink.setString(L"ÎÒµÄÏîÄ¿");
+	visitLink.setString(L"æˆ‘çš„é¡¹ç›®");
 	visitLink.setPosition(160, 900);
-
-	
 
 } 
 
-//------------¹¦ÄÜ---------------
-// //ÓÃÓÚ´æÈëÏÔÊ¾µÄ¹ØÓÚÄÚÈİ
+//------------åŠŸèƒ½---------------
+// //ç”¨äºå­˜å…¥æ˜¾ç¤ºçš„å…³äºå†…å®¹
 
 void StateAbout::handleInput(sf::RenderWindow& window) {
 	AudioManager& audioManager = AudioManager::getInstance();
 	sf::Event event;
 	while (window.pollEvent(event)) {
-		//»ñÈ¡Êó±êÎ»ÖÃ
+		//è·å–é¼ æ ‡ä½ç½®
 		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 
-		//´¦Àí¹Ø±Õ½çÃæ
+		//å¤„ç†å…³é—­ç•Œé¢
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
-		//´¦ÀíÊó±êµã»÷°´Å¥ÊÂ¼ş
+		//å¤„ç†é¼ æ ‡ç‚¹å‡»æŒ‰é’®äº‹ä»¶
 		if (event.type == sf::Event::MouseButtonPressed) {
 			if (home.isMouseOver(mousePosition)) {
 				stateManager.changeState(std::make_unique<StateMenu>(stateManager));
@@ -64,7 +62,7 @@ void StateAbout::handleInput(sf::RenderWindow& window) {
 				//entityManager->clearAllEntities();
 			}
 		}
-		//´¦ÀíÊó±êÒÆ¶¯µ½°´Å¥±äÉ«
+		//å¤„ç†é¼ æ ‡ç§»åŠ¨åˆ°æŒ‰é’®å˜è‰²
 		if (event.type == sf::Event::MouseMoved) {
 			if (home.isMouseOver(mousePosition)) {
 				home.onHover();
@@ -78,7 +76,7 @@ void StateAbout::handleInput(sf::RenderWindow& window) {
 				isSelectHome = false;
 			}
 		}
-		//´¦ÀíÊó±êµã»÷ÎÒµÄÏîÄ¿ÊÂ¼ş
+		//å¤„ç†é¼ æ ‡ç‚¹å‡»æˆ‘çš„é¡¹ç›®äº‹ä»¶
 		if (event.type == sf::Event::MouseButtonPressed) {
 			if (home.isMouseOver(mousePosition)) {
 				stateManager.changeState(std::make_unique<StateMenu>(stateManager));
@@ -97,14 +95,14 @@ void StateAbout::update(float deltaTime) {
 
 void StateAbout::draw(sf::RenderWindow& window) {
 	AssetManager& assetmanager = AssetManager::getInstance();
-	//»æÖÆ±³¾°
+	//ç»˜åˆ¶èƒŒæ™¯
 	window.draw(BackgroundImage);
-	//»æÖÆ±êÌâ
+	//ç»˜åˆ¶æ ‡é¢˜
 	window.draw(title);
-	//»æÖÆ¹ØÓÚÈËÔ±
+	//ç»˜åˆ¶å…³äºäººå‘˜
 	window.draw(About);
 
-	//»æÖÆ°´Å¥
+	//ç»˜åˆ¶æŒ‰é’®
 	home.draw(window);
 
 	window.draw(visitLink);
