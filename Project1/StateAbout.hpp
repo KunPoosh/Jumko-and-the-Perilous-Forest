@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <SFML/Graphics.hpp>
 #include "State.hpp"
 #include "StateManager.hpp"
@@ -41,4 +41,6 @@ private:
 	sf::Sprite BackgroundImage;
 	//用来直接贴我们人员的图片
 	sf::Sprite About;
+	//设置我的项目按钮
+	sf::Text visitLink;
 };

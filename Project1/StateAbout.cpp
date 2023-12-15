@@ -1,8 +1,9 @@
-#include <SFML/Graphics.hpp>
+﻿#include <SFML/Graphics.hpp>
 #include "StateAbout.hpp"
 #include "StateMenu.hpp"
 #include "AudioManager.hpp"
 bool isSelectHome = false;
+bool isSlectLink = false;
 StateAbout::StateAbout(StateManager& manager) : stateManager(manager) {
 	//素材管理器单例
 	AssetManager& assetmanager = AssetManager::getInstance();
@@ -28,7 +29,15 @@ StateAbout::StateAbout(StateManager& manager) : stateManager(manager) {
 	//设置关于人员图片
 	About.setTexture(assetmanager.getTexture("TextAbout"));//从assetmanager中索取图片
 	About.setPosition(sf::Vector2f(0, 0));
-}
+
+	//设置我的项目按钮
+	visitLink.setFont(assetmanager.getFont("simhei"));
+	visitLink.setFillColor(sf::Color::White);
+	visitLink.setCharacterSize(30);
+	visitLink.setString(L"我的项目");
+	visitLink.setPosition(160, 900);
+
+} 
 
 //------------功能---------------
 // //用于存入显示的关于内容
@@ -49,9 +58,16 @@ void StateAbout::handleInput(sf::RenderWindow& window) {
 			if (home.isMouseOver(mousePosition)) {
 				stateManager.changeState(std::make_unique<StateMenu>(stateManager));
 				audioManager.playSound("ClickButton");
+
 				//entityManager->clearAllEntities();
 			}
+			//处理鼠标点击我的项目事件
+			else if (visitLink.getGlobalBounds().contains(mousePosition)) {
+				system("start https://github.com/KunPoosh/Jumko-and-the-Perilous-Forest");
+				audioManager.playSound("ClickButton");
+			}
 		}
+		
 		//处理鼠标移动到按钮变色
 		if (event.type == sf::Event::MouseMoved) {
 			if (home.isMouseOver(mousePosition)) {
@@ -66,6 +82,7 @@ void StateAbout::handleInput(sf::RenderWindow& window) {
 				isSelectHome = false;
 			}
 		}
+		
 	}
 }
 
@@ -84,4 +101,6 @@ void StateAbout::draw(sf::RenderWindow& window) {
 
 	//绘制按钮
 	home.draw(window);
+
+	window.draw(visitLink);
 }
