@@ -189,19 +189,11 @@ StateSelectDifficulty::StateSelectDifficulty(StateManager& manager) : stateManag
 	hardButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
 	hardButton.setPosition(540, 500, 200, 50);
 
-
 	EXButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"EX模式", 25);
 	EXButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
-	EXButton.setPosition(240, 600, 200, 50);
+	EXButton.setPosition(390, 600, 200, 50);
 
 	// 难度选择文本
-
-	bossButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"杩涘叆Boos鎴?, 25);
-	bossButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
-	bossButton.setPosition(540, 600, 200, 50);
-
-	// 闅惧害閫夋嫨鏂囨湰
-
 	difficultyText.setFont(assetManager.getFont("simhei"));
 	difficultyText.setFillColor(sf::Color::White);
 	difficultyText.setCharacterSize(50);
@@ -241,11 +233,7 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 			window.close();
 		}
 
-
 		// 检测难度按钮的点击
-
-		// 妫€娴嬮毦搴﹀拰boss鎴樻寜閽殑鐐瑰嚮
-
 		if (event.type == sf::Event::MouseButtonPressed) {
 			if (easyButton.isMouseOver(window)) {
 				// 处理简单难度的选择
@@ -265,12 +253,6 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 				// 处理EX难度的选择
 				audioManager.playSound("ClickButton");
 				settingsManager.isEXHard = true;
-				stateManager.changeState(stateManager.createState("NewGame"));
-			}
-			else if (bossButton.isMouseOver(mousePosition) && ( settingsManager.unlockedCGs[10]|| settingsManager.unlockedCGs[11])) {
-				audioManager.playSound("ClickButton");
-				settingsManager.isBossCore = true;
-				settingsManager.isHardCore = true;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}
 		}
@@ -300,6 +282,7 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 				hardButton.resetColor();
 				ishardButton = false;
 			}
+
 			if (EXButton.isMouseOver(window)) {
 				EXButton.onHover();
 				if (!isEXButton) {
@@ -310,18 +293,6 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 			else {
 				EXButton.resetColor();
 				isEXButton = false;
-			}
-			//鎮仠boss鎴樻寜閽?
-			if (bossButton.isMouseOver(mousePosition)) {
-				bossButton.onHover();
-				if (!isbossButton) {
-					isbossButton = true;
-					audioManager.playSound("SelectButton");
-				}
-			}
-			else {
-				bossButton.resetColor();
-				isbossButton= false;
 			}
 		}
 	}
@@ -362,6 +333,4 @@ void StateSelectDifficulty::draw(sf::RenderWindow& window) {
 	easyButton.draw(window);
 	hardButton.draw(window);
 	EXButton.draw(window);
-	bossButton.draw(window);
-
 }

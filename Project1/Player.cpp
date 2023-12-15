@@ -39,7 +39,6 @@ Player::Player() {
 	score = 0;
 	isHard = false;
 	isEX = false;
-	isBoss = false;
 	isGameOver = false;
 	isInvincible = false;
 	isSkill = false;
@@ -98,42 +97,8 @@ void Player::hardCore() {
 	healthRegenerationRate = 5;
 }
 
-
 void Player::exCord() {
-
 	//开启EX模式
-	isEX = true;
-	health = 300;
-	maxHealth = 500;
-	healthRegenerationRate = 3;
-
-}
-void Player::bossCore() {
-	//寮€鍚疊oss鎴樻ā寮忥紒
-	/*
-	璐熻矗浜? 娉㈡尝娌?
-
-	鍔熻兘:
-		浣跨帺瀹惰繘鍏ュ洶闅炬ā寮?鏀瑰彉鐜╁鐨勫熀纭€鏁板€?
-
-	鍙傛暟: void
-
-	杩斿洖鍊? void
-	*/
-	//----------------------瀹炵幇------------------------//
-
-	isBoss = true;
-	//鍏朵粬鐨勫弬鏁拌皟鏁?
-	//...
-	health = 1800;
-	maxHealth = 1800;
-	healthRegenerationRate = 20;
-	atkBullet = 600;
-	strength = 3000;
-}
-
-void Player::Invincible() {
-	//寮€鍚棤鏁屾ā寮忥紒
 	/*
 	 负责人：Tiant
 	 功能：

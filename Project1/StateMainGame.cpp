@@ -6,46 +6,46 @@
 StateMainGame::StateMainGame(StateManager& manager)
     : stateManager(manager)
 {
-    //���췽��ʵ��
-    //----------------------ʵ��------------------------//
-    //�ٻ��زĹ��������
+    //构造方法实现
+    //----------------------实现------------------------//
+    //召唤素材管理器大哥
     AssetManager& assetManager = AssetManager::getInstance();
 
-    // ��ʼ��ʱ���ı�
-    timeText.setFont(assetManager.getFont("simhei"));  // ��������
-    timeText.setCharacterSize(30);                       // ���������С
-    timeText.setFillColor(sf::Color::Black);             // ����������ɫ
-    timeText.setPosition(680, 20);                      // �����ı�λ��
+    // 初始化时间文本
+    timeText.setFont(assetManager.getFont("simhei"));  // 设置字体
+    timeText.setCharacterSize(30);                       // 设置字体大小
+    timeText.setFillColor(sf::Color::Black);             // 设置字体颜色
+    timeText.setPosition(680, 20);                      // 设置文本位置
 
-    // ��ʼ�������ı�
-    scoreText.setFont(assetManager.getFont("simhei")); // ͬ��
-    scoreText.setCharacterSize(30);                      // ͬ��
-    scoreText.setFillColor(sf::Color::Black);            // ͬ��
-    scoreText.setPosition(680, 60);                     // �����ı�λ����΢����ʱ���ı�
+    // 初始化分数文本
+    scoreText.setFont(assetManager.getFont("simhei")); // 同上
+    scoreText.setCharacterSize(30);                      // 同上
+    scoreText.setFillColor(sf::Color::Black);            // 同上
+    scoreText.setPosition(680, 60);                     // 设置文本位置稍微低于时间文本
 
-    // ��ʼ�������ı�
-    HP.setFont(assetManager.getFont("simhei")); // ͬ��
-    HP.setCharacterSize(30);                      // ͬ��
-    HP.setFillColor(sf::Color::Black);            // ͬ��
-    HP.setPosition(670, 400);                     // �����ı�λ����Ѫ�����
+    // 初始化分数文本
+    HP.setFont(assetManager.getFont("simhei")); // 同上
+    HP.setCharacterSize(30);                      // 同上
+    HP.setFillColor(sf::Color::Black);            // 同上
+    HP.setPosition(670, 400);                     // 设置文本位置在血条左边
     HP.setString("HP:");
 
-    // ��ʼ��FPS�ı�
-    FPS.setFont(assetManager.getFont("simhei")); // ��������
-    FPS.setCharacterSize(15);                      // ���������С
-    FPS.setFillColor(sf::Color::Black);            // ����������ɫ
-    FPS.setPosition(880, 5);                      // �����ı�λ�ã��������Ͻ�
+    // 初始化FPS文本
+    FPS.setFont(assetManager.getFont("simhei")); // 设置字体
+    FPS.setCharacterSize(15);                      // 设置字体大小
+    FPS.setFillColor(sf::Color::Black);            // 设置字体颜色
+    FPS.setPosition(880, 5);                      // 设置文本位置，例如右上角
 
-    //���ñ���ͼƬ
+    //设置背景图片
     gameBackground.setTexture(assetManager.getTexture("BackGround2"));
     gameBackground.setPosition(0, -1040);
-    //���ý�������
+    //设置酱可立绘
     characterPortrait.setTexture(assetManager.getTexture("JumkoPic1"));
     characterPortrait.setPosition(705, 480);
-    //���ü���ͼ��
+    //设置技能图标
     skillIcon.setTexture(assetManager.getTexture("Skill"));
     skillIcon.setPosition(665, 250);
-    //���ó��ܿ�
+    //设置充能块
     energyBars1.setSize(sf::Vector2f(20, 20));
     energyBars1.setPosition(829, 250);
     energyBars1.setFillColor(sf::Color::Green);
@@ -54,51 +54,50 @@ StateMainGame::StateMainGame(StateManager& manager)
     energyBars2.setPosition(829, 280);
     energyBars2.setFillColor(sf::Color::Green);
 
-    // ��ʼ���ұ�UI�ı�������
-    uiBackground.setSize(sf::Vector2f(320, 960));  // ���þ��εĿ��Ϊ360���߶�Ϊ960
-    uiBackground.setPosition(640, 0);              // �����η����ڴ��ڵ��Ҳ�
-    uiBackground.setFillColor(sf::Color(250, 240, 200));    //������ɫΪ��ɫ
+    // 初始化右边UI的背景矩形
+    uiBackground.setSize(sf::Vector2f(320, 960));  // 设置矩形的宽度为360，高度为960
+    uiBackground.setPosition(640, 0);              // 将矩形放置在窗口的右侧
+    uiBackground.setFillColor(sf::Color(250, 240, 200));    //设置颜色为米色
 
-    // ��ʼ��������µĻ�ɫ����
-    portraitBackground.setSize(sf::Vector2f(270, 500)); // ���þ��εĿ��Ϊ270���߶�Ϊ500
-    portraitBackground.setPosition(665, 460);           // ���þ��ε�λ��
-    portraitBackground.setFillColor(sf::Color(128, 128, 128));//���þ�����ɫΪ��ɫ
+    // 初始化立绘底下的灰色矩形
+    portraitBackground.setSize(sf::Vector2f(270, 500)); // 设置矩形的宽度为270，高度为500
+    portraitBackground.setPosition(665, 460);           // 设置矩形的位置
+    portraitBackground.setFillColor(sf::Color(128, 128, 128));//设置矩形颜色为灰色
 
-    // ��ʼ��Ѫ���װ�
-    healthBarBackground.setSize(sf::Vector2f(206, 26));  // ��Ѫ���Դ�һ��
-    healthBarBackground.setPosition(730, 407);          // λ����Ѫ����ͬ������ƫ��
-    healthBarBackground.setFillColor(sf::Color(50, 50, 50)); // ��ɫ������Ѫ����ɫ�γɶԱ�
-    // ��ʼ��Ѫ��
-    healthBar.setSize(sf::Vector2f(200, 20));  // ����Ѫ���Ĵ�С
-    healthBar.setPosition(733, 410);           // ����Ѫ����λ��
-    healthBar.setFillColor(sf::Color::Red);    // ����Ѫ����ɫΪ��ɫ
+    // 初始化血条底板
+    healthBarBackground.setSize(sf::Vector2f(206, 26));  // 比血条稍大一点
+    healthBarBackground.setPosition(730, 407);          // 位置与血条相同或略有偏移
+    healthBarBackground.setFillColor(sf::Color(50, 50, 50)); // 暗色调，与血条颜色形成对比
+    // 初始化血条
+    healthBar.setSize(sf::Vector2f(200, 20));  // 设置血条的大小
+    healthBar.setPosition(733, 410);           // 设置血条的位置
+    healthBar.setFillColor(sf::Color::Red);    // 设置血条颜色为红色
 
-    // ��ʼ��������ȴ���װ�
-    skillBarBackground.setSize(sf::Vector2f(14, 130));  // ���ü�����ȴ���װ�Ĵ�С
-    skillBarBackground.setPosition(805, 250);           // ���ü�����ȴ���װ��λ��
-    skillBarBackground.setFillColor(sf::Color(50, 50, 50)); // ���ü�����ȴ���װ���ɫ
-    // ��ʼ��������ȴ��
-    skillBar.setSize(sf::Vector2f(10, 126));  // ���ü�����ȴ���ĳ�ʼ��С
-    skillBar.setPosition(807, 252);           // ���ü�����ȴ����λ��
-    skillBar.setFillColor(sf::Color::Cyan);   // ���ü�����ȴ����ɫ
+    // 初始化技能冷却条底板
+    skillBarBackground.setSize(sf::Vector2f(14, 130));  // 设置技能冷却条底板的大小
+    skillBarBackground.setPosition(805, 250);           // 设置技能冷却条底板的位置
+    skillBarBackground.setFillColor(sf::Color(50, 50, 50)); // 设置技能冷却条底板颜色
+    // 初始化技能冷却条
+    skillBar.setSize(sf::Vector2f(10, 126));  // 设置技能冷却条的初始大小
+    skillBar.setPosition(807, 252);           // 设置技能冷却条的位置
+    skillBar.setFillColor(sf::Color::Cyan);   // 设置技能冷却条颜色
 
-    // ��ʼ����ͣ������
+    // 初始化暂停背景板
     ground.setSize(sf::Vector2f(960, 960));
     ground.setPosition(0, 0);
     ground.setFillColor(sf::Color(0, 0, 0, 128));
     ground2.setSize(sf::Vector2f(300, 300));
     ground2.setPosition(300, 300);
     ground2.setFillColor(sf::Color(0, 0, 0, 66));
-    // ��ʼ����ť
-    Continue.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"����", 40);
+    // 初始化按钮
+    Continue.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"继续", 40);
     Continue.setColor(sf::Color(200, 200, 200, 100), sf::Color(255, 0, 0, 0), sf::Color(180, 180, 180, 150));
     Continue.setPosition(325, 350, 250, 80);
-    Return.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"���ر������", 40);
+    Return.setFont(assetManager.getFont("SIMYOU"), sf::Color::Black, L"返回标题界面", 40);
     Return.setColor(sf::Color(200, 200, 200, 100), sf::Color(255, 0, 0, 0), sf::Color(180, 180, 180, 150));
     Return.setPosition(325, 500, 250, 80);
 
-
-    //��ֵ��ʼ��
+    //数值初始化
     TIMEFORPLAY = 0;
     score = 0;
     TOTALTIME = 0.f;
@@ -106,19 +105,6 @@ StateMainGame::StateMainGame(StateManager& manager)
     fpsUpdateTime = 0.f;
     isHardMode = SettingsManager::getInstance().isHardCore;
     isEXMode = SettingsManager::getInstance().isEXHard;
-    isBossMode = SettingsManager::getInstance().isBossCore;
-
-    //数值初始化
-    score = 0;
-    power = 0;
-    if (isBossMode) {
-        TOTALTIME = 205.0f;
-        TIMEFORPLAY = 104;
-    }
-    else {
-        TOTALTIME = 0.f; 
-        TIMEFORPLAY = 0;
-    }
     ENEMYOUT2S = 0;
     ENEMYOUT2STIME = 0.f;
     //RecordTotalTime = 0.f;
@@ -132,27 +118,21 @@ StateMainGame::StateMainGame(StateManager& manager)
     skillUseCd = 1.0f;
     useTime = 0.f;
     
-    //�������
+    //创建玩家
     std::shared_ptr<Player> player = std::make_unique<Player>();
-    //������ҳ�ʼλ��
+    //设置玩家初始位置
     player->setPosition(sf::Vector2f(300, 800));
-    //�Ƿ�������ģʽ
+    //是否开启困难模式
     if (isHardMode) {
         player->hardCore();
     }
-    //�Ƿ���EX�Ѷ�ģʽ
+    //是否开启EX难度模式
     else if (isEXMode) {
         player->exCord();
     }
-    //�Ƿ����޵�ģʽ
+    //是否开启无敌模式
     if (SettingsManager::getInstance().isInvincible) {
         player->Invincible();
-    }
-
-    //�������������
-    //是否开启Boss战模式
-    if (isBossMode) {
-        player->bossCore();
     }
     //管理器关联玩家
     EntityManager::getInstance()->setPlayer(player);
@@ -163,15 +143,15 @@ StateMainGame::StateMainGame(StateManager& manager)
 bool isContinue = false;
 bool isReturn = false;
 void StateMainGame::handleInput(sf::RenderWindow& window) {
-    //������Ϸ�߼�����������롢��ײ���ȡ�
-    //----------------------ʵ��------------------------//
+    //处理游戏逻辑，如玩家输入、碰撞检测等。
+    //----------------------实现------------------------//
     // 
-    //����һ���¼��࣬�������ܺʹ����¼�
+    //创建一个事件类，用来接受和处理事件
     sf::Event event;
 
-    //������Ƶ���ŵ���
+    //引用音频播放单例
     AudioManager& audioManager = AudioManager::getInstance();
-    //����ʵ�������
+    //引用实体管理器
     EntityManager* entityManager = EntityManager::getInstance();
 
     while (window.pollEvent(event))
@@ -192,10 +172,10 @@ void StateMainGame::handleInput(sf::RenderWindow& window) {
         }
         if (!isEsc)
         {
-            //���¼�����������ɫ
+            //将事件尽数传给角色
             entityManager->getPlayer()->handleInput(event);
 
-            //�����Ƿ��ͷ�
+            //技能是否释放
             if (event.type == sf::Event::KeyPressed) {
                 if (event.key.code == sf::Keyboard::X) {
                     if (skillCharging > 0 && (useTime >= skillUseCd)) {
@@ -212,21 +192,21 @@ void StateMainGame::handleInput(sf::RenderWindow& window) {
         {
             if (event.type == sf::Event::MouseButtonPressed)
             {
-                //�ڰ�ť�������Ϸ�
+                //在按钮继续的上方
                 if (Continue.isMouseOver(window)) {
                     audioManager.playSound("ClickButton");
                     isEsc = false;
                     audioManager.resumeMusic();
                 }
 
-                //�ڰ�ť���ر���ҳ����Ϸ�
+                //在按钮返回标题页面的上方
                 else if (Return.isMouseOver(window)) {
                     entityManager->clearAllEntities();
                     stateManager.changeState(std::make_unique<StateMenu>(stateManager));
                     audioManager.playSound("ClickButton");
 
                     audioManager.playMusic("MenuMusic1", true);
-                    //��ת����ʱ��յ�ǰ��ʵ��
+                    //跳转场景时清空当前的实体
 
                 }
             }
@@ -259,7 +239,7 @@ void StateMainGame::handleInput(sf::RenderWindow& window) {
                 }
             }
         }
-        //������ر�ʱ�رմ���
+        //当点击关闭时关闭窗口
         if (event.type == sf::Event::Closed) {
             window.close();
         }
@@ -268,27 +248,27 @@ void StateMainGame::handleInput(sf::RenderWindow& window) {
 }
 
 void StateMainGame::update(float deltaTime) {
-    //������Ϸ״̬����ʵ��λ�á���Ϸ�����ȡ�
-    //----------------------ʵ��------------------------//
+    //更新游戏状态，如实体位置、游戏分数等。
+    //----------------------实现------------------------//
 
-    //�زĴ��
+    //素材大哥
     AssetManager& assetManager = AssetManager::getInstance();
-    //ʵ�������
+    //实体管理器
     EntityManager* entityManager = EntityManager::getInstance();
     if (!isEsc)
     {
-        //ʱ����£�����
+        //时间更新！！！
         ENEMYOUT2STIME += deltaTime;
         TOTALTIME += deltaTime;
         elapsedTime += deltaTime;
         useTime += deltaTime;
         //RecordTotalTime = TOTALTIME;
-        //����ʱ����ʾ
+        //更新时间显示
         int minutes = static_cast<int>(TOTALTIME) / 60;
         int seconds = static_cast<int>(TOTALTIME) % 60;
         entityManager->getPlayer()->setTime(TOTALTIME);
 
-        // ʹ��std::setw��std::setfill��ȷ��ʱ����������λ������ʾ
+        // 使用std::setw和std::setfill来确保时间总是以两位数字显示
         std::stringstream timeStream;
         timeStream << std::setfill('0') << std::setw(2) << minutes << ":"
             << std::setfill('0') << std::setw(2) << seconds;
@@ -296,10 +276,10 @@ void StateMainGame::update(float deltaTime) {
 
         ADDENEMYS();
 
-        //����ʵ��
+        //更新实体
         entityManager->updateEntities(deltaTime);
 
-        //���¼�����ȴ
+        //更新技能冷却
         if (skillCharging < 2) {
             CDTime += deltaTime;
             if (CDTime >= skillCD) {
@@ -312,72 +292,72 @@ void StateMainGame::update(float deltaTime) {
             CDTime = 0.f;
         }
         float cooldownRatio = CDTime / skillCD;
-        cooldownRatio = 1.0f - std::max(0.0f, std::min(cooldownRatio, 1.0f)); // ȷ��������0��1֮��
-        // ���ü�����ȴ���ĸ߶�
+        cooldownRatio = 1.0f - std::max(0.0f, std::min(cooldownRatio, 1.0f)); // 确保比例在0到1之间
+        // 设置技能冷却条的高度
         skillBar.setSize(sf::Vector2f(10, 126 * (1 - cooldownRatio)));
 
-        //����Ҵ����·���
+        //从玩家处更新分数
         score = entityManager->getPlayer()->getScore();
-        //������ʾ
+        //更新显示
         scoreText.setString("Score: " + std::to_string(score));
 
-        //����Ҵ����������Ϣ
+        //从玩家处获得生命信息
         playerHealth = entityManager->getPlayer()->getHealth();
         maxPlayerHealth = entityManager->getPlayer()->getMaxHealth();
-        //�ж���ɫ�Ƿ�����
+        //判定角色是否死亡
         if (playerHealth <= 0.f) {
-            //�л������㳡��
+            //切换到结算场景
             stateManager.changeState(stateManager.createState("StateFailure"));
-            //ֹͣ����BGM
+            //停止播放BGM
             AudioManager::getInstance().stopMusic();
-            //���ʵ��Ĳ����ɽ��㳡������
+            //清空实体的操作由结算场景负责
             return;
         }
-        //������ʾ
-        // ����Ѫ���ĳ��ȱ���
+        //更新显示
+        // 计算血条的长度比例
         float healthRatio = static_cast<float>(playerHealth) / maxPlayerHealth;
-        // ����Ѫ���ĳ���
+        // 设置血条的长度
         healthBar.setSize(sf::Vector2f(200 * healthRatio, 20));
 
 
-        //������ʾFPS
-        fpsUpdateTime += deltaTime; // �ۼ�ʱ��
-        // ÿ�����һ��FPS��ʾ
+        //更新显示FPS
+        fpsUpdateTime += deltaTime; // 累加时间
+        // 每秒更新一次FPS显示
         if (fpsUpdateTime >= 1.0f) {
-            float currentFPS = 1.0f / deltaTime; // ����FPS
+            float currentFPS = 1.0f / deltaTime; // 计算FPS
             FPS.setString("FPS: " + std::to_string(static_cast<int>(currentFPS)));
-            fpsUpdateTime = 0.0f; // �����ۼ�ʱ��
+            fpsUpdateTime = 0.0f; // 重置累计时间
         }
 
-        //�ƶ�����ͼƬ
+        //移动背景图片
         gameBackground.move(sf::Vector2f(0, deltaTime * 2000));
         if (gameBackground.getPosition().y >= 0) {
             gameBackground.setPosition(sf::Vector2f(0, -1040));
         }
 
 
-        //���ɫͬ����ֵ
-        //ͬ�����ܳ���
+        //与角色同步数值
+        //同步技能充能
         entityManager->getPlayer()->setSkill(skillCharging);
 
 
         //...
-        //������
+        //测试区
         //std::cout << "TIMEFORPLAY: " << TIMEFORPLAY << std::endl;
     }
 }
 
 void StateMainGame::draw(sf::RenderWindow& window) {
-    //��Ⱦ��Ϸʵ��ͽ���Ԫ��
-    //----------------------ʵ��------------------------//
+    //渲染游戏实体和界面元素
+    //----------------------实现------------------------//
     window.draw(gameBackground);
 
 
 
-    //��Ⱦʵ��
+    //渲染实体
     EntityManager::getInstance()->drawEntities(window);
 
-    //��ȾUI
+    //渲染UI
     window.draw(uiBackground);
     window.draw(portraitBackground);
     window.draw(characterPortrait);
@@ -391,7 +371,7 @@ void StateMainGame::draw(sf::RenderWindow& window) {
     window.draw(skillBar);
     window.draw(FPS);
 
-    //�����Ƿ�Ҫ��Ⱦ���ܿ�
+    //觉得是否要渲染技能块
     if (skillCharging >= 1) {
         window.draw(energyBars1);
     }
