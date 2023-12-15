@@ -116,6 +116,7 @@ StateMainGame::StateMainGame(StateManager& manager)
     fpsUpdateTime = 0.f;
     isHardMode = SettingsManager::getInstance().isHardCore;
     isBossMode = SettingsManager::getInstance().isBossCore;
+    isEXMode = SettingsManager::getInstance().isEXHard;
     ENEMYOUT2S = 0;
     ENEMYOUT2STIME = 0.f;
     //RecordTotalTime = 0.f;
@@ -157,6 +158,10 @@ StateMainGame::StateMainGame(StateManager& manager)
     //是否开启Boss战模式
     if (isBossMode) {
         player->bossCore();
+    }
+    //是否开启EX难度模式
+    if (isEXMode) {
+        player->exCord();
     }
     //管理器关联玩家
     EntityManager::getInstance()->setPlayer(player);

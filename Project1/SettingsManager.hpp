@@ -51,6 +51,8 @@ public:
 
     //一键进入BOSS战模式
     bool isBossCore = false;
+    //EX模式
+    bool isEXHard = false;
 
 private:
     
