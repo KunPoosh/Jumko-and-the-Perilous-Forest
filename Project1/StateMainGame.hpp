@@ -101,6 +101,7 @@ private:
     float elapsedTime;   // 当前累计时间(测试使用)
     bool isHardMode;     // 玩家是否开启了困难模式
     bool isBossMode;     // 玩家是否开启BOOS战模式
+    bool isEXMode;       //玩家是否开启了EX模式
     float fpsUpdateTime; // 累计时间，用于更新FPS显示
     float TOTALTIME;     // 总时间
     int score;           // 当前分数

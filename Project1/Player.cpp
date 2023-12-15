@@ -39,6 +39,7 @@ Player::Player() {
 	score = 0;
 	isHard = false;
 	isBoss = false;
+	isEX = false;
 	isGameOver = false;
 	isInvincible = false;
 	isSkill = false;
@@ -122,6 +123,22 @@ void Player::bossCore() {
 	healthRegenerationRate = 20;
 	atkBullet = 600;
 	strength = 3000;
+}
+
+void Player::exCord() {
+	//开启EX模式
+	/*
+	 负责人：Tiant
+	 功能：
+	 玩家进入EX模式
+	 改变基础数值
+	 参数：void
+	 返回值：void
+	*/
+	isEX = true;
+	health = 300;
+	maxHealth = 500;
+	healthRegenerationRate = 3;
 }
 
 void Player::Invincible() {

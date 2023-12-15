@@ -84,12 +84,13 @@ private:
 	Button easyButton;
 	Button hardButton;
 	Button bossButton; // 一键进入boss战
+	Button EXButton;
 
 	//是否播放过音效
 	bool isEasyButton;
 	bool ishardButton;
 	bool isbossButton;
-
+	bool isEXButton;
 	// 显示难度选择的文字
 	sf::Text difficultyText;
 

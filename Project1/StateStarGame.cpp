@@ -205,6 +205,7 @@ StateSelectDifficulty::StateSelectDifficulty(StateManager& manager) : stateManag
 
 	isEasyButton = false;
 	ishardButton = false;
+	isEXButton = false;
 }
 
 void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
@@ -258,6 +259,12 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 				settingsManager.isHardCore = true;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}
+			else if (EXButton.isMouseOver(window)) {
+				// 处理EX难度的选择
+				audioManager.playSound("ClickButton");
+				settingsManager.isEXHard = true;
+				stateManager.changeState(stateManager.createState("NewGame"));
+			}
 		}
 
 		// 按钮悬停效果
@@ -297,6 +304,17 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 			else {
 				bossButton.resetColor();
 				isbossButton= false;
+			}
+			if (EXButton.isMouseOver(window)) {
+				EXButton.onHover();
+				if (!isEXButton) {
+					isEXButton = true;
+					audioManager.playSound("SelectButton");
+				}
+			}
+			else {
+				EXButton.resetColor();
+				isEXButton = false;
 			}
 		}
 
@@ -338,4 +356,5 @@ void StateSelectDifficulty::draw(sf::RenderWindow& window) {
 	easyButton.draw(window);
 	hardButton.draw(window);
 	bossButton.draw(window);
+	EXButton.draw(window);
 }
