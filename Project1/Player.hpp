@@ -52,6 +52,7 @@ private:
     int score;          // 分数
     bool isHard;        // 是否开启困难模式
     bool isBoss;        // 是否开启boss战斗模式
+    bool isEX;          //是否开启EX模式
     bool isGameOver;    // 是否通关
     bool isInvincible;  // 是否开启无敌模式
     bool isSkill;       // 是否可以释放技能
@@ -84,6 +85,9 @@ public:
 
     //开启困难模式！
     void hardCore();
+
+    //开启EX模式
+    void exCord();
 
     //开启无敌模式
     void Invincible();
