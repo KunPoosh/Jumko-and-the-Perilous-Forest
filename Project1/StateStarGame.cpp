@@ -196,6 +196,10 @@ StateSelectDifficulty::StateSelectDifficulty(StateManager& manager) : stateManag
 	bossButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
 	bossButton.setPosition(390, 600, 200, 50);
 
+	EXButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"EX", 25);
+	EXButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
+	EXButton.setPosition(390, 700, 200, 50);
+
 	// 难度选择文本
 	difficultyText.setFont(assetManager.getFont("simhei"));
 	difficultyText.setFillColor(sf::Color::White);
@@ -259,7 +263,7 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 				settingsManager.isHardCore = true;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}
-			else if (EXButton.isMouseOver(window)) {
+			else if (EXButton.isMouseOver(mousePosition)) {
 				// 处理EX难度的选择
 				audioManager.playSound("ClickButton");
 				settingsManager.isEXHard = true;
@@ -305,7 +309,7 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 				bossButton.resetColor();
 				isbossButton= false;
 			}
-			if (EXButton.isMouseOver(window)) {
+			if (EXButton.isMouseOver(mousePosition)) {
 				EXButton.onHover();
 				if (!isEXButton) {
 					isEXButton = true;

@@ -136,9 +136,11 @@ void Player::exCord() {
 	 返回值：void
 	*/
 	isEX = true;
-	health = 300;
-	maxHealth = 500;
-	healthRegenerationRate = 3;
+	health = 2000;
+	maxHealth = 2000;
+	healthRegenerationRate = 0;
+	atkBullet = 500;
+	strength = 1000;
 }
 
 void Player::Invincible() {
@@ -270,6 +272,9 @@ void Player::addScore(int scoreToAdd) {
 	//----------------------实现------------------------//
 	if (isHard) {
 		score += scoreToAdd * 1.5;
+	}
+	else if (isEX) {
+		score += scoreToAdd * 2;
 	}
 	else
 	{
