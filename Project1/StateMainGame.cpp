@@ -111,6 +111,14 @@ StateMainGame::StateMainGame(StateManager& manager)
     Return.setPosition(325, 500, 250, 80);
 
     //数值初始化
+
+    elapsedTime = 0.f;
+    fpsUpdateTime = 0.f;
+    isHardMode = SettingsManager::getInstance().isHardCore;
+    isBossMode = SettingsManager::getInstance().isBossCore;
+    ENEMYOUT2S = 0;
+    ENEMYOUT2STIME = 0.f;
+    //RecordTotalTime = 0.f;
    
     score = 0;
     power = 0;
@@ -123,15 +131,6 @@ StateMainGame::StateMainGame(StateManager& manager)
         TIMEFORPLAY = 0;
     }
     
-    
-    
-    elapsedTime = 0.f;
-    fpsUpdateTime = 0.f;
-    isHardMode = SettingsManager::getInstance().isHardCore;
-    isBossMode = SettingsManager::getInstance().isBossCore;
-    ENEMYOUT2S = 0;
-    ENEMYOUT2STIME = 0.f;
-    //RecordTotalTime = 0.f;
 
     maxPlayerHealth = 1000;
     playerHealth = 1000;

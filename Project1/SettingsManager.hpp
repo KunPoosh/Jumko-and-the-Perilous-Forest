@@ -47,7 +47,7 @@ public:
     bool iswasd;
 
     //困难模式
-    bool isHardCore;
+    bool isHardCore = false;
 
     //一键进入BOSS战模式
     bool isBossCore = false;
