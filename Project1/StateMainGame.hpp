@@ -86,7 +86,6 @@ private:
     sf::RectangleShape skillBarBackground;  // 技能冷却条底板
     sf::RectangleShape ground;              // 暂停背景板
     sf::RectangleShape ground2;
-    sf::RectangleShape healthWarning; // 生命值警告矩形
     Button Continue;
     Button Return;
 
@@ -97,10 +96,11 @@ private:
     sf::Text HP;         // 显示玩家血量
     sf::Text FPS;        // 显示当前游戏帧数
 
+
     // 游戏逻辑相关数据
     float elapsedTime;   // 当前累计时间(测试使用)
     bool isHardMode;     // 玩家是否开启了困难模式
-    bool isBossMode;     // 玩家是否开启BOOS战模式
+    bool isBossMode;
     float fpsUpdateTime; // 累计时间，用于更新FPS显示
     float TOTALTIME;     // 总时间
     int score;           // 当前分数
@@ -109,10 +109,10 @@ private:
     int ENEMYOUT2S;      // 小场景切换计数器
     float ENEMYOUT2STIME;// 小场景计时器
     //static float RecordTotalTime;//为结束场景记录最后时间
+    bool isEXMode;       //玩家是否开启了EX模式
 
     int playerHealth;    //玩家的当前生命值
     int maxPlayerHealth; //玩家的生命上限
-    bool isBreak = false;
 
     float skillCD;       //技能CD
     float CDTime;        //当前累计的技能CD时间
@@ -124,9 +124,6 @@ private:
     bool isEsc = false;          //是否进入暂停
     bool isContinue = false;
     bool isReturn = false;
-
-    float GmeOverTimer = 0.f;    //结束前CD
-    bool isGameOver = false;    //游戏是否结束
 
 };
 

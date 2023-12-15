@@ -58,10 +58,6 @@ void SettingsManager::loadSettings(const std::string& filename) {
         if (std::getline(file, line)) {
             isInvincible = (line == "1");
         }
-
-        if (std::getline(file, line)) {
-            iswasd = (line == "1");
-        }
     }
     else {
         std::cout << "Unable to open file for reading" << std::endl;
@@ -116,11 +112,6 @@ void SettingsManager::saveSettings(const std::string& filename) {
         std::cerr << "Error writing isInvincible to file." << std::endl;
     }
 
-    file << (iswasd ? 1 : 0) << "\n";
-    if (!file.good()) {
-        std::cerr << "Error writing iswasd to file." << std::endl;
-    }
-
     //测试
     std::cout << "English String: " << englishString << std::endl;
     std::cout << "Unlocked CGs: ";
@@ -131,7 +122,6 @@ void SettingsManager::saveSettings(const std::string& filename) {
     std::cout << "Sound Volume: " << soundVolume << std::endl;
     std::cout << "Music Volume: " << musicVolume << std::endl;
     std::cout << "isInvincible: " << isInvincible << std::endl;
-    std::cout << "iswasd: " << iswasd << std::endl;
 }
 
 void SettingsManager::printSettings() const {

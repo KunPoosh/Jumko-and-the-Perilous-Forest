@@ -1,60 +1,60 @@
-﻿#ifndef SETTINGSMANAGER_HPP
+#ifndef SETTINGSMANAGER_HPP
 #define SETTINGSMANAGER_HPP
 
 #include <string>
 #include <vector>
 
-// -------------------- 类设计 --------------------
+// -------------------- ����� --------------------
 /*
-    【文件管理类】
-    负责人： 波波沙
+    ���ļ������ࡿ
+    �����ˣ� ����ɳ
 
-    功能：单例模式，复制位于存档文件的读写
-        1.读写全英文字符串秘钥
-        2.读写01穿记录CG解锁
-        3.读写两个音量值
-        4.记录是否开启无敌模式
+    ���ܣ�����ģʽ������λ�ڴ浵�ļ��Ķ�д
+        1.��дȫӢ���ַ�����Կ
+        2.��д01����¼CG����
+        3.��д��������ֵ
+        4.��¼�Ƿ����޵�ģʽ
 */
 
 class SettingsManager {
 public:
 
-    //单例唯一入口
+    //����Ψһ���
     static SettingsManager& getInstance();
-    // 禁用拷贝和赋值
+    // ���ÿ����͸�ֵ
     SettingsManager(const SettingsManager&) = delete;
     SettingsManager& operator=(const SettingsManager&) = delete;
 
-    //读取文件
+    //��ȡ�ļ�
     void loadSettings(const std::string& filename);
-    //保存文件
+    //�����ļ�
     void saveSettings(const std::string& filename);
 
-    //测试
+    //����
     void printSettings() const;
 
-    //秘钥
+    //��Կ
     std::string englishString;
-    //01CG串
+    //01CG��
     std::vector<bool> unlockedCGs;
-    //音效音量
+    //��Ч����
     int soundVolume;
-    //音乐音量
+    //��������
     int musicVolume;
-    //无敌模式
+    //�޵�ģʽ
     bool isInvincible;
-    //键位调整
-    bool iswasd;
 
-    //困难模式
+    //����ģʽ
     bool isHardCore;
+    //EXģʽ
+    bool isEXHard;
 
     //一键进入BOSS战模式
     bool isBossCore = false;
 
 private:
     
-    SettingsManager() {} // 私有构造函数
+    SettingsManager() {} // ˽�й��캯��
 };
 
 #endif // SETTINGSMANAGER_HPP

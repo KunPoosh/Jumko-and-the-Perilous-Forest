@@ -8,7 +8,6 @@
 #include "Bullet.hpp"
 #include "AudioManager.hpp"
 #include <iostream>
-#include "SettingsManager.hpp"
 
 
 // -------------------- 类设计 --------------------
@@ -51,11 +50,11 @@ private:
     float TotalTime;
     int score;          // 分数
     bool isHard;        // 是否开启困难模式
-    bool isBoss;        // 是否开启boss战斗模式
+    bool isBoss;
     bool isGameOver;    // 是否通关
     bool isInvincible;  // 是否开启无敌模式
     bool isSkill;       // 是否可以释放技能
-
+    bool isEX;          //是否开启EX模式
     //事件操作
     bool movingUp;      // 用于跟踪 上 键是否被按下
     bool movingDown;    // 用于跟踪 下 键是否被按下
@@ -63,6 +62,7 @@ private:
     bool movingRight;   // 用于跟踪 右 键是否被按下
     bool slowMovement;  // 用于跟踪 Shift 键是否被按下
     bool openFire;      // 用于跟踪 Z 键是否被按下
+
 
 public:
 
@@ -85,13 +85,19 @@ public:
     //开启困难模式！
     void hardCore();
 
+    //开启EX模式
+    void exCord();
+
     //开启无敌模式
     void Invincible();
 
-    //开启Boss战模式
+    //设置玩家位置
+
+    //寮€鍚疊oss鎴樻ā寮?
     void bossCore();
 
-    //设置玩家位置
+    //璁剧疆鐜╁浣嶇疆
+
     void setPosition(sf::Vector2f position);
 
     // 返回对玩家精灵的引用
@@ -105,11 +111,6 @@ public:
 
     // 增加玩家的分数
     void addScore(int score);
-
-    //获取玩家的力量值
-    int getPower() {
-        return strength;
-    }
 
     // 增加玩家力量
     void addPower(int power);

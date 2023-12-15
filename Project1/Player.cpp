@@ -20,29 +20,29 @@ Player::Player() {
 	sprite.setTexture(assetManager.getTexture("Jumko"));
 	hitboxSprite.setTexture(assetManager.getTexture("HitBox"));
 
-	health = 2500;
-	maxHealth = 2500;
-	strength = 2000;
+	health = 1000;
+	maxHealth = 1000;
+	strength = 1000;
 	moveSpeed = 600;
 
 	accumulatedTime = 0.f;
 	attackInterval = 0.08f;
 	timeTohealth = 0.f;
-	healthRegenerationRate = 30;
+	healthRegenerationRate = 10;
 	skillCharging = 0;
 
-	atkBullet = 900;
+	atkBullet = 400;
 	helthBullet = 1;
 	speedBullet = 1500;
 
 	TotalTime = 0.f;
 	score = 0;
 	isHard = false;
+	isEX = false;
 	isBoss = false;
 	isGameOver = false;
 	isInvincible = false;
 	isSkill = false;
-
 	movingUp = false;
 	movingDown = false;
 	movingLeft = false;
@@ -93,29 +93,37 @@ void Player::hardCore() {
 	isHard = true;
 	//其他的参数调整
 	//...
-	health = 1800;
-	maxHealth = 1800;
-	healthRegenerationRate = 20;
-	strength = 1000;
-	atkBullet = 600;
+	health = 600;
+	maxHealth = 600;
+	healthRegenerationRate = 5;
 }
 
+
+void Player::exCord() {
+
+	//开启EX模式
+	isEX = true;
+	health = 300;
+	maxHealth = 500;
+	healthRegenerationRate = 3;
+
+}
 void Player::bossCore() {
-	//开启Boss战模式！
+	//寮€鍚疊oss鎴樻ā寮忥紒
 	/*
-	负责人: 波波沙
+	璐熻矗浜? 娉㈡尝娌?
 
-	功能:
-		使玩家进入困难模式,改变玩家的基础数值
+	鍔熻兘:
+		浣跨帺瀹惰繘鍏ュ洶闅炬ā寮?鏀瑰彉鐜╁鐨勫熀纭€鏁板€?
 
-	参数: void
+	鍙傛暟: void
 
-	返回值: void
+	杩斿洖鍊? void
 	*/
-	//----------------------实现------------------------//
+	//----------------------瀹炵幇------------------------//
 
 	isBoss = true;
-	//其他的参数调整
+	//鍏朵粬鐨勫弬鏁拌皟鏁?
 	//...
 	health = 1800;
 	maxHealth = 1800;
@@ -124,6 +132,21 @@ void Player::bossCore() {
 	strength = 3000;
 }
 
+void Player::Invincible() {
+	//寮€鍚棤鏁屾ā寮忥紒
+	/*
+	 负责人：Tiant
+	 功能：
+	 玩家进入EX模式
+	 改变基础数值
+	 参数：void
+	 返回值：void
+	*/
+	isEX = true;
+	health = 300;
+	maxHealth = 500;
+	healthRegenerationRate = 3;
+}
 void Player::Invincible() {
 	//开启无敌模式！
 	/*
@@ -251,14 +274,7 @@ void Player::addScore(int scoreToAdd) {
 	返回值: void
 	*/
 	//----------------------实现------------------------//
-	if (isHard) {
-		score += scoreToAdd * 1.5;
-	}
-	else
-	{
-		score += scoreToAdd;
-	}
-	
+	score += scoreToAdd;
 }
 
 int Player::getHealth() {
@@ -800,7 +816,7 @@ void Player::update(float deltaTime) {
 			sf::Vector2f(0, -1),
 			1500,
 			10000,
-			atkBullet * 0.3
+			100
 		);
 		//设置子弹的位置
 		newBullet9->setPosition(sprite.getPosition() + sf::Vector2f(-20, -5));
@@ -860,108 +876,52 @@ void Player::update(float deltaTime) {
 
 void Player::handleInput(sf::Event& event) {
 	//处理事件
-	SettingsManager& settingsManager = SettingsManager::getInstance();
+
 	if (event.type == sf::Event::KeyPressed) {
-		if (!settingsManager.iswasd)
-		{
-			switch (event.key.code) {
-			case sf::Keyboard::Up:
-				movingUp = true;
-				break;
-			case sf::Keyboard::Down:
-				movingDown = true;
-				break;
-			case sf::Keyboard::Left:
-				movingLeft = true;
-				break;
-			case sf::Keyboard::Right:
-				movingRight = true;
-				break;
-			case sf::Keyboard::LShift:
-				slowMovement = true;
-				break;
-			case sf::Keyboard::Z:
-				openFire = true;
-				break;
-				// ... 其他键盘事件 ...
-			}
+		switch (event.key.code) {
+		case sf::Keyboard::Up:
+			movingUp = true;
+			break;
+		case sf::Keyboard::Down:
+			movingDown = true;
+			break;
+		case sf::Keyboard::Left:
+			movingLeft = true;
+			break;
+		case sf::Keyboard::Right:
+			movingRight = true;
+			break;
+		case sf::Keyboard::LShift:
+			slowMovement = true;
+			break;
+		case sf::Keyboard::Z:
+			openFire = true;
+			break;
+			// ... 其他键盘事件 ...
 		}
-		else
-		{
-			switch (event.key.code) {
-			case sf::Keyboard::W:
-				movingUp = true;
-				break;
-			case sf::Keyboard::S:
-				movingDown = true;
-				break;
-			case sf::Keyboard::A:
-				movingLeft = true;
-				break;
-			case sf::Keyboard::D:
-				movingRight = true;
-				break;
-			case sf::Keyboard::LShift:
-				slowMovement = true;
-				break;
-			case sf::Keyboard::J:
-				openFire = true;
-				break;
-				// ... 其他键盘事件 ...
-			}
-		}
-		
 	}
 	else if (event.type == sf::Event::KeyReleased) {
-		if (!settingsManager.iswasd)
-		{
-			switch (event.key.code) {
-			case sf::Keyboard::Up:
-				movingUp = false;
-				break;
-			case sf::Keyboard::Down:
-				movingDown = false;
-				break;
-			case sf::Keyboard::Left:
-				movingLeft = false;
-				break;
-			case sf::Keyboard::Right:
-				movingRight = false;
-				break;
-			case sf::Keyboard::LShift:
-				slowMovement = false;
-				break;
-			case sf::Keyboard::Z:
-				openFire = false;
-				break;
-				// ... 其他键盘事件 ...
-			}
+		switch (event.key.code) {
+		case sf::Keyboard::Up:
+			movingUp = false;
+			break;
+		case sf::Keyboard::Down:
+			movingDown = false;
+			break;
+		case sf::Keyboard::Left:
+			movingLeft = false;
+			break;
+		case sf::Keyboard::Right:
+			movingRight = false;
+			break;
+		case sf::Keyboard::LShift:
+			slowMovement = false;
+			break;
+		case sf::Keyboard::Z:
+			openFire = false;
+			break;
+			// ... 其他键盘事件 ...
 		}
-		else
-		{
-			switch (event.key.code) {
-			case sf::Keyboard::W:
-				movingUp = false;
-				break;
-			case sf::Keyboard::S:
-				movingDown = false;
-				break;
-			case sf::Keyboard::A:
-				movingLeft = false;
-				break;
-			case sf::Keyboard::D:
-				movingRight = false;
-				break;
-			case sf::Keyboard::LShift:
-				slowMovement = false;
-				break;
-			case sf::Keyboard::J:
-				openFire = false;
-				break;
-				// ... 其他键盘事件 ...
-			}
-		}
-		
 	}
 }
 

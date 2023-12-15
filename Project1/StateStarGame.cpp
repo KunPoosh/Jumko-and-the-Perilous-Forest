@@ -1,4 +1,4 @@
-﻿#include "StateStarGame.hpp"
+#include "StateStarGame.hpp"
 
 StateStartGame::StateStartGame(StateManager& manager) : stateManager(manager) {
 	//构造方法
@@ -86,9 +86,6 @@ void StateStartGame::handleInput(sf::RenderWindow& window) {
 	sf::Event event;
 	while (window.pollEvent(event))
 	{
-		//获取鼠标位置
-		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
-
 		//当点击关闭时关闭窗口
 		if (event.type == sf::Event::Closed) {
 			window.close();
@@ -96,13 +93,13 @@ void StateStartGame::handleInput(sf::RenderWindow& window) {
 
 		//点击下一步按钮
 		if (event.type == sf::Event::MouseButtonPressed) {
-			if (this->Next.isMouseOver(mousePosition)) {
+			if (this->Next.isMouseOver(window)) {
 				stateManager.changeState(stateManager.createState("StateSelectDifficulty"));
 			}
 		}
 		//悬停在按钮上面
 		if (event.type == sf::Event::MouseMoved) {
-			if (Next.isMouseOver(mousePosition)) {
+			if (Next.isMouseOver(window)) {
 				Next.onHover();
 			}
 			else {
@@ -158,7 +155,7 @@ void StateStartGame::draw(sf::RenderWindow& window) {
 	window.draw(text2);
 	window.draw(text3);
 	window.draw(text4);
-	if (TotalTime >= 5) {
+	if (TotalTime >= 1) {
 		Next.draw(window);
 	}
 }
@@ -192,11 +189,19 @@ StateSelectDifficulty::StateSelectDifficulty(StateManager& manager) : stateManag
 	hardButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
 	hardButton.setPosition(540, 500, 200, 50);
 
-	bossButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"进入Boos战", 25);
-	bossButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
-	bossButton.setPosition(390, 600, 200, 50);
+
+	EXButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"EX模式", 25);
+	EXButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
+	EXButton.setPosition(240, 600, 200, 50);
 
 	// 难度选择文本
+
+	bossButton.setFont(assetManager.getFont("simhei"), sf::Color::White, L"杩涘叆Boos鎴?, 25);
+	bossButton.setColor(sf::Color::Black, sf::Color::White, sf::Color(100, 100, 100, 255));
+	bossButton.setPosition(540, 600, 200, 50);
+
+	// 闅惧害閫夋嫨鏂囨湰
+
 	difficultyText.setFont(assetManager.getFont("simhei"));
 	difficultyText.setFillColor(sf::Color::White);
 	difficultyText.setCharacterSize(50);
@@ -205,6 +210,7 @@ StateSelectDifficulty::StateSelectDifficulty(StateManager& manager) : stateManag
 
 	isEasyButton = false;
 	ishardButton = false;
+	isEXButton = false;
 }
 
 void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
@@ -231,25 +237,34 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 
 	sf::Event event;
 	while (window.pollEvent(event)) {
-		//获取鼠标位置
-		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
-
 		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
 
-		// 检测难度和boss战按钮的点击
+
+		// 检测难度按钮的点击
+
+		// 妫€娴嬮毦搴﹀拰boss鎴樻寜閽殑鐐瑰嚮
+
 		if (event.type == sf::Event::MouseButtonPressed) {
-			if (easyButton.isMouseOver(mousePosition)) {
+			if (easyButton.isMouseOver(window)) {
 				// 处理简单难度的选择
 				audioManager.playSound("ClickButton");
 				settingsManager.isHardCore = false;
+				settingsManager.isEXHard = false;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}
-			else if (hardButton.isMouseOver(mousePosition)) {
+			else if (hardButton.isMouseOver(window)) {
 				// 处理困难难度的选择
 				audioManager.playSound("ClickButton");
 				settingsManager.isHardCore = true;
+				settingsManager.isEXHard = false;
+				stateManager.changeState(stateManager.createState("NewGame"));
+			}
+			else if (EXButton.isMouseOver(window)) {
+				// 处理EX难度的选择
+				audioManager.playSound("ClickButton");
+				settingsManager.isEXHard = true;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}
 			else if (bossButton.isMouseOver(mousePosition) && ( settingsManager.unlockedCGs[10]|| settingsManager.unlockedCGs[11])) {
@@ -262,7 +277,7 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 
 		// 按钮悬停效果
 		if (event.type == sf::Event::MouseMoved) {
-			if (easyButton.isMouseOver(mousePosition)) {
+			if (easyButton.isMouseOver(window)) {
 				easyButton.onHover();
 				if (!isEasyButton) {
 					isEasyButton = true;
@@ -274,7 +289,7 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 				isEasyButton = false;
 			}
 
-			if (hardButton.isMouseOver(mousePosition)) {
+			if (hardButton.isMouseOver(window)) {
 				hardButton.onHover();
 				if (!ishardButton) {
 					ishardButton = true;
@@ -285,8 +300,18 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 				hardButton.resetColor();
 				ishardButton = false;
 			}
-
-			//悬停boss战按钮
+			if (EXButton.isMouseOver(window)) {
+				EXButton.onHover();
+				if (!isEXButton) {
+					isEXButton = true;
+					audioManager.playSound("SelectButton");
+				}
+			}
+			else {
+				EXButton.resetColor();
+				isEXButton = false;
+			}
+			//鎮仠boss鎴樻寜閽?
 			if (bossButton.isMouseOver(mousePosition)) {
 				bossButton.onHover();
 				if (!isbossButton) {
@@ -299,7 +324,6 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 				isbossButton= false;
 			}
 		}
-
 	}
 }
 
@@ -337,5 +361,7 @@ void StateSelectDifficulty::draw(sf::RenderWindow& window) {
 	window.draw(difficultyText);
 	easyButton.draw(window);
 	hardButton.draw(window);
+	EXButton.draw(window);
 	bossButton.draw(window);
+
 }
