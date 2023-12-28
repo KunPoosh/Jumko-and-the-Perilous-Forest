@@ -46,6 +46,8 @@ int main() {
 	stateManager.changeState(std::make_unique<StateMenu>(stateManager));
 	//默认初始播放BGM
 	audioManager.playMusic("MenuMusic1", true);
+	//播放标题语音
+	audioManager.playSound("Jumko_Title");
 
 	//读取一次存档
 	settingsManager.loadSettings("Asset/save.txt");

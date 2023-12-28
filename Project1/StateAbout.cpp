@@ -42,6 +42,8 @@ void StateAbout::handleInput(sf::RenderWindow& window) {
 
 		//处理关闭界面
 		if (event.type == sf::Event::Closed) {
+			audioManager.playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		//处理鼠标点击按钮事件

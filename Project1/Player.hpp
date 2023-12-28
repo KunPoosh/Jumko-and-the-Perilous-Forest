@@ -38,6 +38,7 @@ private:
     int strength;                  // 力量值
     float moveSpeed;               // 移动速度
 
+    float HitTimer;                // 受击音效间隔
     float accumulatedTime;         // 累计时间(攻击)
     float attackInterval;          // 攻击间隔
     float timeTohealth;            // 累计时间(生命再生)
@@ -56,6 +57,7 @@ private:
     bool isGameOver;    // 是否通关
     bool isInvincible;  // 是否开启无敌模式
     bool isSkill;       // 是否可以释放技能
+    bool isBeHit;       // 是否被击中，要播放受击语音
 
     //事件操作
     bool movingUp;      // 用于跟踪 上 键是否被按下

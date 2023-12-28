@@ -111,6 +111,8 @@ void StateMenu::handleInput(sf::RenderWindow& window){
 
         //当点击关闭时关闭窗口
         if (event.type == sf::Event::Closed) {
+            audioManager.playSound("Jumko_Exit");
+            sf::sleep(sf::seconds(2));
             window.close();
         }
 
@@ -129,6 +131,7 @@ void StateMenu::handleInput(sf::RenderWindow& window){
             else if (galleryButton.isMouseOver(mousePosition)) {
                 stateManager.changeState(stateManager.createState("Appreciate"));
                 audioManager.playSound("ClickButton");
+                audioManager.playSound("Jumko_CG");
                 //跳转场景时清空当前的实体
                 entityManager->clearAllEntities();
             }
@@ -138,6 +141,7 @@ void StateMenu::handleInput(sf::RenderWindow& window){
                 //将场景切换到设置界面
                 stateManager.changeState(stateManager.createState("StateSetting"));
                 audioManager.playSound("ClickButton");
+                audioManager.playSound("Jumko_Setting");
                 //跳转场景时清空当前的实体
                 entityManager->clearAllEntities();
             }
@@ -146,6 +150,7 @@ void StateMenu::handleInput(sf::RenderWindow& window){
             else if (aboutButton.isMouseOver(mousePosition)) {
                 stateManager.changeState(stateManager.createState("StateAbout"));
                 audioManager.playSound("ClickButton");
+                audioManager.playSound("Jumko_About");
                 //跳转场景时清空当前的实体
                 entityManager->clearAllEntities();
             }
@@ -154,6 +159,7 @@ void StateMenu::handleInput(sf::RenderWindow& window){
             else if (howToPlayButton.isMouseOver(mousePosition)) {
                 stateManager.changeState(stateManager.createState("StateGameplay"));
                 audioManager.playSound("ClickButton");
+                audioManager.playSound("Jumko_HowtoPlay");
                 //跳转场景时清空当前的实体
                 entityManager->clearAllEntities();
             }
@@ -161,6 +167,8 @@ void StateMenu::handleInput(sf::RenderWindow& window){
             //在按钮退出的上方
             else if (exitButton.isMouseOver(mousePosition)) {
                 audioManager.playSound("ClickButton");
+                audioManager.playSound("Jumko_Exit");
+                sf::sleep(sf::seconds(2));
                 window.close();
                 return;
             }

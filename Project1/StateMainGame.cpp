@@ -240,6 +240,9 @@ void StateMainGame::handleInput(sf::RenderWindow& window) {
                     audioManager.playMusic("MenuMusic1", true);
                     //跳转场景时清空当前的实体
 
+                    //播放标题语音
+                    audioManager.playSound("Jumko_Title");
+
                 }
             }
             if (event.type == sf::Event::MouseMoved)
@@ -273,6 +276,8 @@ void StateMainGame::handleInput(sf::RenderWindow& window) {
         }
         //当点击关闭时关闭窗口
         if (event.type == sf::Event::Closed) {
+            AudioManager::getInstance().playSound("Jumko_Exit");
+            sf::sleep(sf::seconds(2));
             window.close();
         }
     }
@@ -353,6 +358,7 @@ void StateMainGame::update(float deltaTime) {
             AudioManager::getInstance().playSound("Break");
             AudioManager::getInstance().playSound("Break");
             AudioManager::getInstance().playSound("Break");
+            AudioManager::getInstance().playSound("Jumko_Break");
             //闪红
             // 创建 FlashRedAnimation 实例
             std::shared_ptr<FlashRedAnimation> Animation = std::make_shared<FlashRedAnimation>();

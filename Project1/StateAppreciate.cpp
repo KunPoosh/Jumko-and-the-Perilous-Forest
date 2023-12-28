@@ -134,6 +134,8 @@ void StateAppreciate::handleInput(sf::RenderWindow& window)
 		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 		//当点击关闭时关闭窗口
 		if (event.type == sf::Event::Closed) {
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		// ... 处理按钮点击事件，使用stateManager.changeState(...)
@@ -410,6 +412,8 @@ void StateAppreciate2::handleInput(sf::RenderWindow& window)
 
 		//当点击关闭时关闭窗口
 		if (event.type == sf::Event::Closed) {
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		// ... 处理按钮点击事件，使用stateManager.changeState(...)
@@ -617,6 +621,8 @@ void MagnifyAppreciate::handleInput(sf::RenderWindow& window)
 
 		//当点击关闭时关闭窗口
 		if (event.type == sf::Event::Closed) {
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		// ... 处理按钮点击事件，使用stateManager.changeState(...)
@@ -742,6 +748,8 @@ void MagnifyAppreciate2::handleInput(sf::RenderWindow& window) {
 
 		//当点击关闭时关闭窗口
 		if (event.type == sf::Event::Closed) {
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		// ... 处理按钮点击事件，使用stateManager.changeState(...)

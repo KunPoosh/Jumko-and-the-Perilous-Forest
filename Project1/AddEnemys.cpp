@@ -107,6 +107,9 @@ void StateMainGame::ADDENEMYS()
 			//播放BGM，游戏开始
 			audioManager.playMusic("Stage1", false);
 
+			//播放入场音效
+			audioManager.playSound("Jumko_Begin");
+
 			//测试区
 			//EnemyFactory::createEnemy("Spider", assetManager.getTexture("Spider"), sf::Vector2f(320, -30), sf::Vector2f(0, 1), 160000, 100);
 			

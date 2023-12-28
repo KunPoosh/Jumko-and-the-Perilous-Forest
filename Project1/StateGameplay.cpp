@@ -52,6 +52,8 @@ void StateGameplay::handleInput(sf::RenderWindow& window) {
 
 		//处理关闭界面
 		if (event.type == sf::Event::Closed) {
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		//处理鼠标点击按钮事件
@@ -194,6 +196,8 @@ void StateGameplay2::handleInput(sf::RenderWindow& window) {
 
 		//处理关闭界面
 		if (event.type == sf::Event::Closed) {
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		//处理鼠标点击按钮事件

@@ -91,6 +91,8 @@ void StateStartGame::handleInput(sf::RenderWindow& window) {
 
 		//当点击关闭时关闭窗口
 		if (event.type == sf::Event::Closed) {
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 
@@ -240,6 +242,8 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 		sf::Vector2f mousePosition = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
 
 		if (event.type == sf::Event::Closed) {
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 
@@ -249,23 +253,30 @@ void StateSelectDifficulty::handleInput(sf::RenderWindow& window) {
 				// 处理简单难度的选择
 				audioManager.playSound("ClickButton");
 				settingsManager.isHardCore = false;
+				settingsManager.isBossCore = false;
+				settingsManager.isEXHard = false;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}
 			else if (hardButton.isMouseOver(mousePosition)) {
 				// 处理困难难度的选择
 				audioManager.playSound("ClickButton");
 				settingsManager.isHardCore = true;
+				settingsManager.isBossCore = false;
+				settingsManager.isEXHard = false;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}
 			else if (bossButton.isMouseOver(mousePosition) && ( settingsManager.unlockedCGs[10]|| settingsManager.unlockedCGs[11])) {
 				audioManager.playSound("ClickButton");
-				settingsManager.isBossCore = true;
 				settingsManager.isHardCore = true;
+				settingsManager.isBossCore = true;
+				settingsManager.isEXHard = false;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}
 			else if (EXButton.isMouseOver(mousePosition)) {
 				// 处理EX难度的选择
 				audioManager.playSound("ClickButton");
+				settingsManager.isHardCore = false;
+				settingsManager.isBossCore = false;
 				settingsManager.isEXHard = true;
 				stateManager.changeState(stateManager.createState("NewGame"));
 			}

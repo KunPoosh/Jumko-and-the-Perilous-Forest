@@ -71,6 +71,34 @@ AudioManager::AudioManager() {
     loadSound("Summary", "Asset/Sound/summary.mp3",15);
     //大破音效
     loadSound("Break", "Asset/Sound/break.mp3", 100);
+
+    //角色语音区，都是音效
+    //标题
+    loadSound("Jumko_Title", "Asset/Sound/Jumko_Title.wav", 100);
+    //受伤音效
+    loadSound("Jumko_Hit1", "Asset/Sound/Jumko_Hit1.wav", 100);
+    loadSound("Jumko_Hit2", "Asset/Sound/Jumko_Hit2.wav", 100);
+    loadSound("Jumko_Hit3", "Asset/Sound/Jumko_Hit3.wav", 100);
+    loadSound("Jumko_Hit4", "Asset/Sound/Jumko_Hit4.wav", 100);
+    loadSound("Jumko_Hit5", "Asset/Sound/Jumko_Hit5.wav", 100);
+    //大破音效
+    loadSound("Jumko_Break", "Asset/Sound/Jumko_Break.wav", 100);
+    //战败音效
+    loadSound("Jumko_Fail", "Asset/Sound/Jumko_Fail.wav", 100);
+    //战胜音效
+    loadSound("Jumko_Victory", "Asset/Sound/Jumko_Success.wav", 100);
+    //入场音效
+    loadSound("Jumko_Begin", "Asset/Sound/Jumko_Begain.wav", 100);
+    //鉴赏场景
+    loadSound("Jumko_CG", "Asset/Sound/Jumko_CG.wav", 100);
+    //设置场景
+    loadSound("Jumko_Setting", "Asset/Sound/Jumko_Setting.wav", 100);
+    //关于场景
+    loadSound("Jumko_About", "Asset/Sound/Jumko_About.wav", 100);
+    //玩法场景
+    loadSound("Jumko_HowtoPlay", "Asset/Sound/Jumko_HowtoPlay.wav", 100);
+    //退出
+    loadSound("Jumko_Exit", "Asset/Sound/Jumko_Exit.wav", 100);
 }
 
 void AudioManager::loadSound(const std::string& name, const std::string& filename, float volume) {

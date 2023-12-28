@@ -25,6 +25,7 @@ Player::Player() {
 	strength = 2000;
 	moveSpeed = 600;
 
+	HitTimer = 0.f;
 	accumulatedTime = 0.f;
 	attackInterval = 0.08f;
 	timeTohealth = 0.f;
@@ -43,6 +44,7 @@ Player::Player() {
 	isGameOver = false;
 	isInvincible = false;
 	isSkill = false;
+	isBeHit = false;
 
 	movingUp = false;
 	movingDown = false;
@@ -236,7 +238,8 @@ void Player::takeDamage(int damage) {
 	//----------------------实现------------------------//
 
 	health -= damage;
-	
+	//播放受击角色声音
+	isBeHit = true;
 }
 
 int Player::getScore() const {
@@ -801,6 +804,43 @@ void Player::update(float deltaTime) {
 		health += healthRegenerationRate;
 		timeTohealth -= 1.f;
 		if (health >= maxHealth) health = maxHealth;  // 限制生命值上限
+	}
+
+	// 受击声音播放逻辑
+	HitTimer += deltaTime;
+	if (isBeHit == true && HitTimer >= 3.0f) {
+		//音频管理器
+		AudioManager& audioManager = AudioManager::getInstance();
+
+		HitTimer = 0.f;
+
+		// 生成一个0到6的随机数
+		int randomSoundIndex = rand() % 7;
+
+		// 根据生成的随机数播放对应的音效
+		switch (randomSoundIndex) {
+		case 0:
+			audioManager.playSound("Jumko_Hit1");
+			break;
+		case 1:
+			audioManager.playSound("Jumko_Hit2");
+			break;
+		case 2:
+			audioManager.playSound("Jumko_Hit3");
+			break;
+		case 3:
+			audioManager.playSound("Jumko_Hit4");
+			break;
+		case 4:
+			audioManager.playSound("Jumko_Hit5");
+			break;
+		default:
+			break;
+		}
+	}
+	else
+	{
+		isBeHit = false;
 	}
 
 

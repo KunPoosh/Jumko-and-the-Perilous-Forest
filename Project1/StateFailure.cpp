@@ -89,6 +89,9 @@ StateFailure::StateFailure(StateManager& manager) :stateManager(manager)
 
 	//保存文件
 	SettingsManager::getInstance().saveSettings("Asset/save.txt");
+
+	//播放战败音效
+	AudioManager::getInstance().playSound("Jumko_Fail");
 }
 
 
@@ -104,6 +107,8 @@ void StateFailure::handleInput(sf::RenderWindow& window)
 
 		if (event.type == sf::Event::Closed)
 		{
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		if (event.type == sf::Event::MouseButtonPressed)
@@ -219,6 +224,8 @@ void OpenFailureCG::handleInput(sf::RenderWindow& window)
 
 		if (event.type == sf::Event::Closed)
 		{
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		if (event.type == sf::Event::MouseButtonPressed)
@@ -231,6 +238,8 @@ void OpenFailureCG::handleInput(sf::RenderWindow& window)
 				audioManager.playSound("ClickButton");
 				//播放BGM
 				audioManager.playMusic("MenuMusic1", true);
+				//播放标题语音
+				audioManager.playSound("Jumko_Title");
 			}
 		}
 		if (event.type == sf::Event::MouseMoved)

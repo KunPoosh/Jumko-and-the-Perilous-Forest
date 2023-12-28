@@ -63,6 +63,9 @@ StateVictory::StateVictory(StateManager& manager) :stateManager(manager)
 
 	//保存文件
 	SettingsManager::getInstance().saveSettings("Asset/save.txt");
+
+	//播放获胜音效
+	AudioManager::getInstance().playSound("Jumko_Victory");
 }
 
 //处理输入的事件
@@ -78,6 +81,8 @@ void StateVictory::handleInput(sf::RenderWindow& window)
 
 		if (event.type == sf::Event::Closed)
 		{
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		if (event.type == sf::Event::MouseButtonPressed)
@@ -169,6 +174,8 @@ void OpenVictoryCG::handleInput(sf::RenderWindow& window)
 
 		if (event.type == sf::Event::Closed)
 		{
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		if (event.type == sf::Event::MouseButtonPressed)
@@ -181,6 +188,8 @@ void OpenVictoryCG::handleInput(sf::RenderWindow& window)
 				audioManager.playSound("ClickButton");
 				//播放BGM
 				audioManager.playMusic("MenuMusic1", true);
+				//播放标题语音
+				audioManager.playSound("Jumko_Title");
 			}
 		}
 		if (event.type == sf::Event::MouseMoved)

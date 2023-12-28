@@ -176,6 +176,8 @@ void StateSetting::handleInput(sf::RenderWindow& window) {
 		//当点击关闭时关闭窗口
 		if (event.type == sf::Event::Closed) {
 			SettingsManager::getInstance().saveSettings("Asset/save.txt");
+			AudioManager::getInstance().playSound("Jumko_Exit");
+			sf::sleep(sf::seconds(2));
 			window.close();
 		}
 		// ... 处理按钮点击事件，使用stateManager.changeState(...)
