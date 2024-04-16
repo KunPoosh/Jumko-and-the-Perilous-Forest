@@ -164,6 +164,30 @@ void Enemy1::update(float deltaTime) {
 		audioManager.playSound("EnemyAttack1");
 	}
 
+	// 获取自身的边界框
+	sf::FloatRect EnemyBounds = sprite.getGlobalBounds();
+
+	// 获取玩家对象和边界框
+	auto player = EntityManager::getInstance()->getPlayer();
+	if (player) {
+
+		//取得判定点
+		sf::FloatRect playerBounds = player->getHitBox().getGlobalBounds();
+
+		// 检测和玩家的碰撞
+		if (EnemyBounds.intersects(playerBounds)) {
+			//引用音频播放单例
+			AudioManager& audioManager = AudioManager::getInstance();
+			// 碰撞发生，对玩家造成伤害
+			player->takeDamage(350); // 假设玩家类有一个 takeDamage 方法
+			//播放击中玩家的音效
+			audioManager.playSound("HitPlayer");
+
+			// 标记敌人为待销毁
+			this->health -= 100000;
+		}
+	}
+
 	//敌人离开屏幕被销毁
 	// 获取敌人位置...
 	sf::Vector2f position = sprite.getPosition();
@@ -315,6 +339,30 @@ void Enemy2::update(float deltaTime) {
 
 		//播放开火音效
 		audioManager.playSound("EnemyAttack1");
+	}
+
+	// 获取自身的边界框
+	sf::FloatRect EnemyBounds = sprite.getGlobalBounds();
+
+	// 获取玩家对象和边界框
+	auto player = EntityManager::getInstance()->getPlayer();
+	if (player) {
+
+		//取得判定点
+		sf::FloatRect playerBounds = player->getHitBox().getGlobalBounds();
+
+		// 检测和玩家的碰撞
+		if (EnemyBounds.intersects(playerBounds)) {
+			//引用音频播放单例
+			AudioManager& audioManager = AudioManager::getInstance();
+			// 碰撞发生，对玩家造成伤害
+			player->takeDamage(350); // 假设玩家类有一个 takeDamage 方法
+			//播放击中玩家的音效
+			audioManager.playSound("HitPlayer");
+
+			// 标记敌人为待销毁
+			this->health -= 100000;
+		}
 	}
 
 	//敌人离开屏幕被销毁
@@ -484,6 +532,30 @@ void Enemy3::update(float deltaTime) {
 		EntityManager::getInstance()->addBullet(newBullet3);
 		//播放开火音效
 		audioManager.playSound("EnemyAttack1");
+	}
+
+	// 获取自身的边界框
+	sf::FloatRect EnemyBounds = sprite.getGlobalBounds();
+
+	// 获取玩家对象和边界框
+	auto player = EntityManager::getInstance()->getPlayer();
+	if (player) {
+
+		//取得判定点
+		sf::FloatRect playerBounds = player->getHitBox().getGlobalBounds();
+
+		// 检测和玩家的碰撞
+		if (EnemyBounds.intersects(playerBounds)) {
+			//引用音频播放单例
+			AudioManager& audioManager = AudioManager::getInstance();
+			// 碰撞发生，对玩家造成伤害
+			player->takeDamage(350); // 假设玩家类有一个 takeDamage 方法
+			//播放击中玩家的音效
+			audioManager.playSound("HitPlayer");
+
+			// 标记敌人为待销毁
+			this->health -= 100000;
+		}
 	}
 
 	//敌人离开屏幕被销毁
@@ -696,6 +768,30 @@ void Enemy4::update(float deltaTime) {
 		audioManager.playSound("EnemyAttack1");
 	}
 
+	// 获取自身的边界框
+	sf::FloatRect EnemyBounds = sprite.getGlobalBounds();
+
+	// 获取玩家对象和边界框
+	auto player = EntityManager::getInstance()->getPlayer();
+	if (player) {
+
+		//取得判定点
+		sf::FloatRect playerBounds = player->getHitBox().getGlobalBounds();
+
+		// 检测和玩家的碰撞
+		if (EnemyBounds.intersects(playerBounds)) {
+			//引用音频播放单例
+			AudioManager& audioManager = AudioManager::getInstance();
+			// 碰撞发生，对玩家造成伤害
+			player->takeDamage(350); // 假设玩家类有一个 takeDamage 方法
+			//播放击中玩家的音效
+			audioManager.playSound("HitPlayer");
+
+			// 标记敌人为待销毁
+			this->health -= 100000;
+		}
+	}
+
 	//敌人离开屏幕被销毁
 	// 获取敌人位置...
 	sf::Vector2f position = sprite.getPosition();
@@ -881,6 +977,30 @@ void Enemy5::update(float deltaTime) {
 
 		//播放开火音效
 		audioManager.playSound("EnemyAttack1");
+	}
+
+	// 获取自身的边界框
+	sf::FloatRect EnemyBounds = sprite.getGlobalBounds();
+
+	// 获取玩家对象和边界框
+	auto player = EntityManager::getInstance()->getPlayer();
+	if (player) {
+
+		//取得判定点
+		sf::FloatRect playerBounds = player->getHitBox().getGlobalBounds();
+
+		// 检测和玩家的碰撞
+		if (EnemyBounds.intersects(playerBounds)) {
+			//引用音频播放单例
+			AudioManager& audioManager = AudioManager::getInstance();
+			// 碰撞发生，对玩家造成伤害
+			player->takeDamage(350); // 假设玩家类有一个 takeDamage 方法
+			//播放击中玩家的音效
+			audioManager.playSound("HitPlayer");
+
+			// 标记敌人为待销毁
+			this->health -= 100000;
+		}
 	}
 
 	//敌人离开屏幕被销毁
@@ -1103,6 +1223,30 @@ void Enemy6::update(float deltaTime) {
 
 		//播放开火音效
 		audioManager.playSound("EnemyAttack1");
+	}
+
+	// 获取自身的边界框
+	sf::FloatRect EnemyBounds = sprite.getGlobalBounds();
+
+	// 获取玩家对象和边界框
+	auto player = EntityManager::getInstance()->getPlayer();
+	if (player) {
+
+		//取得判定点
+		sf::FloatRect playerBounds = player->getHitBox().getGlobalBounds();
+
+		// 检测和玩家的碰撞
+		if (EnemyBounds.intersects(playerBounds)) {
+			//引用音频播放单例
+			AudioManager& audioManager = AudioManager::getInstance();
+			// 碰撞发生，对玩家造成伤害
+			player->takeDamage(350); // 假设玩家类有一个 takeDamage 方法
+			//播放击中玩家的音效
+			audioManager.playSound("HitPlayer");
+
+			// 标记敌人为待销毁
+			this->health -= 100000;
+		}
 	}
 
 	//敌人离开屏幕被销毁
@@ -1593,6 +1737,27 @@ void Spider::update(float deltaTime) {
 			attackTimer = 0.f;
 		}
 	}
+
+	// 获取自身的边界框
+	sf::FloatRect EnemyBounds = sprite.getGlobalBounds();
+
+	// 获取玩家对象和边界框
+	auto player = EntityManager::getInstance()->getPlayer();
+	if (player) {
+
+		//取得判定点
+		sf::FloatRect playerBounds = player->getHitBox().getGlobalBounds();
+
+		// 检测和玩家的碰撞
+		if (EnemyBounds.intersects(playerBounds)) {
+			
+			// 碰撞发生，设置玩家属性
+			player->Impact();
+
+			//精英怪不扣血
+		}
+	}
+
 	//敌人离开屏幕被销毁
 
 	// 获取敌人位置...
@@ -2187,6 +2352,26 @@ void BigSlime::update(float deltaTime) {
 		}
 	}
 	//...
+
+	// 获取自身的边界框
+	sf::FloatRect EnemyBounds = sprite.getGlobalBounds();
+
+	// 获取玩家对象和边界框
+	auto player = EntityManager::getInstance()->getPlayer();
+	if (player) {
+
+		//取得判定点
+		sf::FloatRect playerBounds = player->getHitBox().getGlobalBounds();
+
+		// 检测和玩家的碰撞
+		if (EnemyBounds.intersects(playerBounds)) {
+
+			// 碰撞发生，设置玩家属性
+			player->Impact();
+
+			//精英怪不扣血
+		}
+	}
 
 
 

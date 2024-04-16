@@ -25,6 +25,7 @@ Player::Player() {
 	strength = 2000;
 	moveSpeed = 600;
 
+	ImpactTimer = 0.f;
 	HitTimer = 0.f;
 	accumulatedTime = 0.f;
 	attackInterval = 0.08f;
@@ -45,6 +46,7 @@ Player::Player() {
 	isInvincible = false;
 	isSkill = false;
 	isBeHit = false;
+	isImpact = false;
 
 	movingUp = false;
 	movingDown = false;
@@ -77,6 +79,10 @@ sf::Vector2f Player::getHitboxPosition() const {
 	*/
 	//----------------------实现------------------------//
 	return hitboxSprite.getPosition();
+}
+
+void Player::Impact() {
+	isImpact = true;
 }
 
 void Player::hardCore() {
@@ -841,6 +847,22 @@ void Player::update(float deltaTime) {
 	else
 	{
 		isBeHit = false;
+	}
+
+	//撞击受伤害判定
+	//累加未撞击时间
+	ImpactTimer += deltaTime;
+	if (ImpactTimer >= 0.5f && isImpact == true) {
+		//清空计时器
+		ImpactTimer = 0.f;
+		//玩家受到伤害
+		takeDamage(350);
+		//播放击中玩家的音效
+		AudioManager::getInstance().playSound("HitPlayer");
+	}
+	else
+	{
+		isImpact = false;
 	}
 
 
